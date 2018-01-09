@@ -1,4 +1,6 @@
 declare var OpenSeadragon: any;
+
+import {WindowRef} from '../win-ref.service';
 import {Component, OnInit, Input, OnChanges} from '@angular/core';
 import {HgdaPageService} from '../hgda-page.service';
 
@@ -12,7 +14,7 @@ export class HgdaIifComponent implements OnInit, OnChanges {
   canvas: any;
   @Input() page: any;
 
-  constructor() {
+  constructor(private winRef: WindowRef) {
   }
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class HgdaIifComponent implements OnInit, OnChanges {
       visibilityRatio: 1,
       minZoomLevel: 0,
       defaultZoomLevel: 1,
-      sequenceMode: true,
+      sequenceMode: false,
       tileSources: this.page
     });
   }
