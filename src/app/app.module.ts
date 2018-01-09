@@ -8,6 +8,7 @@ import {AppComponent} from './app.component';
 import {HgdaPageService} from './hgda-page.service';
 import {HgdaIifComponent} from './hgda-iif/hgda-iif.component';
 import { HgdaBookComponent } from './hgda-book/hgda-book.component';
+import { WindowRef } from './win-ref.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { HgdaBookComponent } from './hgda-book/hgda-book.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [HgdaPageService],
+  providers: [HgdaPageService,WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule {
