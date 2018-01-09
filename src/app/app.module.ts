@@ -9,19 +9,21 @@ import {HgdaPageService} from './hgda-page.service';
 import {HgdaIifComponent} from './hgda-iif/hgda-iif.component';
 import { HgdaBookComponent } from './hgda-book/hgda-book.component';
 import { WindowRef } from './win-ref.service';
+import { HgdaNavbarComponent } from './hgda-navbar/hgda-navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HgdaIifComponent,
-    HgdaBookComponent
+    HgdaBookComponent,
+    HgdaNavbarComponent
   ],
   imports: [
     BrowserModule,
     HttpModule
   ],
-  providers: [HgdaPageService,WindowRef],
+  providers: [HgdaPageService, WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule {
