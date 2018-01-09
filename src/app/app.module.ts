@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HgdaIifComponent } from './hgda-iif/hgda-iif.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HgdaIifComponent
   ],
   imports: [
     BrowserModule
