@@ -1,2 +1,3 @@
-<app-hgda-chapters class="chapters" ></app-hgda-chapters>
+<app-hgda-chapters (pageChanged)="change($event)" class="chapters" ></app-hgda-chapters>
+<app-hgda-commentary [page]="page" class="commentary"></app-hgda-commentary>
 <app-hgda-iif class="iif" *ngIf="!!pages" [page]="pages[3]['@id']+'/info.json'"></app-hgda-iif>

@@ -11,6 +11,7 @@ import {HgdaBookComponent} from './hgda-book/hgda-book.component';
 import {WindowRef} from './win-ref.service';
 import {HgdaNavbarComponent} from './hgda-navbar/hgda-navbar.component';
 import {HgdaChaptersComponent} from './hgda-chapters/hgda-chapters.component';
+import { HgdaCommentaryComponent } from './hgda-commentary/hgda-commentary.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {HgdaChaptersComponent} from './hgda-chapters/hgda-chapters.component';
     HgdaIifComponent,
     HgdaBookComponent,
     HgdaNavbarComponent,
-    HgdaChaptersComponent
+    HgdaChaptersComponent,
+    HgdaCommentaryComponent
   ],
   imports: [
     BrowserModule,

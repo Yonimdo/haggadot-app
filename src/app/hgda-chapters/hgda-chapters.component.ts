@@ -44,7 +44,8 @@ export class HgdaChaptersComponent implements OnInit {
       if (this.prev.length > 0) {
         const stack = this.prev.pop();
         this.currentNode = stack.prev;
-        this.nodes = stack.nodes.map((t, j, a) => this.titleMap(t, j, a));
+        this.pageChanged.emit({'page': this.currentNode});
+        this.nodes = this._nodes.map((t, j, a) => this.titleMap(t, j, a));
       } else {
         this.currentNode = null;
         this.nodes = this._nodes.map((t, j, a) => this.titleMap(t, j, a));

@@ -1,0 +1,19 @@
+<div  [ngClass]="open ===''? 'div' : 'div open'">
+
+  <button (click)="toggle()"
+          [ngClass]="'hamburger hamburger--arrowturn is-active '"
+          type="button"
+          aria-label="Menu" aria-controls="navigation">
+  <span class="hamburger-box">
+    <span [ngClass]="'hamburger-inner '+open"></span>
+  </span>
+    <p class="hamburger-text">
+      מלל הגדה
+    </p>
+  </button>
+
+  <div *ngIf="page">
+
+    <p *ngFor="let verse of inner;let i = index;" [innerHTML]="verse[1]"></p>
+  </div>
+</div>

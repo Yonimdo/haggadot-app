@@ -26,7 +26,7 @@ export class HgdaIifComponent implements OnInit, OnChanges {
       preserveViewport: true,
       visibilityRatio: 1,
       minZoomLevel: 0,
-      defaultZoomLevel: 1,
+      defaultZoomLevel: 0.4,
       sequenceMode: false,
       tileSources: this.page
     });

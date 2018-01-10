@@ -23,7 +23,7 @@ export class HgdaPageService {
 
   getPagesContent() {
     return this.http
-      .get('assets/haggadah.json')
-      .map(x => x.json().text);
+      .get('assets/rows.json')
+      .map(x => x.json());
   }
 }
