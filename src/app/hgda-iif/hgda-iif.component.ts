@@ -14,7 +14,7 @@ export class HgdaIifComponent implements OnInit, OnChanges {
   canvas: any;
   @Input() page: any;
 
-  constructor(private winRef: WindowRef) {
+  constructor(public winRef: WindowRef) {
   }
 
   ngOnInit() {

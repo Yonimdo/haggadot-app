@@ -9,7 +9,7 @@ import {HgdaIifComponent} from '../hgda-iif/hgda-iif.component';
 })
 export class HgdaBookComponent implements OnInit {
   pages: any;
-  private page: any;
+  page: any;
 
   constructor(private pageService: HgdaPageService) {
   }

@@ -10,10 +10,13 @@ export class HgdaNavbarComponent implements OnInit {
   @Output() openRight = new EventEmitter();
   @Input() page: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
+  home(e) {
+  }
 }
