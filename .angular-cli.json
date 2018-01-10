@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss",
         "styles.scss"
       ],
       "scripts": [],
