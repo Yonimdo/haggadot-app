@@ -1,0 +1,74 @@
+div{
+  background-color: white;
+  width: 260px;
+  overflow: hidden;
+  height: 76px;
+  padding-top: 10px;
+  &.open {
+    height: 660px;
+  }
+}
+
+
+.hamburger{
+  font-size: 160%;
+  width: 100%;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &-text{
+    padding-top: 3px;
+    padding-right: 10px;
+    display: inline-block;
+    transform: rotate(180deg);
+    width: 80% ;
+    text-align: right;
+  }
+}
+
+
+svg {
+  width: 230px;
+  padding: 7px;
+  overflow-y: visible;
+  float: right;
+}
+
+g {
+  stroke-width: 300px;
+  fill: black;
+}
+
+text {
+  font-size: 60%;
+  fill: grey;
+  direction: rtl;
+  -webkit-transition: font-size 0.8s, fill 0.8s, x 0.8s;
+  /* Safari */
+  transition: font-size 0.8s, fill 0.8s, x 0.8s;
+
+  &:hover {
+    font-size: 70%;
+    fill: black;
+  }
+
+  &.selected{
+    font-size: 70%;
+    fill: black;
+  }
+}
+
+circle {
+  -webkit-transition: width 0.8s;
+  /* Safari */
+  transition: cx 0.8s;
+}
+
+path {
+  -webkit-transition: d 0.8s;
+  /* Safari */
+  transition: d 0.8s;
+}
+
+

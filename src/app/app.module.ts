@@ -7,9 +7,10 @@ import {AppComponent} from './app.component';
 
 import {HgdaPageService} from './hgda-page.service';
 import {HgdaIifComponent} from './hgda-iif/hgda-iif.component';
-import { HgdaBookComponent } from './hgda-book/hgda-book.component';
-import { WindowRef } from './win-ref.service';
-import { HgdaNavbarComponent } from './hgda-navbar/hgda-navbar.component';
+import {HgdaBookComponent} from './hgda-book/hgda-book.component';
+import {WindowRef} from './win-ref.service';
+import {HgdaNavbarComponent} from './hgda-navbar/hgda-navbar.component';
+import {HgdaChaptersComponent} from './hgda-chapters/hgda-chapters.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HgdaNavbarComponent } from './hgda-navbar/hgda-navbar.component';
     AppComponent,
     HgdaIifComponent,
     HgdaBookComponent,
-    HgdaNavbarComponent
+    HgdaNavbarComponent,
+    HgdaChaptersComponent
   ],
   imports: [
     BrowserModule,

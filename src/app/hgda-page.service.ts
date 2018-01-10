@@ -17,8 +17,8 @@ export class HgdaPageService {
 
   getPage() {
     return this.http
-      .get('assets/haggadah.json')
-      .map(x => x.json().schema);
+      .get('assets/bookmarks.json')
+      .map(x => x.json());
   }
 
   getPagesContent() {
