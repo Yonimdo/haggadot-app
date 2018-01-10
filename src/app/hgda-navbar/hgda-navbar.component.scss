@@ -4,13 +4,16 @@
 }
 details{
   min-height: 100px;
-  background-image: url(/assets/nav_tri.png);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 20px 20px;
 }
 summary::-webkit-details-marker {
   display: none
+}
+summary{
+  min-height: 70px;
+  background-image: url(/assets/triangular.png);
+  background-repeat: no-repeat;
+  background-position: center 60px;
+
 }
 
 details[open] {
