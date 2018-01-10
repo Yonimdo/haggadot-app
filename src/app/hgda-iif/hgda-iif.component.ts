@@ -28,7 +28,7 @@ export class HgdaIifComponent implements OnInit, OnChanges {
       minZoomLevel: 0,
       defaultZoomLevel: 0.4,
       sequenceMode: false,
-      tileSources: this.page
+      tileSources: 'assets/info.json'
     });
   }
 

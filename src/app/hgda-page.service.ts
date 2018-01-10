@@ -10,7 +10,7 @@ export class HgdaPageService {
 
   getPageImages() {
     return this.http
-      .get('http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS000041667-2/manifest')
+      .get('assets/manifest.json')
       .map(x => x.json());
 
   }

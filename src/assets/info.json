@@ -1,0 +1,31 @@
+{
+  "@context" : "http://iiif.io/api/image/2/context.json",
+  "@id" : "http://iiif.nli.org.il/IIIFv21/FL13511496",
+  "protocol" : "http://iiif.io/api/image",
+  "width" : 3976,
+  "height" : 5464,
+  "sizes" : [ {
+    "width" : 62,
+    "height" : 85
+  }, {
+    "width" : 124,
+    "height" : 170
+  }, {
+    "width" : 248,
+    "height" : 341
+  } ],
+  "tiles" : [ {
+    "width" : 1024,
+    "height" : 1024,
+    "scaleFactors" : [ 1, 2, 4, 8, 16, 32, 64 ]
+  } ],
+  "profile" : [ "http://iiif.io/api/image/2/level1.json", {
+    "formats" : [ "jpg" ],
+    "qualities" : [ "native", "color", "gray" ],
+    "supports" : [ "regionByPct", "regionSquare", "sizeByForcedWh", "sizeByWh", "sizeAboveFull", "rotationBy90s", "mirroring" ],
+    "maxWidth" : 576,
+    "maxHeight" : 576,
+    "maxArea" : 331776
+  } ],
+  "attribution" : [ "מאוסף הספרייה הלאומית" ]
+}
