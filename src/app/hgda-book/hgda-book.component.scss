@@ -7,6 +7,14 @@
   height: 660px;
 }
 
+.book-buttons {
+  z-index: 1;
+  position: fixed;
+  top: 700px;
+  right: 20px;
+  height: 60px;
+
+}
 .commentary {
   margin-top: 100px;
   left: 20px;

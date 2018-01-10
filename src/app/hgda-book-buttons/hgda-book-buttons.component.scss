@@ -1,0 +1,39 @@
+
+div {
+  background-color: white;
+  font-size: 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.circle {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.poster {
+}
+
+.poster a {
+  padding: 0 20px;
+}
+
+#current:after {
+  padding-left: 20px;
+  content: '☰';
+}
+
+#texts:before {
+  padding-right: 20px;
+  content: '❞';
+}
+
+#print:after {
+  padding-left: 20px;
+  content: '❞';
+}
