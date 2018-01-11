@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss",
+        "./sass/vars.scss",
         "styles.scss"
       ],
       "scripts": [],

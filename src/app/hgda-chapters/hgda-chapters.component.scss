@@ -1,74 +1,73 @@
-div{
-  background-color: white;
+@import "../../sass/vars";
+
+div {
+  @include box-shadow();
+  background-color: $accent-btn-color;
   width: 100%;
   overflow: hidden;
-  height: 60px;
+  height: $info-height-closed;
   &.open {
-    height: 660px;
+    height: $info-height-open;
   }
 }
 
-
-.hamburger{
-  font-size: 160%;
+.hamburger {
+  font-size: $font-size-big;
   width: 100%;
-  height: 60px !important;
+  height: $btn-height !important;
   transform: rotate(180deg);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  &-text{
+  &-text {
     padding-top: 3px;
-    padding-right: 10px;
+    padding-right: $padding-small;
     display: inline-block;
     transform: rotate(180deg);
-    width: 80% ;
+    width: 80%;
     text-align: right;
   }
 }
 
-
 svg {
   width: 230px;
-  padding: 7px;
+  padding: $padding-small;
   overflow-y: visible;
   float: right;
-}
+  & g {
+    stroke-width: 300px;
+    &:hover{
+      & circle {
+        fill: $primary-text-color;
+      }
+      & text {
+        font-size: $font-size;
+        fill: $primary-text-color;
+      }
+    }
+    & text {
+      font-size: $font-size-small;
+      fill: $secondary-text-color;
+      direction: rtl;
+      -webkit-transition: font-size 0.8s, fill 0.8s, x 0.8s;
+      /* Safari */
+      transition: font-size 0.8s, fill 0.8s, x 0.8s;
+      &.selected {
+        font-size: $font-size;
+        fill: $primary-text-color;
+      }
+    }
 
-g {
-  stroke-width: 300px;
-  fill: black;
-}
+    & circle {
+      -webkit-transition: width 0.8s;
+      /* Safari */
+      transition: cx 0.8s;
+    }
 
-text {
-  font-size: 60%;
-  fill: grey;
-  direction: rtl;
-  -webkit-transition: font-size 0.8s, fill 0.8s, x 0.8s;
-  /* Safari */
-  transition: font-size 0.8s, fill 0.8s, x 0.8s;
-
-  &:hover {
-    font-size: 70%;
-    fill: black;
+    & path {
+      -webkit-transition: d 0.8s;
+      /* Safari */
+      transition: d 0.8s;
+      }
   }
-
-  &.selected{
-    font-size: 70%;
-    fill: black;
-  }
 }
-
-circle {
-  -webkit-transition: width 0.8s;
-  /* Safari */
-  transition: cx 0.8s;
-}
-
-path {
-  -webkit-transition: d 0.8s;
-  /* Safari */
-  transition: d 0.8s;
-}
-
-

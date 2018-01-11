@@ -1,27 +1,28 @@
+@import "../../sass/vars";
 .chapters {
-  margin-top: 100px;
-  width: 260px;
-  right: 20px;
+  margin-top: $control-padding-screen-wide;
+  width: $chapter-width;
+  right: $control-padding-screen;
   position: fixed;
   z-index: 2;
-  height: 660px;
+  height: $info-height-open;
 }
 
 .book-buttons {
   z-index: 1;
   position: fixed;
-  top: 700px;
-  right: 20px;
-  height: 60px;
+  bottom: $control-padding-screen;
+  right: $control-padding-screen;
+  height: $btn-height;
 
 }
 .commentary {
   margin-top: 100px;
-  left: 20px;
+  left: $control-padding-screen;
   position: fixed;
   z-index: 2;
-  width: 360px;
-  height: 660px;
+  width: $info-width;
+  height: $info-height-open;
 }
 
 
