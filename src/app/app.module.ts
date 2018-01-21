@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 
+import { MnFullpageModule } from 'ngx-fullpage';
 import {HgdaPageService} from './hgda-page.service';
 import {HgdaIifComponent} from './hgda-iif/hgda-iif.component';
 import {HgdaBookComponent} from './hgda-book/hgda-book.component';
@@ -27,6 +28,7 @@ import { HgdaBookButtonsComponent } from './hgda-book-buttons/hgda-book-buttons.
   ],
   imports: [
     BrowserModule,
+    MnFullpageModule.forRoot(),
     HttpModule
   ],
   providers: [HgdaPageService, WindowRef],
