@@ -25,8 +25,7 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/fullpage.js/dist/jquery.fullpage.extensions.min.js",
-        "../node_modules/fullpage.js/dist/jquery.fullpage.js"
+        "assets/diva/js/diva.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

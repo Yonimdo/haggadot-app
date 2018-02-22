@@ -2,9 +2,6 @@
 <!--<app-hgda-book-buttons class="book-buttons"></app-hgda-book-buttons>-->
 <app-hgda-commentary [page]="page" class="commentary"></app-hgda-commentary>
 
-<div mnFullpage>
-  <!-- add  class="welcome-section" where the first page is -->
-  <div class="section fp-section fp-table" *ngFor="let iif of pages;let i = index;">
-      <app-hgda-iif class="fp-tableCell" *ngIf="!!pages" [page]="iif['@id']+'/info.json'"></app-hgda-iif>
-  </div>
-</div>
+<div id="diva-wrapper" class="diva-wrapper"></div>
+
+

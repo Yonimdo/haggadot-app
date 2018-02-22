@@ -5,7 +5,7 @@ import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core'
 import {HgdaPageService} from '../hgda-page.service';
 
 
-@Component({
+  @Component({
   selector: 'app-hgda-iif',
   templateUrl: './hgda-iif.component.html',
   styleUrls: ['./hgda-iif.component.scss']
