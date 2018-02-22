@@ -8,7 +8,7 @@ import {HgdaPageService} from '../hgda-page.service';
 })
 export class HgdaCommentaryComponent implements OnInit, OnChanges {
   open: String = 'active';
-  texts: Array<any>;
+  texts: any;
 
   @Input() page: any;
   @Input() inner: any;
@@ -17,7 +17,7 @@ export class HgdaCommentaryComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.pageService.getPagesContent().subscribe(data => {
+    this.pageService.getRawRows().subscribe(data => {
       this.texts = data;
     });
   }

@@ -27,7 +27,7 @@ export class HgdaChaptersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pageService.getPage().subscribe(data => {
+    this.pageService.getBookmarksRows().subscribe(data => {
       this.nodes = data.map((t, i, a) => this.titleMap(t, i, a));
       this._nodes = data.map((t, i, a) => this.titleMap(t, i, a));
     });

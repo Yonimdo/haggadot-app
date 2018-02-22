@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 
 
 @Injectable()
 export class HgdaPageService {
+  rows: any = new Map();
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
   getPageImages() {
     return this.http
@@ -14,15 +16,20 @@ export class HgdaPageService {
 
   }
 
-  getPage() {
-    return this.http
-      .get('assets/bookmarks.json')
-      .map(x => x.json());
+  getBookRows() {
+    return this.http.get('/assets/books.json')
+      .map(x => x.json()[0]);
   }
 
-  getPagesContent() {
-    return this.http
-      .get('assets/rows.json')
-      .map(x => x.json());
+  getBookmarksRows() {
+    return this.http.get('/assets/bookmarks.json').map(x => x.json());
+  }
+
+  js(obj) {
+    return obj.json();
+  }
+
+  getRawRows() {
+    return this.http.get('/assets/rows.json').map(x => x.json());
   }
 }
