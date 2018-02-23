@@ -5,6 +5,7 @@ import {Http, Response} from '@angular/http';
 @Injectable()
 export class HgdaPageService {
   rows: any = new Map();
+  pageId: any = 'PNX_MANUSCRIPTS000041667';
 
   constructor(private http: Http) {
   }

@@ -24,19 +24,15 @@ html, body {
   overflow-x: hidden;
 }
 
-.diva-zoom-label, .diva-page-nav {
-  display: none !important;
-}
-
 .diva-fullscreen-tools {
   bottom: 15px;
 }
 
-.diva-zoom-label, #diva-1-title {
+#diva-1-view-icon,#diva-1-fullscreen-icon, #diva-1-title,.diva-zoom-label , .diva-goto-form {
   display: none !important;
 }
 
-.diva-fullscreen-tools,
+.diva-fullscreen-tools, .diva-page-nav,
 .diva-fullscreen-tools .diva-grid-label,
 .diva-fullscreen-tools .diva-page-label {
   display: inline-block !important;

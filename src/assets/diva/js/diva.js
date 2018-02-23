@@ -2712,7 +2712,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        createLabel: function ()
 	        {
-	            var elem = createLabel('diva-zoom-label', 'zoom-label', 'Zoom level: ', 'zoom-level', settings.zoomLevel);
+	            var elem = createLabel('diva-zoom-label', 'zoom-label', '', 'zoom-level', settings.zoomLevel);
 	            var textSpan = $(elem).find(settings.selector + 'zoom-level')[0];
 
 	            var updateText = function ()
@@ -3079,7 +3079,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return elt('span', {
 	                class: 'diva-page-label diva-label'
 	            },
-	            'Page ', currentPage, ' of ', numPages
+	            currentPage, ' of ', numPages
 	        );
 	    };
 
@@ -12441,7 +12441,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    @param colour   (optional) A colour for the highlighting, specified in RGBA CSS format
 	                    @param divClass (optional) A class to identify a group of highlighted regions on a specific page by
 	                */
-	                divaInstance.highlightOnPage = function(pageIdx, regions, colour, divClass)
+                    divaInstance.highlightOnPage = function(pageIdx, regions, colour, divClass)
 	                {
 	                    if (colour === undefined)
 	                    {

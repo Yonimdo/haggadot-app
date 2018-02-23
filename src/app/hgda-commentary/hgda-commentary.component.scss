@@ -19,18 +19,27 @@
 .button{
   background-color: $primary-color;
   width: 100%;
+
   height: $info-height-closed !important;
   display: flex;
   align-content: space-between;
   & img {
     margin: $padding-small;
   }
-  & .text {
-    margin: $padding-small;
-    font-size: $font-size;
-    width: 90%;
-    text-align: right;
+  & .text{
+    border : none;
   }
+}
+
+.text {
+  margin: $padding-small;
+  padding: $padding-small;
+  font-size: $font-size;
+  width: 90%;
+  text-align: right;
+  border : 2px Solid $primary-btn-color;
+  border-radius : $box-border-radius;
+
 }
 
 

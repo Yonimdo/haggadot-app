@@ -44,7 +44,7 @@ div {
     text-align: end;
     font-size: $font-size-meddium;
     fill: $secondary-text-color;
-
+    padding-right: $padding-medium;
     &.selected {
       font-size: $font-size;
       fill: $primary-text-color;

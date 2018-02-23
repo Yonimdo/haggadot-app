@@ -27,7 +27,11 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     $('#diva-wrapper').diva({
       goDirectlyTo: 3,
       inFullscreen: true,
-      objectData: 'http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS003146684/manifest/',
+      mobileWebkit: true,
+      enableAutoHeight: true,
+      fixedHeightGrid: false,
+      objectData: `http://iiif.nli.org.il/IIIFv21/DOCID/${this.pageService.pageId}/manifest/`,
+      enableHighlight: true
     });
 
     this.selectObject = $('#object-select');
@@ -51,11 +55,27 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   }
 
+  setDivaAnnotations() {
+    const ps = this.pages.filter(n => n.annotations.length !== 0);
+    ps.each(n => {
+      const region = {
+        'width': 120,
+        'height': 120,
+        'ulx': n.annotations.x,
+        'uly': n.annotations.y,
+        'divID': `highlight-page${ps.ps.ordinal}`
+      };
+// Apply the highlight to the first page
+      diva.highlightOnPage(ps.ordinal, [region], '#ffffff', 'highlight-page');
+    });
+  }
+
   ngOnInit() {
     this.setDiva();
     this.pageService.getBookRows().subscribe(data => {
       this.setPages(data.pages);
       this.setDivaEvents();
+      this.setDivaAnnotations();
     });
   }
 

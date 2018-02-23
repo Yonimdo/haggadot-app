@@ -292,7 +292,7 @@
   outline: none;
 }
 .diva-link-popup.in-fullscreen {
-  top: 150px;
+  bottom: 80px;
   right: 30px;
 }
 .diva-hide-scrollbar {
