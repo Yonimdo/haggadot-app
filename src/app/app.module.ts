@@ -13,6 +13,7 @@ import {HgdaNavbarComponent} from './hgda-navbar/hgda-navbar.component';
 import {HgdaChaptersComponent} from './hgda-chapters/hgda-chapters.component';
 import { HgdaCommentaryComponent } from './hgda-commentary/hgda-commentary.component';
 import { HgdaBookButtonsComponent } from './hgda-book-buttons/hgda-book-buttons.component';
+import { HgdaAudioComponent } from './hgda-audio/hgda-audio.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HgdaBookButtonsComponent } from './hgda-book-buttons/hgda-book-buttons.
     HgdaNavbarComponent,
     HgdaChaptersComponent,
     HgdaCommentaryComponent,
-    HgdaBookButtonsComponent
+    HgdaBookButtonsComponent,
+    HgdaAudioComponent
   ],
   imports: [
     BrowserModule,

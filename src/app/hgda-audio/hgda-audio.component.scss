@@ -1,0 +1,22 @@
+@import "../../sass/vars";
+
+
+#jp_container_1, .jp-interface {
+  //@include box-shadow();
+  background-color: $primary-color-dark !important;
+  opacity: 0.96 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  z-index: 5 !important;
+  height: $nav-size !important;
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+}
+.jp-progress{
+  flex-grow: 1;
+
+}
