@@ -1,38 +1,25 @@
 @import "../../sass/vars";
 
-
-#home{
+#home {
   position: absolute;
-  right: $padding-small;
-}
-details{
-  min-height: 100px;
-}
-summary::-webkit-details-marker {
-  display: none
-}
-summary{
-  min-height: $nav-size;
-  background-image: url(/assets/triangular.png);
-  background-repeat: no-repeat;
-  background-position: center 60px;
-
+  right: $padding-medium;
 }
 
-details[open] {
-  background: $primary-color-dark;
-}
 #title {
   flex-grow: 1;
-}
-summary{
-  text-align: center;
+  & h4 {
+    min-height: $nav-size;
+    background-image: url("/assets/res/img/general/nev_down/normal.svg"), url("/assets/res/btn/genreal/arrow/normal.svg");
+    background-repeat: no-repeat;
+    background-position: center 70px, center 50px;
+  }
 }
 
 ul {
-  @include box-shadow();
+  //@include box-shadow();
   list-style-type: none;
-  background-color:  $primary-color;
+  background-color: $primary-color-dark;
+  opacity: 0.96;
   position: fixed;
   top: 0;
   left: 0;
@@ -52,11 +39,15 @@ li * {
   padding: 14px 16px;
   text-decoration: none;
   font-size: $font-size-big;
-  cursor:pointer;
+  cursor: pointer;
   margin: auto;
 }
 
-/* Change the link color to #111 (black) on hover */
-li *:hover {
-
+.lang {
+  height: 32px;
+  width: 57px;
+  color: #FBF9ED;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
 }

@@ -1,50 +1,36 @@
 @import "../../sass/vars";
-.div{
+
+.div {
   @include box-shadow();
+  border-radius: $box-border-radius;
   background-color: $accent-btn-color;
   width: 100%;
   text-align: right;
   overflow: hidden;
-  & p{
+  & p {
     margin: 3px;
   }
-  height: $btn-height;
+  height: $info-height-closed;
   &.open {
     height: $info-height-open;
   }
 }
 
-.hamburger{
-  font-size: $font-size-big;
+.button{
+  background-color: $primary-color;
   width: 100%;
-  height: $btn-height !important;
-  transform: rotate(180deg);
+  height: $info-height-closed !important;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  &-text{
-    padding-right: $padding-small;
-    display: inline-block;
-    transform: rotate(180deg);
-    width: 80% ;
+  align-content: space-between;
+  & img {
+    margin: $padding-small;
+  }
+  & .text {
+    margin: $padding-small;
+    font-size: $font-size;
+    width: 90%;
     text-align: right;
   }
-  & .hamburger-inner{
-    visibility: hidden;
-    margin-top: -4px;
-    &.active{
-      transform: rotate(270deg);
-      margin-top: 0;
-    }
-    &:before{
-      visibility: visible;
-      border: 0.9px solid black;
-    }
-    &:after{
-      visibility: visible;
-      border: 0.9px solid black;
-    }
-  }
 }
+
 

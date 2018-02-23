@@ -4,9 +4,9 @@ div {
   @include box-shadow();
   background-color: $accent-btn-color;
   width: 100%;
-
+  border-radius: $box-border-radius;
   overflow: hidden;
-  height: $info-height-closed;
+  height: $chapter-height-closed;
   &.open {
     height: $info-height-open;
   }
@@ -20,9 +20,11 @@ div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-color: $primary-color;
+
   &-text {
     padding-top: 3px;
-    padding-right: $padding-small;
+    padding-right: $padding-medium;
     display: inline-block;
     transform: rotate(180deg);
     width: 80%;
@@ -30,14 +32,14 @@ div {
   }
 }
 
+
 .item {
   width: 100%;
-
+  height: $chapter-height;
   background-color: $accent-btn-color;
   display: flex;
   align-items: center;
   & .text {
-    padding: $padding-small;
     width: 100%;
     text-align: end;
     font-size: $font-size-meddium;

@@ -26,10 +26,8 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   setDiva() {
     $('#diva-wrapper').diva({
       goDirectlyTo: 3,
-      isScrollable: true,
-      fixedHeightGrid: true,
       inFullscreen: true,
-      objectData: 'http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS000041667-2/manifest/',
+      objectData: 'http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS003146684/manifest/',
     });
 
     this.selectObject = $('#object-select');

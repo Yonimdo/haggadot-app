@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>btn/tools/share/normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symboles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="btn/tools/share/normal">
+            <rect id="Rectangle" fill-opacity="0.8" fill="#384C62" x="0" y="0" width="55" height="55" rx="2"></rect>
+            <path d="M36.8077521,25.5007198 L30.1492593,18.1949754 C29.8852926,17.9350082 29.4573466,17.9350082 29.1933799,18.1949754 C29.0413991,18.3482894 28.9874059,18.5482641 29.0100697,18.7482389 L29.0100697,22.6810758 C23.4821009,22.6810758 19,27.1605103 19,32.6864794 C19,34.1063002 19.298629,35.4527969 19.8305618,36.6793087 C20.6204621,32.5065021 24.5992932,29.3402351 28.9987378,29.3402351 L28.9987378,33.3397303 C28.9754074,33.5330392 29.0420657,33.6663557 29.1933799,33.8130039 C29.4846765,34.1063002 29.9386192,33.9863153 30.1859213,33.7730089 L36.8077521,26.5139253 C36.948401,26.3739429 37.0083934,26.1872998 36.9990612,26.0073225 C37.0083934,25.8206794 36.948401,25.6407021 36.8077521,25.5007198" id="Fill-11" fill="#FBF9ED"></path>
+        </g>
+    </g>
+</svg>
