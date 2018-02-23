@@ -177,7 +177,7 @@
 }
 .diva-fullscreen-tools {
   position: fixed;
-  top: 15px;
+  bottom: 15px;
   right: 30px;
   z-index: 101;
   padding: 15px;
@@ -203,7 +203,7 @@
   width: 8em;
   display: block;
 }
-.diva-fullscreen-tools .diva-page-nav {
+  .diva-fullscreen-tools .diva-page-nav {
   margin-right: 0;
 }
 .diva-outer {

@@ -3,7 +3,6 @@ declare var $: any;
 
 import {Component, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
 import {HgdaPageService} from '../hgda-page.service';
-import {HgdaIifComponent} from '../hgda-iif/hgda-iif.component';
 import {MnFullpageService} from 'ngx-fullpage';
 import {WindowRef} from '../win-ref.service';
 
@@ -27,10 +26,10 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   setDiva() {
     $('#diva-wrapper').diva({
       goDirectlyTo: 3,
+      isScrollable: true,
+      fixedHeightGrid: true,
       inFullscreen: true,
-      minPagesPerRow: 1,
       objectData: 'http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS000041667-2/manifest/',
-      enableGridControls: 'buttons'
     });
 
     this.selectObject = $('#object-select');

@@ -1,16 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import "sass/vars";
 
-html,body{height: 100%;}
-*{
+html, body {
+  height: 100%;
+}
+
+* {
   margin: 0;
   padding: 0;
   font-family: "Open Sans Hebrew";
 }
 
-.diva-outer,.diva-wrapper{
-  height:100% !important;
+.diva-outer, .diva-wrapper {
+  height: 100% !important;
+}
+.diva-viewport{
+overflow: hidden;
+}
+.diva-zoom-label, .diva-page-nav {
+  display: none !important;
 }
 
+.diva-fullscreen-tools {
+  bottom: 15px;
+}
 
-
+.diva-zoom-label{
+  display: none !important;
+}
+.diva-fullscreen-tools,
+.diva-fullscreen-tools .diva-grid-label,
+.diva-fullscreen-tools .diva-page-label {
+  display: inline-block !important;
+}

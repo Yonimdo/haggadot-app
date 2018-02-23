@@ -31,12 +31,13 @@ div {
 }
 
 .item {
-  width: 90%;
-  padding: $padding-small;
+  width: 100%;
+
   background-color: $accent-btn-color;
   display: flex;
   align-items: center;
   & .text {
+    padding: $padding-small;
     width: 100%;
     text-align: end;
     font-size: $font-size-meddium;

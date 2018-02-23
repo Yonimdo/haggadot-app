@@ -4,7 +4,7 @@
   width: $chapter-width;
   right: $control-padding-screen;
   position: fixed;
-  z-index: 2;
+  z-index: 105;
   height: $info-height-open;
 }
 
@@ -20,10 +20,12 @@
   margin-top: 100px;
   left: $control-padding-screen;
   position: fixed;
-  z-index: 2;
+  z-index: 105;
   width: $info-width;
   height: $info-height-open;
 }
-
+div.diva-wrapper{
+  overflow: hidden;
+}
 
 
