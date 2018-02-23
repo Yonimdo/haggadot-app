@@ -4,6 +4,7 @@ div {
   @include box-shadow();
   background-color: $accent-btn-color;
   width: 100%;
+
   overflow: hidden;
   height: $info-height-closed;
   &.open {
@@ -29,45 +30,21 @@ div {
   }
 }
 
-svg {
-  width: 230px;
+.item {
+  width: 90%;
   padding: $padding-small;
-  overflow-y: visible;
-  float: right;
-  & g {
-    stroke-width: 300px;
-    &:hover{
-      & circle {
-        fill: $primary-text-color;
-      }
-      & text {
-        font-size: $font-size;
-        fill: $primary-text-color;
-      }
-    }
-    & text {
-      font-size: $font-size-small;
-      fill: $secondary-text-color;
-      direction: rtl;
-      -webkit-transition: font-size 0.8s, fill 0.8s, x 0.8s;
-      /* Safari */
-      transition: font-size 0.8s, fill 0.8s, x 0.8s;
-      &.selected {
-        font-size: $font-size;
-        fill: $primary-text-color;
-      }
-    }
+  background-color: $accent-btn-color;
+  display: flex;
+  align-items: center;
+  & .text {
+    width: 100%;
+    text-align: end;
+    font-size: $font-size-meddium;
+    fill: $secondary-text-color;
 
-    & circle {
-      -webkit-transition: width 0.8s;
-      /* Safari */
-      transition: cx 0.8s;
+    &.selected {
+      font-size: $font-size;
+      fill: $primary-text-color;
     }
-
-    & path {
-      -webkit-transition: d 0.8s;
-      /* Safari */
-      transition: d 0.8s;
-      }
   }
 }

@@ -23,7 +23,7 @@ export class HgdaCommentaryComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    if (!!this.page && this.page.hasOwnProperty('rows')) {
+    if (!!this.texts && !!this.page && this.page.hasOwnProperty('rows')) {
       this.inner = this.texts.filter(verse => this.page.rows.includes(verse[0]));
     }
   }

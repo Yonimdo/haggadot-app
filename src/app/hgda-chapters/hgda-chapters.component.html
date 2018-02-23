@@ -21,26 +21,17 @@
     <span class="hamburger-inner"></span>
   </span>
     <p (click)="toggle()" class="hamburger-text">
-      {{currentNode.name}}
+      {{currentNode.title}}
     </p>
   </button>
 
-  <svg viewBox="0 0 120 400">
-    <g *ngFor="let title of nodes;let i = index;"
+  <div class="item" *ngFor="let title of nodes;let i = index;"
        (mouseenter)="current(title,i)"
        (mouseleave)="reset(title,i)"
        (click)="selected($event,title,i)"
-    >
-      <path [attr.d]="title.a" fill="transparent"/>
-
-      <text [ngClass]="currentNode === title ? 'selected':''"
-            [attr.x]="title.x - 4.5"
-            [attr.y]="title.y"
-      >
-        {{title.name}}
-      </text>
-      <circle [attr.cx]="title.x" [attr.cy]="title.cy" r="2"/>
-      <path [attr.d]="title.d"/>
-    </g>
-  </svg>
+  >
+    <p [ngClass]="currentNode === title ? 'text selected':'text'">
+      {{title.title}}
+    </p>
+  </div>
 </div>

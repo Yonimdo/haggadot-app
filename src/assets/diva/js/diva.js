@@ -707,7 +707,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            toolbarParentObject: null,  // The toolbar parent object.
 	            verticallyOriented: true,   // Determines vertical vs. horizontal orientation
 	            viewportMargin: 200,        // Pretend tiles +/- 200px away from viewport are in
-	            zoomLevel: 2                // The initial zoom level (used to store the current zoom level)
+	            zoomLevel: 1                // The initial zoom level (used to store the current zoom level)
 	        }, options);
 
 	        // Returns the page index associated with the given filename; must called after setting settings.manifest

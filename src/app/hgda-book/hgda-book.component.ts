@@ -22,36 +22,16 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   selectObject: any;
 
   constructor(private pageService: HgdaPageService, public fullpageService: MnFullpageService, public window: WindowRef) {
-
   }
 
-  ngOnInit() {
-
-
-    this.pageService.getBookRows().subscribe(data => {
-      this.setPages(data.pages);
-
-
-    });
-
-
+  setDiva() {
     $('#diva-wrapper').diva({
-      fixedHeightGrid: true,
       goDirectlyTo: 3,
-      enableSpaceScroll: true,   // Scrolling down by pressing the space key
-      // enableGridControls: 'slider',
-      // inFullscreen: true,
-      // toolbarParentObject: true,
+      inFullscreen: true,
       minPagesPerRow: 1,
-      objectData: 'http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS000041667-2/manifest/'
+      objectData: 'http://iiif.nli.org.il/IIIFv21/DOCID/PNX_MANUSCRIPTS000041667-2/manifest/',
+      enableGridControls: 'buttons'
     });
-
-    diva.Events.subscribe('VisiblePageDidChange', (index) => {
-      this.page = this.pages[index];
-      const e = {page: this.page};
-      this.change(e);
-    }, 1)
-
 
     this.selectObject = $('#object-select');
     this.iiif_viewer_data = $('#diva-wrapper').data('diva');
@@ -62,7 +42,24 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     $('#orientation').on('click', function () {
       this.iiif_viewer_data.toggleOrientation();
     });
+  }
 
+
+  setDivaEvents() {
+    diva.Events.subscribe('VisiblePageDidChange', (index) => {
+      this.page = this.pages[index];
+      const e = {page: this.page};
+      this.change(e);
+    }, 1);
+
+  }
+
+  ngOnInit() {
+    this.setDiva();
+    this.pageService.getBookRows().subscribe(data => {
+      this.setPages(data.pages);
+      this.setDivaEvents();
+    });
   }
 
   ngOnDestroy(): void {
@@ -71,9 +68,6 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   setPages(pages) {
     this.pages = pages;
-    // this.fullpageService.reBuild();
-    // setTimeout(this.fullpageService.reBuild, 1000);
-    // setTimeout(() => this.fullpageService.moveTo(3), 1002);
   }
 
   change(e) {
