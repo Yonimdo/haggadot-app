@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>btn/tools/arrow/hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.40638021,11.8134115 L0.968880208,4.37591146 C0.454817708,3.86184896 0.454817708,3.03059896 0.968880208,2.52200521 L2.20481771,1.28606771 C2.71888021,0.772005208 3.55013021,0.772005208 4.05872396,1.28606771 L9.33059896,6.55794271 L14.602474,1.28606771 C15.1165365,0.772005208 15.9477865,0.772005208 16.4563802,1.28606771 L17.6923177,2.52200521 C18.2063802,3.03606771 18.2063802,3.86731771 17.6923177,4.37591146 L10.2548177,11.8134115 C9.75169271,12.327474 8.92044271,12.327474 8.40638021,11.8134115 Z" id="path-1"></path>
+    </defs>
+    <g id="Symboles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="btn/tools/arrow/hover">
+            <rect id="Rectangle" fill="#0A9CA3" x="0" y="0" width="35" height="35" rx="3"></rect>
+            <g id="btn/general/arrow/normal" transform="translate(17.000000, 17.000000) rotate(90.000000) translate(-17.000000, -17.000000) translate(3.000000, 3.000000)">
+                <g id="Solid/angle-down" transform="translate(4.666667, 7.466667)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Color" mask="url(#mask-2)" fill="#FBF9ED">
+                        <g transform="translate(-4.666667, -7.466667)" id="White">
+                            <rect x="0" y="0" width="28" height="28"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
