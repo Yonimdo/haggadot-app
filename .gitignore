@@ -4,12 +4,14 @@
 /dist
 /tmp
 /out-tsc
+/Artifacts/res*
+/Artifacts/img*
 
 # dependencies
 /node_modules
 
 # IDEs and editors
-/.idea
+*.idea*
 .project
 .classpath
 .c9/
