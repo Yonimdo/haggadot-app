@@ -10,10 +10,12 @@
   </button>
 
   <div class="item" *ngFor="let title of nodes;let i = index;"
-       (click)="click($event,title,i)"
-  >
-    <p [ngClass]="(_selected === title ? 'selected':'')">
+       (click)="click($event,title,i)">
+    <p data-image="#FAFAFA" [ngClass]="(_selected === title ? 'selected':'')">
       {{title.name}}
     </p>
+    <span class="color"></span>
+    <span class="image"></span>
+
   </div>
 </div>
