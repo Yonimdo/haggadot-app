@@ -97,7 +97,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     this.page = e.page;
   }
 
-  change() {
-    this.iiif_viewer_data.gotoPageByIndex(this.page.ordinal);
+  change(e) {
+    this.iiif_viewer_data.gotoPageByIndex(e.page.ordinal);
   }
 }
