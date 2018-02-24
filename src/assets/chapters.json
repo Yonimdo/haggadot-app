@@ -1,0 +1,72 @@
+[
+  {
+    "title": "\u05e7\u05d3\u05e9",
+    "ordinal": 1,
+    "img": "assets/img/res-btn-index_chapters-kadesh-hover.svg"
+  },
+  {
+    "title": "\u05d5\u05e8\u05d7\u05e5",
+    "ordinal": 15,
+    "img": "assets/img/res-btn-index_chapters-urchatz-hover.svg"
+  },
+  {
+    "title": "\u05db\u05e8\u05e4\u05e1",
+    "ordinal": 18,
+    "img": "assets/img/res-btn-index_chapters-karpas-hover.svg"
+  },
+  {
+    "title": "\u05d9\u05d7\u05e5",
+    "ordinal": 22,
+    "img": "assets/img/res-btn-index_chapters-yahatz-hover.svg"
+  },
+  {
+    "title": "\u05de\u05d2\u05d9\u05d3",
+    "ordinal": 25,
+    "img": "assets/img/res-btn-index_chapters-magid-hover.svg"
+  },
+  {
+    "title": "\u05e8\u05d7\u05e6\u05d4",
+    "ordinal": 134,
+    "img": "assets/img/res-btn-index_chapters-rhatza-hover.svg"
+  },
+  {
+    "title": "\u05de\u05d5\u05e6\u05d9\u05d0 \u05de\u05e6\u05d4",
+    "ordinal": 138,
+    "img": "assets/img/res-btn-index_chapters-motzie_matza-hover.svg"
+  },
+  {
+    "title": "\u05de\u05e8\u05d5\u05e8",
+    "ordinal": 143,
+    "img": "assets/img/res-btn-index_chapters-maror-hover.svg"
+  },
+  {
+    "title": "\u05db\u05d5\u05e8\u05da",
+    "ordinal": 147,
+    "img": "assets/img/res-btn-index_chapters-korech-hover.svg"
+  },
+  {
+    "title": "\u05e9\u05d5\u05dc\u05d7\u05df \u05e2\u05d5\u05e8\u05da",
+    "ordinal": 152,
+    "img": "assets/img/res-btn-index_chapters-shulhan_orech-hover.svg"
+  },
+  {
+    "title": "\u05e6\u05e4\u05d5\u05df",
+    "ordinal": 155,
+    "img": "assets/img/res-btn-index_chapters-zafun_barech-hover.svg"
+  },
+  {
+    "title": "\u05d1\u05e8\u05da",
+    "ordinal": 159,
+    "img": "assets/img/res-btn-index_chapters-zafun_barech-hover.svg"
+  },
+  {
+    "title": "\u05d4\u05dc\u05dc",
+    "ordinal": 190,
+    "img": "assets/img/res-btn-index_chapters-halel-hover.svg"
+  },
+  {
+    "title": "\u05e0\u05e8\u05e6\u05d4",
+    "ordinal": 214,
+    "img": "assets/img/res-btn-index_chapters-nirtza-hover.svg"
+  }
+]

@@ -22,7 +22,7 @@ export class HgdaChaptersComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.pageService.getBookmarksRows().subscribe(data => {
+    this.pageService.getBookmarksImages().then(data => {
       this.nodes = data.map((t, i, a) => this.titleMap(t, i, a));
     });
   }
@@ -45,6 +45,7 @@ export class HgdaChaptersComponent implements OnInit, OnChanges {
 
   click(e, title, i) {
     e.page = title;
+    this._selected = title;
     this.pageChanged.emit(e);
   }
 

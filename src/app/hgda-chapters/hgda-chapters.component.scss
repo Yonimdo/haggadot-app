@@ -32,13 +32,13 @@ div {
 
 .item {
   &:hover {
-    background: $primary-color-light url('/assets/img/res-btn-index_chapters-magid-hover.svg');
-    background-position: center right;
-    background-repeat: no-repeat;
+    background: $primary-color-light;
     & p {
       display: none;
     }
-
+    & img {
+      display: block;
+    }
   }
   width: 100%;
   cursor: pointer;
@@ -49,7 +49,7 @@ div {
   & p {
     width: 100%;
     text-align: end;
-    padding: $padding-medium;
+    padding: $padding-wide;
     font-size: $font-size-meddium;
     fill: $secondary-text-color;
     &.selected {
@@ -57,5 +57,9 @@ div {
       fill: $primary-text-color;
     }
   }
-
+  & img {
+    position: absolute;
+    right: 0;
+    display: none;
+  }
 }
