@@ -12,21 +12,19 @@ div {
   }
 }
 
-.hamburger {
+.mainBtn {
   font-size: $font-size-big;
   width: 100%;
   height: $btn-height !important;
-  transform: rotate(180deg);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: $primary-color;
 
-  &-text {
+  & p {
     padding-top: 3px;
     padding-right: $padding-medium;
     display: inline-block;
-    transform: rotate(180deg);
     width: 80%;
     text-align: right;
   }
@@ -35,16 +33,16 @@ div {
 
 .item {
   width: 100%;
+  cursor: pointer;
   height: $chapter-height;
   background-color: $accent-btn-color;
   display: flex;
   align-items: center;
-  & .text {
+  & p {
     width: 100%;
     text-align: end;
     font-size: $font-size-meddium;
     fill: $secondary-text-color;
-    padding-right: $padding-medium;
     &.selected {
       font-size: $font-size;
       fill: $primary-text-color;

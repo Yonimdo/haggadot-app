@@ -14,26 +14,18 @@ import 'rxjs/add/operator/map';
 export class HgdaChaptersComponent implements OnInit, OnChanges {
   @Output() pageChanged = new EventEmitter();
   @Input() page: any;
-  _nodes: any[];
   nodes: any[];
-  prev: any[] = [];
-  currentNode: any;
-  space = 20;
-  x = 110;
-  dx = -15;
   open: String = 'is-active';
+  _selected: any;
 
   constructor(private pageService: HgdaPageService) {
-
   }
 
   ngOnInit() {
     this.pageService.getBookmarksRows().subscribe(data => {
       this.nodes = data.map((t, i, a) => this.titleMap(t, i, a));
-      this._nodes = data.map((t, i, a) => this.titleMap(t, i, a));
     });
   }
-
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('page') && !!changes.page.currentValue) {
@@ -42,34 +34,18 @@ export class HgdaChaptersComponent implements OnInit, OnChanges {
         return;
       }
       const row = this.page.rows[0];
-
-      const node = !!this.nodes ? this.nodes.find(n => {
+      this._selected = !!this.nodes ? this.nodes.find(n => {
         if (n.hasOwnProperty('children')) {
-          return !!(n.children.find(c => c.rows.includes(row))) ;
+          return !!(n.children.find(c => c.rows.includes(row)));
         }
         return n.rows.includes(row);
       }) : null;
-
-      if (!!node) {
-        this.changeChapter(this.nodes.indexOf(node), node);
-      }
     }
   }
 
-  changeChapter(i: number, title) {
-    this.currentNode = title;
-  }
-
-  toggle() {
-    setTimeout(() => {
-      this.open = this.open === '' ? 'is-active' : '';
-    }, 100);
-  }
-
-  unselect() {
-    setTimeout(() => {
-      this.currentNode = null;
-    }, 100);
+  click(e, title, i) {
+    e.page = title;
+    this.pageChanged.emit(e);
   }
 
   titleMap(title, i, arr) {
@@ -77,16 +53,11 @@ export class HgdaChaptersComponent implements OnInit, OnChanges {
     return title;
   }
 
-  selected(e, title, i) {
-    e.page = title;
-    this.pageChanged.emit(e);
-  }
 
-  reset(title: any, i: number) {
-    if (title === this.currentNode) {
-      return;
-    }
+  toggleOpen() {
+    setTimeout(() => {
+      this.open = this.open === '' ? 'is-active' : '';
+    }, 100);
   }
-
 
 }

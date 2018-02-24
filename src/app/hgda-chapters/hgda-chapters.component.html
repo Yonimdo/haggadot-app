@@ -1,37 +1,19 @@
 <div [ngClass]="open===''? '' : 'open'">
 
-  <button *ngIf="!currentNode?.hasOwnProperty('children') && prev.length===0"
-          (click)="toggle()"
-          [ngClass]="'hamburger hamburger--elastic '+open"
+  <button class="mainBtn" (click)="toggleOpen()"
+          [ngClass]="''+open"
           type="button"
           aria-label="Menu" aria-controls="navigation">
-  <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
-    <p class="hamburger-text">
-      {{currentNode ? currentNode.name : 'תוכן עניניים'}}
-    </p>
-  </button>
-
-  <button *ngIf="currentNode?.hasOwnProperty('children') || prev.length > 0"
-          [ngClass]="'hamburger hamburger--arrowturn '+open"
-          type="button"
-          aria-label="Menu" aria-controls="navigation">
-  <span (click)="open===''? toggle() : unselect()" class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
-    <p (click)="toggle()" class="hamburger-text">
-      {{currentNode.title}}
+    <p>
+      {{!!_selected ? _selected.name : 'תוכן עניניים'}}
     </p>
   </button>
 
   <div class="item" *ngFor="let title of nodes;let i = index;"
-       (mouseenter)="current(title,i)"
-       (mouseleave)="reset(title,i)"
-       (click)="selected($event,title,i)"
+       (click)="click($event,title,i)"
   >
-    <p [ngClass]="currentNode === title ? 'text selected':'text'">
-      {{title.title}}
+    <p [ngClass]="(_selected === title ? 'selected':'')">
+      {{title.name}}
     </p>
   </div>
 </div>
