@@ -20,9 +20,14 @@
       "prefix": "app",
       "styles": [
         "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss",
+        "./sass/vars.scss",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "assets/diva/js/diva.js",
+        "../node_modules/jplayer/dist/jplayer/jquery.jplayer.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

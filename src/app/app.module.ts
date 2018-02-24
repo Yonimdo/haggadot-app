@@ -5,28 +5,30 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 
+import { MnFullpageModule } from 'ngx-fullpage';
 import {HgdaPageService} from './hgda-page.service';
-import {HgdaIifComponent} from './hgda-iif/hgda-iif.component';
 import {HgdaBookComponent} from './hgda-book/hgda-book.component';
 import {WindowRef} from './win-ref.service';
 import {HgdaNavbarComponent} from './hgda-navbar/hgda-navbar.component';
 import {HgdaChaptersComponent} from './hgda-chapters/hgda-chapters.component';
 import { HgdaCommentaryComponent } from './hgda-commentary/hgda-commentary.component';
 import { HgdaBookButtonsComponent } from './hgda-book-buttons/hgda-book-buttons.component';
+import { HgdaAudioComponent } from './hgda-audio/hgda-audio.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HgdaIifComponent,
     HgdaBookComponent,
     HgdaNavbarComponent,
     HgdaChaptersComponent,
     HgdaCommentaryComponent,
-    HgdaBookButtonsComponent
+    HgdaBookButtonsComponent,
+    HgdaAudioComponent
   ],
   imports: [
     BrowserModule,
+    MnFullpageModule.forRoot(),
     HttpModule
   ],
   providers: [HgdaPageService, WindowRef],

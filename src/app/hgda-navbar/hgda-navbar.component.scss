@@ -1,39 +1,25 @@
-#home{
+@import "../../sass/vars";
+
+#home {
   position: absolute;
-  right: 10px;
-}
-details{
-  min-height: 100px;
-}
-summary::-webkit-details-marker {
-  display: none
-}
-summary{
-  min-height: 70px;
-  background-image: url(/assets/triangular.png);
-  background-repeat: no-repeat;
-  background-position: center 60px;
-
+  right: $padding-medium;
 }
 
-details[open] {
-  background: #528A8F;
-}
 #title {
   flex-grow: 1;
-}
-summary{
-  text-align: center;
-}
-
-#texts:before{
-  padding-right: 20px;
-  content: '❞';
+  & h4 {
+    min-height: $nav-size;
+    background-image: url("/assets/img/res-img-general-nav_down-normal.svg"), url("/assets/img/res-btn-genreal-arrow-normal.svg");
+    background-repeat: no-repeat;
+    background-position: center 70px, center 50px;
+  }
 }
 
 ul {
+  //@include box-shadow();
   list-style-type: none;
-  background-color:  #528A8F;
+  background-color: $primary-color-dark;
+  opacity: 0.96;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,9 +29,8 @@ ul {
   justify-content: center;
   align-items: flex-start;
   margin: 0;
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   z-index: 5;
-  height: 76px;
+  height: $nav-size;
 }
 
 li * {
@@ -53,12 +38,16 @@ li * {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size:30px;
-  cursor:pointer;
+  font-size: $font-size-big;
+  cursor: pointer;
   margin: auto;
 }
 
-/* Change the link color to #111 (black) on hover */
-li *:hover {
-
+.lang {
+  height: 32px;
+  width: 57px;
+  color: #FBF9ED;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
 }

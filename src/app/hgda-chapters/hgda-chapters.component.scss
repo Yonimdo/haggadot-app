@@ -1,74 +1,61 @@
-div{
-  background-color: white;
+@import "../../sass/vars";
+
+div {
+  @include box-shadow();
+  background-color: $accent-btn-color;
   width: 100%;
+  border-radius: $box-border-radius;
   overflow: hidden;
-  height: 60px;
+  height: $chapter-height-closed;
   &.open {
-    height: 660px;
+    height: $info-height-open;
   }
 }
 
-
-.hamburger{
-  font-size: 160%;
+.mainBtn {
+  font-size: $font-size-big;
   width: 100%;
-  height: 60px !important;
-  transform: rotate(180deg);
+  height: $btn-height !important;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  &-text{
+  background-color: $primary-color;
+
+  & p {
     padding-top: 3px;
-    padding-right: 10px;
+    padding-right: $padding-medium;
     display: inline-block;
-    transform: rotate(180deg);
-    width: 80% ;
+    width: 80%;
     text-align: right;
   }
 }
 
-
-svg {
-  width: 230px;
-  padding: 7px;
-  overflow-y: visible;
-  float: right;
-}
-
-g {
-  stroke-width: 300px;
-  fill: black;
-}
-
-text {
-  font-size: 60%;
-  fill: grey;
-  direction: rtl;
-  -webkit-transition: font-size 0.8s, fill 0.8s, x 0.8s;
-  /* Safari */
-  transition: font-size 0.8s, fill 0.8s, x 0.8s;
-
+.item {
   &:hover {
-    font-size: 70%;
-    fill: black;
+    background: $primary-color-light url('/assets/img/res-btn-index_chapters-magid-hover.svg');
+    background-position: center right;
+    background-repeat: no-repeat;
+    & p {
+      display: none;
+    }
+
+  }
+  width: 100%;
+  cursor: pointer;
+  height: $chapter-height;
+  background-color: $accent-btn-color;
+  display: flex;
+  align-items: center;
+  & p {
+    width: 100%;
+    text-align: end;
+    padding: $padding-medium;
+    font-size: $font-size-meddium;
+    fill: $secondary-text-color;
+    &.selected {
+      font-size: $font-size;
+      fill: $primary-text-color;
+    }
   }
 
-  &.selected{
-    font-size: 70%;
-    fill: black;
-  }
 }
-
-circle {
-  -webkit-transition: width 0.8s;
-  /* Safari */
-  transition: cx 0.8s;
-}
-
-path {
-  -webkit-transition: d 0.8s;
-  /* Safari */
-  transition: d 0.8s;
-}
-
-

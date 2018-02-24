@@ -1,8 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+@import "sass/vars";
 
-*{
+html, body {
+  height: 100%;
+}
+
+* {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans Hebrew";
+  font-family: 'Assistant', sans-serif;
+}
+
+.diva-outer, .diva-wrapper {
+  height: 100% !important;
+  background-color: $primary-back-dark;
+  background-image: url("/assets/img/res-img-general-background-pattern.png");
+  background-repeat: repeat;
+}
+
+.diva-viewport {
+  //overflow: hidden;
+  width: 110% !important;
+  overflow-x: hidden;
+}
+
+.diva-fullscreen-tools {
+  bottom: 105px;
+}
+
+#diva-1-view-icon,#diva-1-fullscreen-icon, #diva-1-title,.diva-zoom-label , .diva-goto-form {
+  display: none !important;
+}
+
+.diva-fullscreen-tools, .diva-page-nav,
+.diva-fullscreen-tools .diva-grid-label,
+.diva-fullscreen-tools .diva-page-label {
+  display: inline-block !important;
 }

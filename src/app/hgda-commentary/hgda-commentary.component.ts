@@ -8,7 +8,7 @@ import {HgdaPageService} from '../hgda-page.service';
 })
 export class HgdaCommentaryComponent implements OnInit, OnChanges {
   open: String = 'active';
-  texts: Array<any>;
+  texts: any;
 
   @Input() page: any;
   @Input() inner: any;
@@ -17,13 +17,13 @@ export class HgdaCommentaryComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.pageService.getPagesContent().subscribe(data => {
+    this.pageService.getRawRows().subscribe(data => {
       this.texts = data;
     });
   }
 
   ngOnChanges() {
-    if (this.page.hasOwnProperty('rows')) {
+    if (!!this.texts && !!this.page && this.page.hasOwnProperty('rows')) {
       this.inner = this.texts.filter(verse => this.page.rows.includes(verse[0]));
     }
   }
