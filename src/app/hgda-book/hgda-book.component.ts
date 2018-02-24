@@ -24,13 +24,17 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   }
 
   setDiva() {
+
+
     $('#diva-wrapper').diva({
-      goDirectlyTo: 3,
-      inFullscreen: true,
-      mobileWebkit: true,
-      enableAutoHeight: true,
-      fixedHeightGrid: false,
+      enableImageTitles: false,
+      fixedHeightGrid: true,
       objectData: `http://iiif.nli.org.il/IIIFv21/DOCID/${this.pageService.pageId}/manifest/`,
+      // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
+      enableIIIFHighlight: true,
+      // enableIIIFMetadata: true, throws error
+      goDirectlyTo: 26,
+      inFullscreen: true,
       enableHighlight: true
     });
 
@@ -45,29 +49,32 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     });
   }
 
-
   setDivaEvents() {
     diva.Events.subscribe('VisiblePageDidChange', (index) => {
       this.page = this.pages[index];
       const e = {page: this.page};
-      this.change(e);
+      this._change(e);
     }, 1);
 
   }
 
   setDivaAnnotations() {
     const ps = this.pages.filter(n => n.annotations.length !== 0);
-    ps.each(n => {
-      const region = {
-        'width': 120,
-        'height': 120,
-        'ulx': n.annotations.x,
-        'uly': n.annotations.y,
-        'divID': `highlight-page${ps.ps.ordinal}`
-      };
-// Apply the highlight to the first page
-      diva.highlightOnPage(ps.ordinal, [region], '#ffffff', 'highlight-page');
+    ps.map(n => {
+      const regions = [];
+      n.annotations.map((a, index) => {
+        regions.push({
+          'width': 300,
+          'height': 300,
+          'ulx': a.x,
+          'uly': a.y,
+          'divID': `page${n.ordinal - 1}-highlight-${index}`
+        });
+        debugger;
+      });
+      this.iiif_viewer_data.highlightOnPage(n.ordinal, regions, '#ffffff', 'highlight-page');
     });
+// Apply the highlight to the first page
   }
 
   ngOnInit() {
@@ -75,7 +82,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     this.pageService.getBookRows().subscribe(data => {
       this.setPages(data.pages);
       this.setDivaEvents();
-      this.setDivaAnnotations();
+      diva.Events.subscribe('ViewerDidLoad', (s) => this.setDivaAnnotations());
     });
   }
 
@@ -87,7 +94,11 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     this.pages = pages;
   }
 
-  change(e) {
+  _change(e) {
     this.page = e.page;
+  }
+
+  change() {
+    this.iiif_viewer_data.gotoPageByIndex(this.page.ordinal);
   }
 }

@@ -12457,8 +12457,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        divClass = divaSettings.ID + 'highlight diva-highlight ' + divClass;
 	                    }
 
-	                    highlightManager.addHighlight({
-	                        page: pageIdx,
+                    highlightManager.addHighlight({
+	                        page: parseInt(pageIdx),
 	                        regions: regions,
 	                        colour: colour,
 	                        divClass: divClass
