@@ -70,7 +70,6 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
           'uly': a.y,
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
-        debugger;
       });
       this.iiif_viewer_data.highlightOnPage(n.ordinal, regions, '#ffffff', 'highlight-page');
     });
