@@ -50,7 +50,7 @@ export class HgdaPageService implements OnInit, OnChanges {
   }
 
   changePage(index) {
-    this.page = this.book[index];
+    this.page = this.book.pages[index];
   }
 
   getBook(id) {
@@ -89,14 +89,19 @@ export class HgdaPageService implements OnInit, OnChanges {
   }
 
   changeChapter(chapter) {
-    const row = chapter.rows[0];
-    this.page = !!this.book ? this.book.pages.find(n => {
+    let row;
+    if (chapter.hasOwnProperty('children')) {
+      row = chapter.children[0].rows[0];
+    } else {
+      row = chapter.rows[0];
+    }
+    const page = !!this.book ? this.book.pages.find(n => {
       if (n.hasOwnProperty('children')) {
         return !!(n.children.find(c => c.rows.includes(row)));
       }
       return n.rows.includes(row);
     }) : null;
-    this.pageChanged.emit(this.page);
+    this.pageChanged.emit(page);
     this.chapter = chapter;
     return;
   }

@@ -10,14 +10,27 @@ export class HgdaTextFilterPipe implements PipeTransform {
 
   }
 
-  transform(rows: any[], chapter: any) {
+  transform(rows: any[], page: any, chapter: any) {
+    let result = [];
+    if (!!page && !!(page.rows) && !!rows) {
+      result = rows.filter(row => {
+        return page.rows.includes(row[0]);
+      });
+      if (result != null) {
+        return result;
+      }
+    }
+
     if (!!chapter && !!(chapter.rows) && !!rows) {
-      return rows.filter(row => {
+      result = rows.filter(row => {
         return chapter.rows.includes(row[0]);
       });
-    } else {
-      return rows;
+      if (result != null) {
+        return result;
+      }
     }
+    
+    return rows;
   }
 
 }
