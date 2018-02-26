@@ -29,7 +29,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
       // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error
-      goDirectlyTo: 26,
+      goDirectlyTo: 3,
       inFullscreen: true,
       enableHighlight: true
     });
@@ -73,6 +73,12 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     this.setDiva();
     this.setDivaEvents();
     diva.Events.subscribe('ViewerDidLoad', (s) => this.setDivaAnnotations());
+    this.pageService.getPageChangeEmitter()
+      .subscribe(item => {
+        if (item != null) {
+          this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
+        }
+      });
   }
 
   ngOnDestroy(): void {

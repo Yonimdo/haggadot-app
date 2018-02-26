@@ -6,12 +6,12 @@ import {HgdaPageService} from './hgda-page.service';
 })
 export class HgdaTextFilterPipe implements PipeTransform {
 
-  constructor(private pageSefvice: HgdaPageService) {
+  constructor() {
 
   }
 
   transform(rows: any[], chapter: any) {
-    if (!!chapter && !!rows) {
+    if (!!chapter && !!(chapter.rows) && !!rows) {
       return rows.filter(row => {
         return chapter.rows.includes(row[0]);
       });

@@ -1,4 +1,4 @@
-import { HgdaTextFilterPipe } from './hgda-text-filter.pipe';
+import {HgdaTextFilterPipe} from './hgda-text-filter.pipe';
 
 describe('HgdaTextFilterPipe', () => {
   it('create an instance', () => {

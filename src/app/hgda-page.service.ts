@@ -1,4 +1,4 @@
-import {Injectable, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {EventEmitter, Injectable, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/mergeMap';
 import {mergeMap} from 'rxjs/operator/mergeMap';
@@ -8,6 +8,7 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class HgdaPageService implements OnInit, OnChanges {
   @Input() bookId: any = 'PNX_MANUSCRIPTS000041667';
+  pageChanged: EventEmitter<any> = new EventEmitter();
   book: any;
   page: any;
   track: any;
@@ -95,8 +96,14 @@ export class HgdaPageService implements OnInit, OnChanges {
       }
       return n.rows.includes(row);
     }) : null;
+    this.pageChanged.emit(this.page);
     this.chapter = chapter;
     return;
+  }
+
+
+  getPageChangeEmitter() {
+    return this.pageChanged;
   }
 
 }
