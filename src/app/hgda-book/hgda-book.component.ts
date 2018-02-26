@@ -14,8 +14,6 @@ import {WindowRef} from '../win-ref.service';
 })
 export class HgdaBookComponent implements OnInit, OnDestroy {
   @Output() pageChanged = new EventEmitter();
-  pages: any;
-  page: any;
   iiif_viewer_data: any;
 
   selectObject: any;
@@ -24,12 +22,10 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   }
 
   setDiva() {
-
-
     $('#diva-wrapper').diva({
       enableImageTitles: false,
       fixedHeightGrid: true,
-      objectData: `http://iiif.nli.org.il/IIIFv21/DOCID/${this.pageService.pageId}/manifest/`,
+      objectData: this.pageService.getBook(this.pageService.bookId),
       // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error
@@ -51,16 +47,13 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   setDivaEvents() {
     diva.Events.subscribe('VisiblePageDidChange', (index) => {
-      this.page = this.pages[index];
-      const e = {page: this.page};
-      this._change(e);
+      this.pageService.changePage(index);
     }, 1);
 
   }
 
   setDivaAnnotations() {
-    const ps = this.pages.filter(n => n.annotations.length !== 0);
-    ps.map(n => {
+    this.pageService.annotations.map(n => {
       const regions = [];
       n.annotations.map((a, index) => {
         regions.push({
@@ -78,26 +71,11 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.setDiva();
-    this.pageService.getBookRows().subscribe(data => {
-      this.setPages(data.pages);
-      this.setDivaEvents();
-      diva.Events.subscribe('ViewerDidLoad', (s) => this.setDivaAnnotations());
-    });
+    this.setDivaEvents();
+    diva.Events.subscribe('ViewerDidLoad', (s) => this.setDivaAnnotations());
   }
 
   ngOnDestroy(): void {
     // this.winRef.scrollUnsubscribe();
-  }
-
-  setPages(pages) {
-    this.pages = pages;
-  }
-
-  _change(e) {
-    this.page = e.page;
-  }
-
-  change(e) {
-    this.iiif_viewer_data.gotoPageByIndex(e.page.ordinal);
   }
 }

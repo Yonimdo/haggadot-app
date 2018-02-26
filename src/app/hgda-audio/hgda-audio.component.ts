@@ -8,28 +8,18 @@ import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core'
   templateUrl: './hgda-audio.component.html',
   styleUrls: ['./hgda-audio.component.scss']
 })
-export class HgdaAudioComponent implements OnInit, OnChanges {
-  tracks: any = {};
-  selected: any;
-  @Input() page: any;
+export class HgdaAudioComponent {
 
   constructor(private pageService: HgdaPageService) {
   }
 
-  ngOnInit() {
-    this.pageService.getTracks().subscribe(ts => {
-      this.tracks = ts;
-    });
-  }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.page = changes.page.currentValue;
-    if (!this.page) {
+  changeTrack(): void {
+    if (!this.pageService.page) {
       return;
     }
-    this.selected = this.tracks.find(t => t.bookmarks.includes(this.page.ordinal));
-    if (!!this.selected) {
-      const url = this.selected.audio_url;
+    if (!!this.pageService.track) {
+      const url = this.pageService.track.audio_url;
       $('#jquery_jplayer_1').jPlayer({
         ready: function () {
           $(this).jPlayer('setMedia', {

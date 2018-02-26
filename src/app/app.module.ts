@@ -12,8 +12,8 @@ import {WindowRef} from './win-ref.service';
 import {HgdaNavbarComponent} from './hgda-navbar/hgda-navbar.component';
 import {HgdaChaptersComponent} from './hgda-chapters/hgda-chapters.component';
 import { HgdaCommentaryComponent } from './hgda-commentary/hgda-commentary.component';
-import { HgdaBookButtonsComponent } from './hgda-book-buttons/hgda-book-buttons.component';
 import { HgdaAudioComponent } from './hgda-audio/hgda-audio.component';
+import { HgdaTextFilterPipe } from './hgda-text-filter.pipe';
 
 
 @NgModule({
@@ -23,8 +23,8 @@ import { HgdaAudioComponent } from './hgda-audio/hgda-audio.component';
     HgdaNavbarComponent,
     HgdaChaptersComponent,
     HgdaCommentaryComponent,
-    HgdaBookButtonsComponent,
-    HgdaAudioComponent
+    HgdaAudioComponent,
+    HgdaTextFilterPipe
   ],
   imports: [
     BrowserModule,

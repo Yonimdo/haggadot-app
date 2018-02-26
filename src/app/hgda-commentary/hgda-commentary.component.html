@@ -10,8 +10,6 @@
       type="button"
       aria-label="Menu" aria-controls="navigation" src="/assets/img/res-btn-genreal-arrow-normal.svg">
   </div>
-  <input type="text" class="text" placeholder="קפוץ לפסוק"/>
-  <div *ngIf="page">
-    <p *ngFor="let verse of inner;let i = index;" [innerHTML]="verse[1]"></p>
-  </div>
+  <p *ngFor="let verse of (pageService.rows | hgdaTextFilter:pageService.chapter);let i = index;"
+     [innerHTML]="verse[1]"></p>
 </div>

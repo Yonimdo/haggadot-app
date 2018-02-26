@@ -5,14 +5,14 @@
           type="button"
           aria-label="Menu" aria-controls="navigation">
     <p>
-      {{!!_selected ? _selected.name : 'תוכן עניניים'}}
+      {{!!pageService.chapter ? pageService.chapter.title : 'תוכן עניניים'}}
     </p>
   </button>
 
-  <div class="item" *ngFor="let title of nodes;let i = index;"
+  <div class="item" *ngFor="let title of pageService.chapters ;let i = index;"
        (click)="click($event,title,i)">
     <p data-image="#FAFAFA" [ngClass]="(_selected === title ? 'selected':'')">
-      {{title.name}}
+      {{title.title}}
     </p>
     <img src="{{title.img}}"/>
   </div>
