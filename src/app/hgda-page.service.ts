@@ -19,6 +19,10 @@ export class HgdaPageService implements OnInit, OnChanges {
   books: any;
   annotations: any;
 
+  getBookUrl(id) {
+    return `http://iiif.nli.org.il/IIIFv21/DOCID/${id}/manifest/`;
+  }
+
   constructor(private http: Http) {
 
     Promise.all([
@@ -38,6 +42,8 @@ export class HgdaPageService implements OnInit, OnChanges {
         b.img = imgs.filter(im => im.ordinal === b.ordinal)[0].img;
       });
       this.chapters = bookmarks;
+      this.page = this.book.pages[this.book.start_page];
+      this.pageChanged.emit(this.page);
     });
   }
 
@@ -51,41 +57,6 @@ export class HgdaPageService implements OnInit, OnChanges {
 
   changePage(index) {
     this.page = this.book.pages[index];
-  }
-
-  getBook(id) {
-    return `http://iiif.nli.org.il/IIIFv21/DOCID/${id}/manifest/`;
-  }
-
-  getBookRows() {
-    return this.http.get('/assets/books.json')
-      .map(x => x.json()[0]);
-  }
-
-  getBookmarksRows() {
-    return this.http.get('/assets/bookmarks.json').map(x => x.json());
-  }
-
-  getBookmarksImages() {
-    return Promise.all([
-      fetch('/assets/bookmarks.json').then(n => n.json()),
-      fetch('/assets/chapters.json').then(n => n.json())
-    ]).then(c => {
-      const imgs = c[1], bookmarks = c[0];
-      bookmarks.map(b => {
-        b.img = imgs.filter(im => im.ordinal === b.ordinal)[0].img;
-      });
-      return bookmarks;
-    });
-  }
-
-  getRawRows() {
-    return this.http.get('/assets/rows.json').map(x => x.json());
-  }
-
-
-  getTracks() {
-    return this.http.get('/assets/tracks.json').map((res) => res.json());
   }
 
   changeChapter(chapter) {
@@ -105,7 +76,6 @@ export class HgdaPageService implements OnInit, OnChanges {
     this.chapter = chapter;
     return;
   }
-
 
   getPageChangeEmitter() {
     return this.pageChanged;

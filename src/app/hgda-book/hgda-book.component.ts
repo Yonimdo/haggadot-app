@@ -25,7 +25,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     $('#diva-wrapper').diva({
       enableImageTitles: false,
       fixedHeightGrid: true,
-      objectData: this.pageService.getBook(this.pageService.bookId),
+      objectData: this.pageService.getBookUrl(this.pageService.bookId),
       // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error
@@ -71,14 +71,17 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.setDiva();
-    this.setDivaEvents();
-    diva.Events.subscribe('ViewerDidLoad', (s) => this.setDivaAnnotations());
-    this.pageService.getPageChangeEmitter()
-      .subscribe(item => {
-        if (item != null) {
-          this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
-        }
-      });
+    diva.Events.subscribe('ViewerDidLoad', (s) => {
+      this.setDivaEvents();
+      this.setDivaAnnotations();
+      this.pageService.getPageChangeEmitter()
+        .subscribe(item => {
+          if (item != null) {
+            // TODO: throws error if diva is not loaded before the data
+            this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
+          }
+        });
+    });
   }
 
   ngOnDestroy(): void {
