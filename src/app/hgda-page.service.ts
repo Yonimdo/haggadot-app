@@ -9,6 +9,7 @@ import {Observable} from 'rxjs/Observable';
 export class HgdaPageService implements OnInit, OnChanges {
   @Input() bookId: any = 'PNX_MANUSCRIPTS000041667';
   pageChanged: EventEmitter<any> = new EventEmitter();
+  annotationLoaded: EventEmitter<any> = new EventEmitter();
   book: any;
   page: any;
   track: any;
@@ -31,20 +32,83 @@ export class HgdaPageService implements OnInit, OnChanges {
       fetch('/assets/rows.json').then(n => n.json()),
       fetch('/assets/tracks.json').then(n => n.json()),
       fetch('/assets/books.json').then(n => n.json()),
+      fetch(`http://iiif.nli.org.il/IIIFv21/DOCID/${this.bookId}/manifest/`).then(n => n.json()),
     ]).then(c => {
       const bookmarks = c[0], imgs = c[1];
       this.rows = c[2];
       this.tracks = c[3];
       this.books = c[4];
+      const doc = c[5];
       this.book = this.books[0];
-      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+      this.book.title = doc.label;
       bookmarks.map(b => {
         b.img = imgs.filter(im => im.ordinal === b.ordinal)[0].img;
       });
       this.chapters = bookmarks;
+
+
+      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+      this.tracks.map(t => {
+        t.x = 500;
+        t.y = 2000;
+        const pages = this.getChaptersPages(t.bookmarks.map(b => this.getChapter(b)));
+        if (!!pages) {
+          pages.map(p => {
+            const anno = this.annotations.find(annoP => annoP.ordinal === p.ordinal);
+            if (!!anno) {
+              anno.annotations.push(t);
+            } else {
+              p.annotations = [t];
+              this.annotations.push(p);
+            }
+          });
+        }
+      });
       this.page = this.book.pages[this.book.start_page];
       this.pageChanged.emit(this.page);
+      this.annotationLoaded.emit();
     });
+  }
+
+  getChaptersPages(chapters) {
+    const rows = this.getChaptersRows(chapters);
+    const pages = this.book.pages.filter(p => {
+      return p.rows.some((v) => {
+        return rows.includes(v);
+      });
+    });
+    return pages;
+  }
+
+  getChaptersRows(chapters) {
+    let rows = [];
+    chapters.map(c => {
+      if (c.hasOwnProperty('children')) {
+        rows = rows.concat(this.getChaptersRows(c.children));
+      }
+      if (c.hasOwnProperty('rows')) {
+        rows = rows.concat(c.rows);
+      }
+    });
+    return rows;
+  }
+
+  getChapter(id) {
+    let chap;
+    this.chapters.find(c => {
+      if (c.hasOwnProperty('children')) {
+        chap = c.children.find(ch => ch.ordinal === id);
+        if (!!chap) {
+          return true;
+        }
+      }
+      if (c.ordinal === id) {
+        chap = c;
+        return true;
+      }
+      return;
+    });
+    return chap;
   }
 
   ngOnInit(): void {
@@ -60,25 +124,20 @@ export class HgdaPageService implements OnInit, OnChanges {
   }
 
   changeChapter(chapter) {
-    let row;
-    if (chapter.hasOwnProperty('children')) {
-      row = chapter.children[0].rows[0];
-    } else {
-      row = chapter.rows[0];
-    }
-    const page = !!this.book ? this.book.pages.find(n => {
-      if (n.hasOwnProperty('children')) {
-        return !!(n.children.find(c => c.rows.includes(row)));
-      }
-      return n.rows.includes(row);
-    }) : null;
-    this.pageChanged.emit(page);
     this.chapter = chapter;
+    const page = this.getChaptersPages([chapter]);
+    if (!!page && page.length >= 1) {
+      this.pageChanged.emit(page[0]);
+    }
     return;
   }
 
   getPageChangeEmitter() {
     return this.pageChanged;
+  }
+
+  getAnnoChangeEmitter() {
+    return this.annotationLoaded;
   }
 
 }

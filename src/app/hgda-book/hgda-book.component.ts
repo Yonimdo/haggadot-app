@@ -73,7 +73,6 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     this.setDiva();
     diva.Events.subscribe('ViewerDidLoad', (s) => {
       this.setDivaEvents();
-      this.setDivaAnnotations();
       this.pageService.getPageChangeEmitter()
         .subscribe(item => {
           if (item != null) {
@@ -81,6 +80,8 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
             this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
           }
         });
+      this.pageService.getAnnoChangeEmitter()
+        .subscribe(e => this.setDivaAnnotations());
     });
   }
 

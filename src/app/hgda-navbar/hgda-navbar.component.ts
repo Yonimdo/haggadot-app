@@ -1,4 +1,5 @@
 import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core';
+import {HgdaPageService} from "../hgda-page.service";
 
 @Component({
   selector: 'app-hgda-navbar',
@@ -10,7 +11,7 @@ export class HgdaNavbarComponent implements OnInit {
   @Output() openRight = new EventEmitter();
   @Input() page: any;
 
-  constructor() {
+  constructor(private pageService: HgdaPageService) {
   }
 
   ngOnInit() {
