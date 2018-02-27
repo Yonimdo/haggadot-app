@@ -1,19 +1,22 @@
 <div [ngClass]="open===''? '' : 'open'">
 
-  <button class="mainBtn" (click)="toggleOpen()"
-          [ngClass]="''+open"
+  <button (click)="toggleOpen()"
+          class="main-btn"
           type="button"
           aria-label="Menu" aria-controls="navigation">
-    <p>
-      {{!!pageService.chapter ? pageService.chapter.title : 'תוכן עניניים'}}
-    </p>
+    <img src="assets/img/res-btn-index-menuline-normal.svg"/>
+    <p *ngIf="!(pageService.chapter.img)">
+      סדר הגדה </p>
+    <img *ngIf="!!(pageService.chapter.img)" class="selected"
+         src="{{pageService.chapter.img.replace('hover','selected')}}"/>
   </button>
 
-  <div class="item" *ngFor="let title of pageService.chapters ;let i = index;"
-       (click)="click($event,title,i)">
-    <p data-image="#FAFAFA" [ngClass]="(_selected === title ? 'selected':'')">
+  <div *ngFor="let title of pageService.chapters ;let i = index;"
+       (click)="click($event,title,i)" [ngClass]="(pageService.chapter === title ? 'item selected':'item')">
+    <p data-image="#FAFAFA">
       {{title.title}}
     </p>
-    <img src="{{title.img}}"/>
+    <img *ngIf="title !== pageService.chapter" src="{{title.img}}"/>
+    <img class="selected" *ngIf="title === pageService.chapter" src="{{title.img.replace('hover','selected')}}"/>
   </div>
 </div>

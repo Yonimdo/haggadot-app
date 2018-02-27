@@ -12,7 +12,7 @@ div {
   }
 }
 
-.mainBtn {
+.main-btn {
   font-size: $font-size-big;
   width: 100%;
   height: $btn-height !important;
@@ -20,12 +20,16 @@ div {
   justify-content: flex-start;
   align-items: center;
   background-color: $primary-color;
-
+  & img {
+    position: absolute;
+    right: 30px;
+  }
   & p {
-    padding-top: 3px;
-    padding-right: $padding-medium;
+    color: $accent-btn-color;
+    padding-right: $padding-wide;
     display: inline-block;
-    width: 80%;
+    font-weight: 700;
+    width: 70%;
     text-align: right;
   }
 }
@@ -38,6 +42,15 @@ div {
     }
     & img {
       display: block;
+    }
+  }
+  &.selected {
+    background: $primary-color !important;
+    & img {
+      display: block;
+    }
+    & p {
+      display: none;
     }
   }
   width: 100%;

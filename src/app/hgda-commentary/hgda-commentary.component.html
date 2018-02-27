@@ -8,7 +8,7 @@
       (click)="toggle()"
       [ngClass]="''"
       type="button"
-      aria-label="Menu" aria-controls="navigation" src="/assets/img/res-btn-genreal-arrow-normal.svg">
+      aria-label="Menu" aria-controls="navigation" src="/assets/img/res-btn-main-arrow-normal.svg">
   </div>
   <p *ngFor="let verse of (pageService.rows | hgdaTextFilter: pageService.page :pageService.chapter );let i = index;"
      [innerHTML]="verse[1]"></p>
