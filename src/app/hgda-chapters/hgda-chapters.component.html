@@ -4,11 +4,12 @@
           class="main-btn"
           type="button"
           aria-label="Menu" aria-controls="navigation">
-    <img src="assets/img/res-btn-index-menuline-normal.svg"/>
+    <img  *ngIf="!(open)" src="assets/img/res-btn-index-menuline-normal.svg"/>
+    <img  *ngIf="open" src="assets/img/res-btn-general-close-normal.svg"/>
     <p *ngIf="!(pageService.chapter.img)">
       סדר הגדה </p>
     <img *ngIf="!!(pageService.chapter.img)" class="selected"
-         src="{{pageService.chapter.img.replace('hover','selected')}}"/>
+         src="{{pageService.chapter.img.replace('hover','normal')}}"/>
   </button>
 
   <div *ngFor="let title of pageService.chapters ;let i = index;"
@@ -17,6 +18,6 @@
       {{title.title}}
     </p>
     <img *ngIf="title !== pageService.chapter" src="{{title.img}}"/>
-    <img class="selected" *ngIf="title === pageService.chapter" src="{{title.img.replace('hover','selected')}}"/>
+    <img class="selected" *ngIf="title === pageService.chapter" src="{{title.img.replace('hover','normal')}}"/>
   </div>
 </div>

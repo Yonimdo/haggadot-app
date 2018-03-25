@@ -15,7 +15,7 @@ div {
 .main-btn {
   font-size: $font-size-big;
   width: 100%;
-  height: $btn-height !important;
+  height: $chapter-height-closed !important;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,6 +23,10 @@ div {
   & img {
     position: absolute;
     right: 30px;
+  }
+  & img.selected {
+    position: absolute;
+    right: 60px;
   }
   & p {
     color: $accent-btn-color;
@@ -41,6 +45,7 @@ div {
       display: none;
     }
     & img {
+      right: 30px;
       display: block;
     }
   }
@@ -48,6 +53,7 @@ div {
     background: $primary-color !important;
     & img {
       display: block;
+      right: 30px;
     }
     & p {
       display: none;
