@@ -24,7 +24,12 @@ html, body {
   overflow-x: hidden;
 }
 
-#diva-1-view-icon,#diva-1-fullscreen-icon, #diva-1-title,.diva-zoom-label , .diva-goto-form {
+.diva-fullscreen-tools {
+  background-color: transparent;
+  border: 0;
+}
+
+#diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title, .diva-zoom-label, .diva-goto-form {
   display: none !important;
 }
 
