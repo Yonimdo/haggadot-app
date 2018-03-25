@@ -1,4 +1,5 @@
 @import "../../sass/vars";
+
 .chapters {
   margin-top: $control-padding-screen-wide;
   width: $chapter-width;
@@ -13,8 +14,11 @@
   bottom: $control-padding-screen;
   right: $control-padding-screen;
   height: $btn-height;
-
 }
+
+
+
+
 .commentary {
   margin-top: 100px;
   left: $control-padding-screen;
@@ -22,7 +26,8 @@
   z-index: 105;
   width: $info-width;
 }
-div.diva-wrapper{
+
+div.diva-wrapper {
   overflow: hidden;
 }
 

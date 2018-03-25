@@ -38,3 +38,34 @@ html, body {
 .diva-fullscreen-tools .diva-page-label {
   display: inline-block !important;
 }
+
+
+.diva-button {
+  width: $info-height-closed;
+  height:$info-height-closed;
+  border-radius: 2px;
+  margin: 3px;
+  background-position: center;
+  background-color: rgba(56, 76, 98, 0.8) !important;
+}
+
+
+#diva-1-print-icon{
+  background-image: url("/assets/img/res-btn-tools-print-normal.svg");
+  width: 170px;
+}
+#diva-1-link-icon{
+  background-image: url("/assets/img/res-btn-tools-share-normal.svg");
+
+}
+#diva-1-dwn-icon{
+  background-image: url("/assets/img/res-btn-tools-share-normal.svg");
+
+}
+#diva-1-zoom-out-button{
+  background-image: url("/assets/img/res-btn-tools-zoomout-normal.svg");
+
+}
+#diva-1-zoom-in-button{
+  background-image: url("/assets/img/res-btn-tools-zoomin-normal.svg");
+}

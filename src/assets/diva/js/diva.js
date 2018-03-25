@@ -2883,7 +2883,7 @@
         };
 
         var createDownloadIcon = function () {
-          var elem = createButtonElement('download-icon', 'Download this page');
+          var elem = createButtonElement('dwn-icon', 'Download this page');
           var linkIcon = $(elem);
 
           linkIcon.on('click', function () {
