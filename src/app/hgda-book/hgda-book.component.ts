@@ -64,6 +64,13 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
           'ulx': a.x,
           'uly': a.y,
           'classes': a.hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
+          'attrs': a.hasOwnProperty('audio_url') ? {
+            'data-toggle': 'modal',
+            'data-target': '#hgda-audio-model'
+          } : {
+            'data-toggle': 'modal',
+            'data-target': '#hgda-info-model'
+          },
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
       });
