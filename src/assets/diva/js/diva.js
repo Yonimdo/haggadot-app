@@ -12032,7 +12032,7 @@
 
           // FIXME: Use CSS class instead of inline style
           var box = elt('div', {
-            class: divClass,
+            class: divClass + (region.hasOwnProperty("classes") ? " " + region.classes : ""),
             style: {
               background: colour,
               border: "1px solid #555",

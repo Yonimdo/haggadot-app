@@ -1,3 +1,5 @@
+import {hasOwnProperty} from 'tslint/lib/utils';
+
 declare var diva: any;
 declare var $: any;
 
@@ -61,6 +63,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
           'height': 300,
           'ulx': a.x,
           'uly': a.y,
+          'classes': a.hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
       });
