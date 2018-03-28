@@ -1,3 +1,5 @@
+import {hasOwnProperty} from 'tslint/lib/utils';
+
 declare var diva: any;
 declare var $: any;
 
@@ -14,8 +16,6 @@ import {WindowRef} from '../win-ref.service';
 })
 export class HgdaBookComponent implements OnInit, OnDestroy {
   @Output() pageChanged = new EventEmitter();
-  pages: any;
-  page: any;
   iiif_viewer_data: any;
 
   selectObject: any;
@@ -24,16 +24,14 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   }
 
   setDiva() {
-
-
     $('#diva-wrapper').diva({
       enableImageTitles: false,
       fixedHeightGrid: true,
-      objectData: `http://iiif.nli.org.il/IIIFv21/DOCID/${this.pageService.pageId}/manifest/`,
+      objectData: this.pageService.getBookUrl(this.pageService.bookId),
       // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error
-      goDirectlyTo: 26,
+      goDirectlyTo: 3,
       inFullscreen: true,
       enableHighlight: true
     });
@@ -51,16 +49,13 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   setDivaEvents() {
     diva.Events.subscribe('VisiblePageDidChange', (index) => {
-      this.page = this.pages[index];
-      const e = {page: this.page};
-      this._change(e);
+      this.pageService.changePage(index);
     }, 1);
 
   }
 
   setDivaAnnotations() {
-    const ps = this.pages.filter(n => n.annotations.length !== 0);
-    ps.map(n => {
+    this.pageService.annotations.map(n => {
       const regions = [];
       n.annotations.map((a, index) => {
         regions.push({
@@ -68,6 +63,14 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
           'height': 300,
           'ulx': a.x,
           'uly': a.y,
+          'classes': a.hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
+          'attrs': a.hasOwnProperty('audio_url') ? {
+            'data-toggle': 'modal',
+            'data-target': '#hgda-audio-model'
+          } : {
+            'data-toggle': 'modal',
+            'data-target': '#hgda-info-model'
+          },
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
       });
@@ -78,26 +81,21 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.setDiva();
-    this.pageService.getBookRows().subscribe(data => {
-      this.setPages(data.pages);
+    diva.Events.subscribe('ViewerDidLoad', (s) => {
       this.setDivaEvents();
-      diva.Events.subscribe('ViewerDidLoad', (s) => this.setDivaAnnotations());
+      this.pageService.getPageChangeEmitter()
+        .subscribe(item => {
+          if (item != null) {
+            // TODO: throws error if diva is not loaded before the data
+            this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
+          }
+        });
+      this.pageService.getAnnoChangeEmitter()
+        .subscribe(e => this.setDivaAnnotations());
     });
   }
 
   ngOnDestroy(): void {
     // this.winRef.scrollUnsubscribe();
-  }
-
-  setPages(pages) {
-    this.pages = pages;
-  }
-
-  _change(e) {
-    this.page = e.page;
-  }
-
-  change(e) {
-    this.iiif_viewer_data.gotoPageByIndex(e.page.ordinal);
   }
 }

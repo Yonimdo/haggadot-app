@@ -12,33 +12,52 @@ div {
   }
 }
 
-.mainBtn {
+.main-btn {
   font-size: $font-size-big;
   width: 100%;
-  height: $btn-height !important;
+  height: $chapter-height-closed !important;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: $primary-color;
-
+  & img {
+    position: absolute;
+    right: 30px;
+  }
+  & img.selected {
+    position: absolute;
+    right: 60px;
+  }
   & p {
-    padding-top: 3px;
-    padding-right: $padding-medium;
+    color: $accent-btn-color;
+    padding-right: $padding-wide;
     display: inline-block;
-    width: 80%;
+    font-weight: 700;
+    width: 70%;
     text-align: right;
   }
 }
 
 .item {
   &:hover {
-    background: $primary-color-light url('/assets/img/res-btn-index_chapters-magid-hover.svg');
-    background-position: center right;
-    background-repeat: no-repeat;
+    background: $primary-color-light;
     & p {
       display: none;
     }
-
+    & img {
+      right: 30px;
+      display: block;
+    }
+  }
+  &.selected {
+    background: $primary-color !important;
+    & img {
+      display: block;
+      right: 30px;
+    }
+    & p {
+      display: none;
+    }
   }
   width: 100%;
   cursor: pointer;
@@ -49,7 +68,7 @@ div {
   & p {
     width: 100%;
     text-align: end;
-    padding: $padding-medium;
+    padding: $padding-wide;
     font-size: $font-size-meddium;
     fill: $secondary-text-color;
     &.selected {
@@ -57,5 +76,9 @@ div {
       fill: $primary-text-color;
     }
   }
-
+  & img {
+    position: absolute;
+    right: 0;
+    display: none;
+  }
 }

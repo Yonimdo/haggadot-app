@@ -1,45 +1,143 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/mergeMap';
 import {mergeMap} from 'rxjs/operator/mergeMap';
+import {Observable} from 'rxjs/Observable';
 
 
 @Injectable()
-export class HgdaPageService {
-  rows: any = new Map();
-  pageId: any = 'PNX_MANUSCRIPTS000041667';
+export class HgdaPageService implements OnInit, OnChanges {
+  @Input() bookId: any = 'PNX_MANUSCRIPTS000041667';
+  pageChanged: EventEmitter<any> = new EventEmitter();
+  annotationLoaded: EventEmitter<any> = new EventEmitter();
+  book: any;
+  page: any;
+  track: any;
+  chapter: any = [];
+  chapters: any = [];
+  rows: any;
+  tracks: any;
+  books: any;
+  annotations: any;
+
+  getBookUrl(id) {
+    return `http://iiif.nli.org.il/IIIFv21/DOCID/${id}/manifest/`;
+  }
 
   constructor(private http: Http) {
+
+    Promise.all([
+      fetch('/assets/bookmarks.json').then(n => n.json()),
+      fetch('/assets/chapters.json').then(n => n.json()),
+      fetch('/assets/rows.json').then(n => n.json()),
+      fetch('/assets/tracks.json').then(n => n.json()),
+      fetch('/assets/books.json').then(n => n.json()),
+      fetch(`http://iiif.nli.org.il/IIIFv21/DOCID/${this.bookId}/manifest/`).then(n => n.json()),
+    ]).then(c => {
+      const bookmarks = c[0], imgs = c[1];
+      this.rows = c[2];
+      this.tracks = c[3];
+      this.books = c[4];
+      const doc = c[5];
+      this.book = this.books[0];
+      this.book.title = doc.label;
+      bookmarks.map(b => {
+        b.img = imgs.filter(im => im.ordinal === b.ordinal)[0].img;
+      });
+      this.chapters = bookmarks;
+
+
+      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+      this.tracks.map(t => {
+        t.x = 500;
+        t.y = 2000;
+        const pages = this.getChaptersPages(t.bookmarks.map(b => this.getChapter(b)));
+        if (!!pages) {
+          pages.map(p => {
+            const anno = this.annotations.find(annoP => annoP.ordinal === p.ordinal);
+            if (!!anno) {
+              anno.annotations.push(t);
+            } else {
+              p.annotations = [t];
+              this.annotations.push(p);
+            }
+          });
+        }
+      });
+      this.page = this.book.pages[this.book.start_page];
+      this.pageChanged.emit(this.page);
+      this.annotationLoaded.emit();
+    });
   }
 
-  getPageImages() {
-    return this.http
-      .get('assets/manifest.json')
-      .map(x => x.json());
+  getChaptersPages(chapters) {
+    const rows = this.getChaptersRows(chapters);
+    const pages = this.book.pages.filter(p => {
+      return p.rows.some((v) => {
+        return rows.includes(v);
+      });
+    });
+    return pages;
+  }
+
+  getChaptersRows(chapters) {
+    let rows = [];
+    chapters.map(c => {
+      if (c.hasOwnProperty('children')) {
+        rows = rows.concat(this.getChaptersRows(c.children));
+      }
+      if (c.hasOwnProperty('rows')) {
+        rows = rows.concat(c.rows);
+      }
+    });
+    return rows;
+  }
+
+  getChapter(id) {
+    let chap;
+    this.chapters.find(c => {
+      if (c.hasOwnProperty('children')) {
+        chap = c.children.find(ch => ch.ordinal === id);
+        if (!!chap) {
+          return true;
+        }
+      }
+      if (c.ordinal === id) {
+        chap = c;
+        return true;
+      }
+      return;
+    });
+    return chap;
+  }
+
+  ngOnInit(): void {
 
   }
 
-  getBookRows() {
-    return this.http.get('/assets/books.json')
-      .map(x => x.json()[0]);
+  ngOnChanges(changes: SimpleChanges): void {
+
   }
 
-  getBookmarksRows() {
-    return this.http.get('/assets/bookmarks.json').map(x => x.json());
+  changePage(index) {
+    this.page = this.book.pages[index];
   }
 
-  js(obj) {
-    return obj.json();
+  changeChapter(chapter) {
+    this.chapter = chapter;
+    const page = this.getChaptersPages([chapter]);
+    if (!!page && page.length >= 1) {
+      this.pageChanged.emit(page[0]);
+    }
+    return;
   }
 
-  getRawRows() {
-    return this.http.get('/assets/rows.json').map(x => x.json());
+  getPageChangeEmitter() {
+    return this.pageChanged;
   }
 
-
-  getTracks() {
-    return this.http.get('/assets/tracks.json').map((res) => res.json());
+  getAnnoChangeEmitter() {
+    return this.annotationLoaded;
   }
-
 
 }

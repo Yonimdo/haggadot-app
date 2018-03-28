@@ -20,11 +20,13 @@
       "prefix": "app",
       "styles": [
         "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "./sass/vars.scss",
         "styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
         "assets/diva/js/diva.js",
         "../node_modules/jplayer/dist/jplayer/jquery.jplayer.js"
       ],
