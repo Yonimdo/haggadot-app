@@ -12040,7 +12040,11 @@
               zIndex: 100
             }
           });
-
+          if (region.hasOwnProperty("attrs")){
+            for (let attr in region.attrs) {
+              box.setAttribute(attr, region.attrs[attr])
+            }
+          }
           if (region.divID !== undefined) {
             box.setAttribute('data-highlight-id', region.divID);
           }
