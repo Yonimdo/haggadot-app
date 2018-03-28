@@ -18,11 +18,17 @@ $accent-color: #FBF9ED;
 $primary-text-color: #384C62;
 $secondary-text-color: #757575;
 $divider-color: #BDBDBD;
+$info-dialog-text-background: #FBF9ED;
 
 @mixin box-shadow() {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+@mixin base-background() {
 
+  background-color: $primary-back-dark;
+  background-image: url("/assets/img/res-img-general-background-pattern.png");
+  background-repeat: repeat;
+}
 //dimensions
 $padding-wide: 30px;
 $padding: 20px;
@@ -46,3 +52,7 @@ $btn-height: 60px;
 $control-padding-screen-wide: 100px;
 $control-padding-screen: 30px;
 $control-padding-screen-bottom:10px;
+$info-dialog-width:1090px;
+$info-dialog-text-width:536px;
+$info-dialog-image-width:554px;
+$info-dialog-height:610px;
