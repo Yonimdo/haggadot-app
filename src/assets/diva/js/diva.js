@@ -12040,9 +12040,14 @@
               zIndex: 100
             }
           });
-          if (region.hasOwnProperty("attrs")){
+          if (region.hasOwnProperty("attrs")) {
             for (let attr in region.attrs) {
-              box.setAttribute(attr, region.attrs[attr])
+              if (typeof region.attrs[attr] === 'function') {
+                box.addEventListener("click", region.attrs[attr])
+              } else {
+                box.setAttribute(attr, region.attrs[attr])
+
+              }
             }
           }
           if (region.divID !== undefined) {
