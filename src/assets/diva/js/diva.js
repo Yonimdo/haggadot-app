@@ -12214,10 +12214,10 @@
                   }
 
                   if (divClass === undefined) {
-                    divClass = divaSettings.ID + 'highlight diva-highlight';
+                    divClass = 'highlight diva-highlight';
                   }
                   else {
-                    divClass = divaSettings.ID + 'highlight diva-highlight ' + divClass;
+                    divClass = 'highlight diva-highlight ' + divClass;
                   }
 
                   highlightManager.addHighlight({

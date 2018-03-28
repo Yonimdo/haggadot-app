@@ -69,3 +69,28 @@ html, body {
 #diva-1-zoom-in-button{
   background-image: url("/assets/img/res-btn-tools-zoomin-normal.svg");
 }
+
+.highlight-page{
+  width: 80px !important;
+  height: 80px !important;
+  background-color: transparent !important;
+  border: none !important;
+  background-repeat: no-repeat !important;
+  cursor: pointer;
+  z-index: 1005;
+}
+
+.highlight-audio {
+  background-image: url("/assets/img/res-btn-hagada-Music-normal.svg") !important;
+  &:hover{
+    background-image: url("/assets/img/res-btn-hagada-Music-hover.svg") !important;
+  }
+}
+
+.highlight-info {
+  background-image: url("/assets/img/res-btn-hagada-info-normal.svg") !important;
+  &:hover{
+    background-image: url("/assets/img/res-btn-hagada-info-hover.svg") !important;
+  }
+}
+
