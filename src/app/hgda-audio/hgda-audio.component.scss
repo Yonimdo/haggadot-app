@@ -2,7 +2,7 @@
 
 #jp_container_1, .jp-interface {
   //@include box-shadow();
-  background-color: $primary-color-dark !important;
+  background-color: $player-background-color !important;
   opacity: 0.96 !important;
   position: fixed !important;
   bottom: 0 !important;
@@ -14,26 +14,42 @@
   display: flex;
   align-items: center;
   align-content: space-between;
+  & .devider {
+    height: $nav-size;
+    width: 2px;
+    background-color: $primary-color;
+    margin: 0 $padding-wide 0 $padding-wide;
+
+
+  }
   & .jp-volume-controls {
     display: flex;
+    align-items: center;
+    padding: 0 0 0 $padding-wide;
     & .jp-volume-max {
       width: 24px;
       height: 22px;
       background-repeat: no-repeat;
       //background-image: url('');
     }
-    & .jp-mute{
+    & .jp-mute {
       width: 30px;
       height: 24px;
 
       background-repeat: no-repeat;
       background-image: url('/assets/img/res-btn-player-mute-normal.svg');
     }
+    & .jp-volume-bar {
+      height: 5px;
+      width: 112px;
+      border-radius: 3px;
+      background-color: $accent-color;
+    }
   }
-  & .jp-title{
+  & .jp-title {
     color: #FBF9ED;
   }
-  & .jp-controls{
+  & .jp-controls {
     display: flex;
 
     & .jp-play {
@@ -42,7 +58,7 @@
       background-repeat: no-repeat;
       background-image: url('/assets/img/res-btn-player-play-normal.svg');
     }
-    & .jp-stop{
+    & .jp-pause {
       width: 16px;
       height: 22px;
 
@@ -50,10 +66,35 @@
       background-image: url('/assets/img/res-btn-player-pause-normal.svg');
     }
   }
-
+  & .jp-time-holder {
+    color: $info-dialog-text-background;
+    width: 50px;
+  }
+  & .sticky-current {
+    height: $nav-size;
+    width: 655px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: right;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  & .jp-progress {
+    flex-grow: 1;
+    height: 5px;
+    padding: 0 $padding-wide 0 $padding-wide;
+    & .jp-seek-bar {
+      height: 5px;
+      background-color: $primary-text-color;
+      border-radius: 3px;
+    }
+    & .jp-play-bar {
+      height: 5px;
+      background-color: $accent-color;
+      border-radius: 3px;
+    }
+  }
 }
 
-.jp-progress {
-  flex-grow: 1;
-
-}
