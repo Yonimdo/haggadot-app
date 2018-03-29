@@ -1,6 +1,5 @@
 @import "../../sass/vars";
 
-
 #jp_container_1, .jp-interface {
   //@include box-shadow();
   background-color: $primary-color-dark !important;
@@ -15,8 +14,46 @@
   display: flex;
   align-items: center;
   align-content: space-between;
+  & .jp-volume-controls {
+    display: flex;
+    & .jp-volume-max {
+      width: 24px;
+      height: 22px;
+      background-repeat: no-repeat;
+      //background-image: url('');
+    }
+    & .jp-mute{
+      width: 30px;
+      height: 24px;
+
+      background-repeat: no-repeat;
+      background-image: url('/assets/img/res-btn-player-mute-normal.svg');
+    }
+  }
+  & .jp-title{
+    color: #FBF9ED;
+  }
+  & .jp-controls{
+    display: flex;
+
+    & .jp-play {
+      width: 16px;
+      height: 22px;
+      background-repeat: no-repeat;
+      background-image: url('/assets/img/res-btn-player-play-normal.svg');
+    }
+    & .jp-stop{
+      width: 16px;
+      height: 22px;
+
+      background-repeat: no-repeat;
+      background-image: url('/assets/img/res-btn-player-pause-normal.svg');
+    }
+  }
+
 }
-.jp-progress{
+
+.jp-progress {
   flex-grow: 1;
 
 }

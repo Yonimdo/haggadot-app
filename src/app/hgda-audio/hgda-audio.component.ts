@@ -13,25 +13,4 @@ export class HgdaAudioComponent {
   constructor(private pageService: HgdaPageService) {
   }
 
-
-  changeTrack(): void {
-    if (!this.pageService.page) {
-      return;
-    }
-    if (!!this.pageService.track) {
-      const url = this.pageService.track.audio_url;
-      $('#jquery_jplayer_1').jPlayer({
-        ready: function () {
-          $(this).jPlayer('setMedia', {
-            mp3: url
-          });
-        },
-        swfPath: '/js',
-        supplied:
-          'mp3'
-      });
-    }
-
-  }
-
 }

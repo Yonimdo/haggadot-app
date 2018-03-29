@@ -2,6 +2,7 @@ import {hasOwnProperty} from 'tslint/lib/utils';
 
 declare var diva: any;
 declare var $: any;
+declare var jPlayerPlaylist: any;
 
 import {Component, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
 import {HgdaPageService} from '../hgda-page.service';
@@ -61,19 +62,20 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
         regions.push({
           'width': 300,
           'height': 300,
-          'ulx': a.x,
-          'uly': a.y,
-          'classes': a.hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
-          'attrs': a.hasOwnProperty('audio_url') ? {
-            'data-toggle': 'modal',
-            'data-target': '#hgda-audio-model'
+          'ulx': a[0].x,
+          'uly': a[0].y,
+          'classes': a[0].hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
+          'attrs': a[0].hasOwnProperty('audio_url') ? {
+            'click': () => {
+              this.playPlaylist(a);
+            }
           } : {
             'data-toggle': 'modal',
             'data-target': '#hgda-info-model',
             'click': () => {
-                  $('#info-img').attr('src', a.src);
-                  $('#info-title').html(a.title);
-                  $('#info-text').html(a.content);
+              $('#info-img').attr('src', a[0].src);
+              $('#info-title').html(a[0].title);
+              $('#info-text').html(a[0].content);
             }
           },
           'divID': `page${n.ordinal - 1}-highlight-${index}`
@@ -82,6 +84,23 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
       this.iiif_viewer_data.highlightOnPage(n.ordinal, regions, '#ffffff', 'highlight-page');
     });
 // Apply the highlight to the first page
+  }
+
+  playPlaylist(playlist): void {
+    const myPlaylist = new jPlayerPlaylist({
+      jPlayer: '#jquery_jplayer_1',
+      cssSelectorAncestor: '#jp_container_1'
+    }, playlist , {
+      playlistOptions: {
+        enableRemoveControls: true
+      },
+      swfPath: '/js',
+      supplied: 'ogv, m4v, oga, mp3',
+      smoothPlayBar: true,
+      keyEnabled: true,
+      audioFullScreen: true // Allows the audio poster to go full screen via keyboard
+    });
+
   }
 
   ngOnInit() {

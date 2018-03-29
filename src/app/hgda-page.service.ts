@@ -47,22 +47,44 @@ export class HgdaPageService implements OnInit, OnChanges {
       this.chapters = bookmarks;
 
 
-      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+      const annotations = this.book.pages.filter(n => n.annotations.length !== 0);
       this.tracks.map(t => {
         t.x = 500;
         t.y = 2000;
+        t[t.audio_url.split('.').pop()] = t.audio_url;
         const pages = this.getChaptersPages(t.bookmarks.map(b => this.getChapter(b)));
         if (!!pages) {
           pages.map(p => {
-            const anno = this.annotations.find(annoP => annoP.ordinal === p.ordinal);
+            const anno = annotations.find(annoP => annoP.ordinal === p.ordinal);
             if (!!anno) {
               anno.annotations.push(t);
             } else {
               p.annotations = [t];
-              this.annotations.push(p);
+              annotations.push(p);
             }
           });
         }
+      });
+
+      this.annotations = [];
+      annotations.map(p => {
+        const page_anno = [];
+        p.annotations.map(a => {
+          if (a.hasOwnProperty('audio_url')) {
+            const playlist = !!page_anno[1] ? page_anno[1] : [];
+            playlist.push(a);
+            page_anno[1] = playlist;
+          } else {
+            const infolist = !!page_anno[0] ? page_anno[0] : [];
+            infolist.push(a);
+            page_anno[0] = infolist;
+          }
+        });
+        this.annotations.push({
+          'ordinal': p.ordinal,
+          'rows': p.rows,
+          'annotations': page_anno
+        });
       });
       this.page = this.book.pages[this.book.start_page];
       this.pageChanged.emit(this.page);

@@ -25,6 +25,7 @@ html, body {
 .diva-fullscreen-tools {
   background-color: transparent;
   border: 0;
+  bottom: $control-padding-screen-bottom;
 }
 
 #diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title, .diva-zoom-label, .diva-goto-form {
