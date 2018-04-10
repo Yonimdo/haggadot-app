@@ -1,6 +1,7 @@
 @import "../../sass/vars";
 
 #jp_container_1 {
+  z-index: 102;
   background-color: transparent !important;
   min-height: $nav-size !important;
   display: flex;
@@ -20,6 +21,8 @@
 
   }
   & .jp-interface {
+    padding: 0;
+    margin: 0;
     //@include box-shadow();
     background-color: $player-background-color !important;
     opacity: 0.96 !important;
@@ -29,12 +32,12 @@
     width: 100% !important;
     margin: 0 !important;
     z-index: 5 !important;
-    height: $nav-size !important;
+    height: $player-size !important;
     display: flex;
     align-items: center;
     align-content: space-between;
     & .devider {
-      height: $nav-size;
+      height:  $player-size;
       width: 2px;
       background-color: $primary-color;
       margin: 0 $padding-wide 0 $padding-wide;
@@ -65,7 +68,7 @@
       }
     }
     & .jp-title {
-      color: #FBF9ED;
+      color: $accent-color;
     }
     & .jp-controls {
       display: flex;

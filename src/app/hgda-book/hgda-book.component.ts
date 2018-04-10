@@ -66,7 +66,23 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
           'uly': a[0].y,
           'classes': a[0].hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
           'attrs': a[0].hasOwnProperty('audio_url') ? {
-            'click': () => {
+            'click': (box) => {
+              const el = $(box);
+              if (el.hasClass('selected')) {
+                el.removeClass('selected');
+                el.html('');
+              } else {
+                el.addClass('selected');
+                el.html(`<div class="jumbotron track-jumbotron">
+                  <h4 class="">הכותרת של השיר<small>[00:00]</small></h4>
+                  <p>ביצוע: שם האומן</p>
+                  <p>שפות:<span>שפה</span>  </p>
+                  <div class="flex-row"><p>מקום:<span>שם המקום</span></p><p>שנה:<span>שנת יציאה </span></p></div>
+                  <p>קרדיט:<span>קרדיט</span></p>
+                  <p class="summary"><span>תיאור כללי ב</span></p>
+              </div>`);
+              }
+
               this.playPlaylist(a);
             }
           } : {
@@ -90,7 +106,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     const myPlaylist = new jPlayerPlaylist({
       jPlayer: '#jquery_jplayer_1',
       cssSelectorAncestor: '#jp_container_1'
-    }, playlist , {
+    }, playlist, {
       playlistOptions: {
         enableRemoveControls: true
       },

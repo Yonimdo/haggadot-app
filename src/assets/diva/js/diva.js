@@ -12028,10 +12028,10 @@
 
         var j = regions.length;
         while (j--) {
-          var region = regions[j];
+          let region = regions[j];
 
           // FIXME: Use CSS class instead of inline style
-          var box = elt('div', {
+          let box = elt('div', {
             class: divClass + (region.hasOwnProperty("classes") ? " " + region.classes : ""),
             style: {
               background: colour,
@@ -12043,7 +12043,9 @@
           if (region.hasOwnProperty("attrs")) {
             for (let attr in region.attrs) {
               if (typeof region.attrs[attr] === 'function') {
-                box.addEventListener("click", region.attrs[attr])
+                box.addEventListener(attr, function(){
+                  region.attrs[attr](box);
+                })
               } else {
                 box.setAttribute(attr, region.attrs[attr])
 

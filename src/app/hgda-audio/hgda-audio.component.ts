@@ -13,4 +13,7 @@ export class HgdaAudioComponent {
   constructor(private pageService: HgdaPageService) {
   }
 
+  togglePlaylist() {
+    $('.jp-playlist').slideToggle();
+  }
 }

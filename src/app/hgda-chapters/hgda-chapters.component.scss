@@ -17,20 +17,23 @@ div {
   width: 100%;
   height: $chapter-height-closed !important;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+
   align-items: center;
   background-color: $primary-color;
   & img {
     position: absolute;
-    right: 30px;
+    right: 10px;
+    border: 1dp
   }
   & img.selected {
     position: absolute;
     right: 60px;
   }
   & p {
+    position: absolute;
+    right: 60px;
     color: $accent-btn-color;
-    padding-right: $padding-wide;
     display: inline-block;
     font-weight: 700;
     width: 70%;
