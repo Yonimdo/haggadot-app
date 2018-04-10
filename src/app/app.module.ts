@@ -15,8 +15,6 @@ import { HgdaCommentaryComponent } from './hgda-commentary/hgda-commentary.compo
 import { HgdaAudioComponent } from './hgda-audio/hgda-audio.component';
 import { HgdaTextFilterPipe } from './hgda-text-filter.pipe';
 import { HgdaInfoDialogComponent } from './hgda-info-dialog/hgda-info-dialog.component';
-import { HgdaTrackInfoComponent } from './hgda-track-info/hgda-track-info.component';
-
 
 @NgModule({
   declarations: [
