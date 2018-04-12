@@ -2,7 +2,6 @@ import {hasOwnProperty} from 'tslint/lib/utils';
 
 declare var diva: any;
 declare var $: any;
-declare var jPlayerPlaylist: any;
 
 import {Component, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
 import {HgdaPageService} from '../hgda-page.service';
@@ -72,18 +71,19 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
                 el.removeClass('selected');
                 el.html('');
               } else {
+                this.playPlaylist(a);
                 el.addClass('selected');
                 el.html(`<div class="jumbotron track-jumbotron">
-                  <h4 class="">הכותרת של השיר<small>[00:00]</small></h4>
-                  <p>ביצוע: שם האומן</p>
-                  <p>שפות:<span>שפה</span>  </p>
-                  <div class="flex-row"><p>מקום:<span>שם המקום</span></p><p>שנה:<span>שנת יציאה </span></p></div>
-                  <p>קרדיט:<span>קרדיט</span></p>
-                  <p class="summary"><span>תיאור כללי ב</span></p>
+                  <h4 class=""><span id="static-track-title">הכותרת של השיר</span>
+                  <small>[<span id="static-track-time">00:00</span>]</small></h4>
+                  <p>ביצוע:<span id="static-track-author" >שם האומן</span></p>
+                  <p>שפות:<span id="static-track-language" >שפה</span></p>
+                  <div class="flex-row"><p >מקום:<span id="static-track-location">שם המקום</span>
+                  </p><p>שנה:<span id="static-track-year" >שנת יציאה </span></p></div>
+                  <p >קרדיט:<span id="static-track-credit">קרדיט</span></p>
+                  <p class="summary"><span id="static-track-summary" >תיאור כללי ב</span></p>
               </div>`);
               }
-
-              this.playPlaylist(a);
             }
           } : {
             'data-toggle': 'modal',
@@ -103,20 +103,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
   }
 
   playPlaylist(playlist): void {
-    const myPlaylist = new jPlayerPlaylist({
-      jPlayer: '#jquery_jplayer_1',
-      cssSelectorAncestor: '#jp_container_1'
-    }, playlist, {
-      playlistOptions: {
-        enableRemoveControls: true
-      },
-      swfPath: '/js',
-      supplied: 'ogv, m4v, oga, mp3',
-      smoothPlayBar: true,
-      keyEnabled: true,
-      audioFullScreen: true // Allows the audio poster to go full screen via keyboard
-    });
-
+    this.pageService.setPlaylist(playlist);
   }
 
   ngOnInit() {

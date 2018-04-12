@@ -2948,22 +2948,29 @@
           var switchMode = function () {
             var toolsRightElement = document.getElementById(settings.ID + 'tools-right');
             var pageNavElement = document.getElementById(settings.ID + 'page-nav');
-
             if (!settings.inFullscreen) {
               // Leaving fullscreen
               $(tools).removeClass('diva-fullscreen-tools');
 
               //move ID-page-nav to beginning of tools right
-              toolsRightElement.removeChild(pageNavElement);
-              toolsRightElement.insertBefore(pageNavElement, toolsRightElement.firstChild);
+              if (!!pageNavElement) {
+                toolsRightElement.removeChild(pageNavElement);
+                toolsRightElement.insertBefore(pageNavElement, toolsRightElement.firstChild);
+              }else{
+                console.log("pageNavElement is null");
+              }
             }
             else {
               // Entering fullscreen
               $(tools).addClass('diva-fullscreen-tools');
 
               //move ID-page-nav to end of tools right
-              toolsRightElement.removeChild(pageNavElement);
-              toolsRightElement.appendChild(pageNavElement);
+              if (!!pageNavElement) {
+                toolsRightElement.removeChild(pageNavElement);
+                toolsRightElement.appendChild(pageNavElement);
+              }else{
+                console.log("pageNavElement is null")
+              }
             }
           };
 
@@ -12043,7 +12050,7 @@
           if (region.hasOwnProperty("attrs")) {
             for (let attr in region.attrs) {
               if (typeof region.attrs[attr] === 'function') {
-                box.addEventListener(attr, function(){
+                box.addEventListener(attr, function () {
                   region.attrs[attr](box);
                 })
               } else {

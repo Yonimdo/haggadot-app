@@ -12,7 +12,7 @@
     width: 100%;
   }
   & .jp-playlist {
-    display: flex !important;
+    display: flex;
     flex-flow: column !important;
     position: fixed !important;
     bottom: $nav-size !important;

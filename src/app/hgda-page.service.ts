@@ -10,6 +10,7 @@ export class HgdaPageService implements OnInit, OnChanges {
   @Input() bookId: any = 'PNX_MANUSCRIPTS000041667';
   pageChanged: EventEmitter<any> = new EventEmitter();
   annotationLoaded: EventEmitter<any> = new EventEmitter();
+  playlistChanged: EventEmitter<any> = new EventEmitter();
   book: any;
   page: any;
   track: any;
@@ -19,6 +20,7 @@ export class HgdaPageService implements OnInit, OnChanges {
   tracks: any;
   books: any;
   annotations: any;
+  private mplaylist: any;
 
   getBookUrl(id) {
     return `http://iiif.nli.org.il/IIIFv21/DOCID/${id}/manifest/`;
@@ -162,4 +164,12 @@ export class HgdaPageService implements OnInit, OnChanges {
     return this.annotationLoaded;
   }
 
+  setPlaylist(playlist: any) {
+    this.mplaylist = playlist;
+    this.playlistChanged.emit(this.mplaylist);
+  }
+
+  changeTrack(track: any) {
+    this.track = track;
+  }
 }
