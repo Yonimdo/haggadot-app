@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="100px" height="41px" viewBox="0 0 100 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
     <title>img/general/nav_down/normal</title>
     <desc>Created with Sketch.</desc>
     <defs>
@@ -11,12 +11,10 @@
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
-    <g id="Symboles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="img/general/nav_down/normal">
-            <g id="Fill-1">
-                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                <use fill="#384C62" fill-rule="evenodd" xlink:href="#path-1"></use>
-            </g>
+    <g id="img/general/nav_down/normal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fill-1">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#384C62" fill-rule="evenodd" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>

@@ -16,7 +16,7 @@ export class HgdaChaptersComponent implements OnInit {
 
   open: String = 'is-active';
 
-  constructor(private pageService: HgdaPageService) {
+  constructor(public pageService: HgdaPageService) {
   }
 
   ngOnInit() {

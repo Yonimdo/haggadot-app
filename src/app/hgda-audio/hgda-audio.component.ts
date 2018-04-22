@@ -10,7 +10,7 @@ import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core'
 })
 export class HgdaAudioComponent {
 
-  constructor(private pageService: HgdaPageService) {
+  constructor(public pageService: HgdaPageService) {
   }
 
 

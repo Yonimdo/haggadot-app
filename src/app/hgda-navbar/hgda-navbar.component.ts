@@ -11,7 +11,7 @@ export class HgdaNavbarComponent implements OnInit {
   @Output() openRight = new EventEmitter();
   @Input() page: any;
 
-  constructor(private pageService: HgdaPageService) {
+  constructor(public pageService: HgdaPageService) {
   }
 
   ngOnInit() {
