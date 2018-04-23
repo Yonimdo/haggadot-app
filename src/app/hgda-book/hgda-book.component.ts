@@ -61,15 +61,38 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
         regions.push({
           'width': 300,
           'height': 300,
-          'ulx': a.x,
-          'uly': a.y,
-          'classes': a.hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
-          'attrs': a.hasOwnProperty('audio_url') ? {
-            'data-toggle': 'modal',
-            'data-target': '#hgda-audio-model'
+          'ulx': a[0].x,
+          'uly': a[0].y,
+          'classes': a[0].hasOwnProperty('audio_url') ? 'highlight-audio' : 'highlight-info',
+          'attrs': a[0].hasOwnProperty('audio_url') ? {
+            'click': (box) => {
+              const el = $(box);
+              if (el.hasClass('selected')) {
+                el.removeClass('selected');
+                el.html('');
+              } else {
+                this.playPlaylist(a);
+                el.addClass('selected');
+                el.html(`<div class="jumbotron track-jumbotron">
+                  <h4 class=""><span id="static-track-title">הכותרת של השיר</span>
+                  <small>[<span id="static-track-time">00:00</span>]</small></h4>
+                  <p>ביצוע:<span id="static-track-author" >שם האומן</span></p>
+                  <p>שפות:<span id="static-track-language" >שפה</span></p>
+                  <div class="flex-row"><p >מקום:<span id="static-track-location">שם המקום</span>
+                  </p><p>שנה:<span id="static-track-year" >שנת יציאה </span></p></div>
+                  <p >קרדיט:<span id="static-track-credit">קרדיט</span></p>
+                  <p class="summary"><span id="static-track-summary" >תיאור כללי ב</span></p>
+              </div>`);
+              }
+            }
           } : {
             'data-toggle': 'modal',
-            'data-target': '#hgda-info-model'
+            'data-target': '#hgda-info-model',
+            'click': () => {
+              $('#info-img').attr('src', a[0].src);
+              $('#info-title').html(a[0].title);
+              $('#info-text').html(a[0].content);
+            }
           },
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
@@ -77,6 +100,10 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
       this.iiif_viewer_data.highlightOnPage(n.ordinal, regions, '#ffffff', 'highlight-page');
     });
 // Apply the highlight to the first page
+  }
+
+  playPlaylist(playlist): void {
+    this.pageService.setPlaylist(playlist);
   }
 
   ngOnInit() {

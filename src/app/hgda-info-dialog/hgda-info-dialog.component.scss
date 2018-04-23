@@ -1,0 +1,68 @@
+@import "../../sass/vars";
+
+.hgda-info-model {
+  margin: auto;
+  left: -580px;
+  padding-top: $nav-size;
+  & .close {
+    z-index: 1020;
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 80px;
+    height: 80px;
+    background-image: url('/assets/img/res-btn-info-close-normal.svg');
+    background-repeat: no-repeat;
+  }
+  & .hgda-info-container {
+    width: $info-dialog-width;
+    height: $info-dialog-height;
+    display: flex;
+    flex-flow: row;
+    & .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $info-dialog-height;
+      width: $info-dialog-image-width;
+      @include base-background()
+    }
+    & .text-container {
+      padding: $padding-wide 0 0 0;
+      height: $info-dialog-height;
+      width: $info-dialog-text-width;
+      background-color: $info-dialog-text-background;
+      display: flex;
+      flex-flow: column;
+      align-content: stretch;
+      & .info-text-container {
+        overflow-y: auto;
+        direction: rtl;
+
+      }
+      & p, h2 {
+        text-align: right;
+      }
+      & h2 {
+        color: $primary-color;
+        font-weight: bold;
+        padding: $padding-small;
+      }
+      & h2:after {
+        content: "▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪";
+        color: $primary-btn-color;
+        font-size: 1rem;
+        display: block;
+        letter-spacing: 3px;
+        line-height: 10px;
+        text-indent: 1rem;
+      }
+    }
+  }
+  & .modal-body, .modal-content {
+    padding: 0;
+    width: $info-dialog-width !important;
+    height: $info-dialog-height;
+  }
+}
+

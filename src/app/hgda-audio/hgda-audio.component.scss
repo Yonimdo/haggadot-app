@@ -1,22 +1,122 @@
 @import "../../sass/vars";
 
-
-#jp_container_1, .jp-interface {
-  //@include box-shadow();
-  background-color: $primary-color-dark !important;
-  opacity: 0.96 !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  margin: 0 !important;
-  z-index: 5 !important;
-  height: $nav-size !important;
+#jp_container_1 {
+  z-index: 102;
+  background-color: transparent !important;
+  min-height: $nav-size !important;
   display: flex;
-  align-items: center;
-  align-content: space-between;
-}
-.jp-progress{
-  flex-grow: 1;
+  flex-flow: column;
+  position: fixed !important;
+  & li {
+    display: flex !important;
+    width: 100%;
+  }
+  & .jp-playlist {
+    display: flex;
+    flex-flow: column !important;
+    position: fixed !important;
+    bottom: $nav-size !important;
+    left: 0 !important;
+    width: 100%;
+
+  }
+  & .jp-interface {
+    padding: 0;
+    margin: 0;
+    //@include box-shadow();
+    background-color: $player-background-color !important;
+    opacity: 0.96 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    z-index: 5 !important;
+    height: $player-size !important;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    & .devider {
+      height:  $player-size;
+      width: 2px;
+      background-color: $primary-color;
+      margin: 0 $padding-wide 0 $padding-wide;
+
+    }
+    & .jp-volume-controls {
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 $padding-wide;
+      & .jp-volume-max {
+        width: 24px;
+        height: 22px;
+        background-repeat: no-repeat;
+        //background-image: url('');
+      }
+      & .jp-mute {
+        width: 30px;
+        height: 24px;
+
+        background-repeat: no-repeat;
+        background-image: url('/assets/img/res-btn-player-mute-normal.svg');
+      }
+      & .jp-volume-bar {
+        height: 5px;
+        width: 112px;
+        border-radius: 3px;
+        background-color: $accent-color;
+      }
+    }
+    & .jp-title {
+      color: $accent-color;
+    }
+    & .jp-controls {
+      display: flex;
+
+      & .jp-play {
+        width: 16px;
+        height: 22px;
+        background-repeat: no-repeat;
+        background-image: url('/assets/img/res-btn-player-play-normal.svg');
+      }
+      & .jp-pause {
+        width: 16px;
+        height: 22px;
+
+        background-repeat: no-repeat;
+        background-image: url('/assets/img/res-btn-player-pause-normal.svg');
+      }
+    }
+    & .jp-time-holder {
+      color: $info-dialog-text-background;
+      width: 50px;
+    }
+    & .sticky-current {
+      height: $nav-size;
+      width: 655px;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: right;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    & .jp-progress {
+      flex-grow: 1;
+      height: 5px;
+      padding: 0 $padding-wide 0 $padding-wide;
+      & .jp-seek-bar {
+        height: 5px;
+        background-color: $primary-text-color;
+        border-radius: 3px;
+      }
+      & .jp-play-bar {
+        height: 5px;
+        background-color: $accent-color;
+        border-radius: 3px;
+      }
+    }
+  }
 
 }

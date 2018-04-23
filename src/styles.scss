@@ -13,9 +13,7 @@ html, body {
 
 .diva-outer, .diva-wrapper {
   height: 100% !important;
-  background-color: $primary-back-dark;
-  background-image: url("/assets/img/res-img-general-background-pattern.png");
-  background-repeat: repeat;
+  @include base-background()
 }
 
 .diva-viewport {
@@ -27,6 +25,7 @@ html, body {
 .diva-fullscreen-tools {
   background-color: transparent;
   border: 0;
+  bottom: $control-padding-screen-bottom;
 }
 
 #diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title, .diva-zoom-label, .diva-goto-form {
@@ -39,38 +38,41 @@ html, body {
   display: inline-block !important;
 }
 
-
 .diva-button {
   width: $info-height-closed;
-  height:$info-height-closed;
+  height: $info-height-closed;
   border-radius: 2px;
   margin: 3px;
+  border: none;
   background-position: center;
   background-color: rgba(56, 76, 98, 0.8) !important;
 }
 
-
-#diva-1-print-icon{
+#diva-1-print-icon {
   background-image: url("/assets/img/res-btn-tools-print-normal.svg");
   width: 170px;
 }
-#diva-1-link-icon{
+
+#diva-1-link-icon {
   background-image: url("/assets/img/res-btn-tools-share-normal.svg");
 
 }
-#diva-1-dwn-icon{
+
+#diva-1-dwn-icon {
   background-image: url("/assets/img/res-btn-tools-share-normal.svg");
 
 }
-#diva-1-zoom-out-button{
+
+#diva-1-zoom-out-button {
   background-image: url("/assets/img/res-btn-tools-zoomout-normal.svg");
 
 }
-#diva-1-zoom-in-button{
+
+#diva-1-zoom-in-button {
   background-image: url("/assets/img/res-btn-tools-zoomin-normal.svg");
 }
 
-.highlight-page{
+.highlight-page {
   width: 80px !important;
   height: 80px !important;
   background-color: transparent !important;
@@ -78,19 +80,121 @@ html, body {
   background-repeat: no-repeat !important;
   cursor: pointer;
   z-index: 1005;
+  overflow: visible;
 }
 
 .highlight-audio {
-  background-image: url("/assets/img/res-btn-hagada-Music-normal.svg") !important;
-  &:hover{
-    background-image: url("/assets/img/res-btn-hagada-Music-hover.svg") !important;
+  direction: rtl;
+  &.selected{
+    &:before {
+      width: 80px !important;
+      height: 80px !important;
+      content: url("/assets/img/res-btn-info-close-normal.svg") !important;
+    }
+    &:hover:before{
+      content: url("/assets/img/res-btn-info-close-selected.svg") !important;
+    }
+  }
+  &:before {
+    width: 80px !important;
+    height: 80px !important;
+    content: url("/assets/img/res-btn-hagada-Music-normal.svg") !important;
+  }
+  &:hover:before{
+    content: url("/assets/img/res-btn-hagada-Music-hover.svg") !important;
   }
 }
 
 .highlight-info {
   background-image: url("/assets/img/res-btn-hagada-info-normal.svg") !important;
-  &:hover{
+  &:hover {
     background-image: url("/assets/img/res-btn-hagada-info-hover.svg") !important;
   }
 }
 
+.jp-playlist {
+  z-index: 102;
+  & div, li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $player-playlist-size !important;
+  }
+  & li {
+    background-color: $player-background-color;
+    & a.jp-playlist-item {
+      display: flex;
+      line-height: $player-playlist-size;
+      height: $player-playlist-size;
+      font-size: 20px;
+      color: $accent-color;
+      &:after {
+        margin-left: $padding-wide;
+        padding-left: $padding-small;
+        height: $player-playlist-size;
+        border-left: 2px solid $primary-color;
+        content: url(/assets/img/res-btn-music-Playlist-normal.svg);
+      }
+    }
+  }
+
+}
+
+.track-jumbotron {
+  direction: rtl;
+  margin: -40px 40px;
+  width: 314px !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: $padding-wide;
+  flex-flow: column;
+  border-radius: 3px;
+  background-color: rgba(251, 249, 237, 0.9);
+  box-shadow: 6px 2px 6px 0 rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  & h4 {
+    font-weight: bolder;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+  }
+  & h4 + p {
+    padding-bottom: $padding-medium;
+    font-weight: bolder;
+  }
+  & span {
+    font-weight: normal;
+  }
+  & p {
+    margin: 0;
+    padding-left: $padding-small;
+    line-height: 1;
+  }
+  & .flex-row {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    & p {
+      display: inline;
+    }
+  }
+  & .summary {
+    & span {
+    }
+    font-weight: normal;
+    &:after {
+      display: inline-block;
+      content: "{";
+      transform: rotate(180deg);
+    }
+    &:before {
+      display: inline-block;
+      content: "}";
+      transform: rotate(180deg);
+    }
+  }
+
+}

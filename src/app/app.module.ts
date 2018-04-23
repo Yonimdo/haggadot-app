@@ -16,7 +16,6 @@ import { HgdaAudioComponent } from './hgda-audio/hgda-audio.component';
 import { HgdaTextFilterPipe } from './hgda-text-filter.pipe';
 import { HgdaInfoDialogComponent } from './hgda-info-dialog/hgda-info-dialog.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -2948,22 +2948,29 @@
           var switchMode = function () {
             var toolsRightElement = document.getElementById(settings.ID + 'tools-right');
             var pageNavElement = document.getElementById(settings.ID + 'page-nav');
-
             if (!settings.inFullscreen) {
               // Leaving fullscreen
               $(tools).removeClass('diva-fullscreen-tools');
 
               //move ID-page-nav to beginning of tools right
-              toolsRightElement.removeChild(pageNavElement);
-              toolsRightElement.insertBefore(pageNavElement, toolsRightElement.firstChild);
+              if (!!pageNavElement) {
+                toolsRightElement.removeChild(pageNavElement);
+                toolsRightElement.insertBefore(pageNavElement, toolsRightElement.firstChild);
+              }else{
+                console.log("pageNavElement is null");
+              }
             }
             else {
               // Entering fullscreen
               $(tools).addClass('diva-fullscreen-tools');
 
               //move ID-page-nav to end of tools right
-              toolsRightElement.removeChild(pageNavElement);
-              toolsRightElement.appendChild(pageNavElement);
+              if (!!pageNavElement) {
+                toolsRightElement.removeChild(pageNavElement);
+                toolsRightElement.appendChild(pageNavElement);
+              }else{
+                console.log("pageNavElement is null")
+              }
             }
           };
 
@@ -12028,10 +12035,10 @@
 
         var j = regions.length;
         while (j--) {
-          var region = regions[j];
+          let region = regions[j];
 
           // FIXME: Use CSS class instead of inline style
-          var box = elt('div', {
+          let box = elt('div', {
             class: divClass + (region.hasOwnProperty("classes") ? " " + region.classes : ""),
             style: {
               background: colour,
@@ -12040,9 +12047,16 @@
               zIndex: 100
             }
           });
-          if (region.hasOwnProperty("attrs")){
+          if (region.hasOwnProperty("attrs")) {
             for (let attr in region.attrs) {
-              box.setAttribute(attr, region.attrs[attr])
+              if (typeof region.attrs[attr] === 'function') {
+                box.addEventListener(attr, function () {
+                  region.attrs[attr](box);
+                })
+              } else {
+                box.setAttribute(attr, region.attrs[attr])
+
+              }
             }
           }
           if (region.divID !== undefined) {
