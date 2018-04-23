@@ -29,11 +29,11 @@ export class HgdaPageService implements OnInit, OnChanges {
   constructor(private http: Http) {
 
     Promise.all([
-      fetch('/assets/bookmarks.json').then(n => n.json()),
-      fetch('/assets/chapters.json').then(n => n.json()),
-      fetch('/assets/rows.json').then(n => n.json()),
-      fetch('/assets/tracks.json').then(n => n.json()),
-      fetch('/assets/books.json').then(n => n.json()),
+      fetch('assets/bookmarks.json').then(n => n.json()),
+      fetch('assets/chapters.json').then(n => n.json()),
+      fetch('assets/rows.json').then(n => n.json()),
+      fetch('assets/tracks.json').then(n => n.json()),
+      fetch('assets/books.json').then(n => n.json()),
       fetch(`http://iiif.nli.org.il/IIIFv21/DOCID/${this.bookId}/manifest/`).then(n => n.json()),
     ]).then(c => {
       const bookmarks = c[0], imgs = c[1];
