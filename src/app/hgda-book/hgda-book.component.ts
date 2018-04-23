@@ -20,7 +20,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
 
   selectObject: any;
 
-  constructor(private pageService: HgdaPageService, public fullpageService: MnFullpageService, public window: WindowRef) {
+  constructor(public pageService: HgdaPageService, public fullpageService: MnFullpageService, public window: WindowRef) {
   }
 
   setDiva() {

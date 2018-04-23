@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="170px" height="40px" viewBox="0 0 170 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>btn/tools/print/selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="btn/tools/print/selected" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FBF9ED" x="0" y="0" width="170" height="40" rx="3"></rect>
+        <text id="הגדה-להדפסה" font-family="Assistant-SemiBold, Assistant" font-size="20" font-weight="500" fill="#FA7F8E">
+            <tspan x="8" y="27">הגדה להדפסה</tspan>
+        </text>
+        <path d="M134.625,9 C132.623094,9 131,10.2122831 131,11.7075 L131,25.9218749 C131,27.4170917 132.708281,28.1643617 134.625,28.6293749 L144.59375,30.6599998 L144.59375,11.030625 C140.051625,10.120905 134.625,9 134.625,9 L134.625,9 Z M156.386803,9 C156.386803,9 151.158507,10.0789387 146.40625,11.030625 L146.450512,11.030625 L146.450512,30.6599998 C151.524343,29.6453642 156.386803,28.6293749 156.386803,28.6293749 C158.241276,28.2699542 160,27.4170917 160,25.9218749 L160,11.7075 C160,10.2122831 158.382191,9 156.386803,9 L156.386803,9 Z" id="Fill-215" fill="#FA7F8E"></path>
+    </g>
+</svg>

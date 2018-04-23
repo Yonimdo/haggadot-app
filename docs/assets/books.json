@@ -1,0 +1,1784 @@
+[
+  {
+    "id": 2,
+    "doc_id": "PNX_MANUSCRIPTS000041667-2",
+    "summary": null,
+    "num_pages": 101,
+    "start_page": 3,
+    "end_page": 101,
+    "pages": [
+      {
+        "ordinal": 1,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 2,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 3,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 4,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 5,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 6,
+        "rows": [
+          2
+        ],
+        "annotations": [
+          {
+            "id": 7,
+            "x": 42.7,
+            "y": 29.6,
+            "content": "<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 7,
+        "rows": [
+          29,
+          31,
+          32
+        ],
+        "annotations": [
+          {
+            "id": 7,
+            "x": 42.7,
+            "y": 29.6,
+            "content": "<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 8,
+        "rows": [
+          32,
+          34,
+          35
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 9,
+        "rows": [
+          35
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 10,
+        "rows": [
+          35,
+          37
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 11,
+        "rows": [
+          37,
+          38
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 12,
+        "rows": [
+          38,
+          40,
+          41
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 13,
+        "rows": [
+          41,
+          42
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 14,
+        "rows": [
+          42,
+          43
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 15,
+        "rows": [
+          44
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 16,
+        "rows": [
+          44,
+          46,
+          48,
+          49
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 17,
+        "rows": [
+          49,
+          50
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 18,
+        "rows": [
+          50,
+          51,
+          52
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 19,
+        "rows": [
+          52,
+          54,
+          55
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 20,
+        "rows": [
+          55,
+          56
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 21,
+        "rows": [
+          56,
+          57,
+          58
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 22,
+        "rows": [
+          58,
+          59
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 23,
+        "rows": [
+          59,
+          60
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 24,
+        "rows": [
+          61,
+          62
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 25,
+        "rows": [
+          62,
+          63,
+          64,
+          65,
+          66
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 26,
+        "rows": [
+          66,
+          67,
+          68
+        ],
+        "annotations": [
+          {
+            "id": 15,
+            "x": 62.3,
+            "y": 73.0,
+            "content": "<p>asdasda</p>"
+          },
+          {
+            "id": 12,
+            "x": 0.0,
+            "y": 47.4,
+            "content": "<p>asdasdasdad</p>"
+          },
+          {
+            "id": 16,
+            "x": 100.0,
+            "y": 4.5,
+            "content": "<p>afadsfasf</p>"
+          },
+          {
+            "id": 13,
+            "x": 77.5,
+            "y": 33.3,
+            "content": "<p>asdsad</p>"
+          },
+          {
+            "id": 14,
+            "x": 31.9,
+            "y": 16.8,
+            "content": "<p>dasdasd</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 27,
+        "rows": [
+          68,
+          69
+        ],
+        "annotations": [
+          {
+            "id": 10,
+            "x": 20.5,
+            "y": 30.0,
+            "content": "<p>asdsada</p>"
+          },
+          {
+            "id": 11,
+            "x": 69.5,
+            "y": 38.9,
+            "content": "<p>asdasdsa</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 28,
+        "rows": [
+          71,
+          72
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 29,
+        "rows": [
+          72,
+          73
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 30,
+        "rows": [
+          75,
+          76
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 31,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 32,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 33,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 34,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 35,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 36,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 37,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 38,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 39,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 40,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 41,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 42,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 43,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 44,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 45,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 46,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 47,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 48,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 49,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 50,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 51,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 52,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 53,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 54,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 55,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 56,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 57,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 58,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 59,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 60,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 61,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 62,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 63,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 64,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 65,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 66,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 67,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 68,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 69,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 70,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 71,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 72,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 73,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 74,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 75,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 76,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 77,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 78,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 79,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 80,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 81,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 82,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 83,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 84,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 85,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 86,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 87,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 88,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 89,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 90,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 91,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 92,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 93,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 94,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 95,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 96,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 97,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 98,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 99,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 100,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 101,
+        "rows": [],
+        "annotations": []
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "doc_id": "PNX_MANUSCRIPTS000041407",
+    "summary": "\u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \r\n\r\n\u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \r\n\u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \r\n\r\n\r\n\u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.  \u05d1\u05d0\u05de\u05ea \u05d4\u05d2\u05d3\u05d4 \u05d9\u05e4\u05d4.",
+    "num_pages": 41,
+    "start_page": 3,
+    "end_page": 41,
+    "pages": [
+      {
+        "ordinal": 1,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 2,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 3,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 4,
+        "rows": [
+          2,
+          3
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 5,
+        "rows": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 6,
+        "rows": [
+          16,
+          17,
+          19,
+          20,
+          21,
+          23,
+          24
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 7,
+        "rows": [
+          27,
+          28,
+          29,
+          31,
+          32,
+          34,
+          35
+        ],
+        "annotations": [
+          {
+            "id": 7,
+            "x": 42.7,
+            "y": 29.6,
+            "content": "<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 8,
+        "rows": [
+          35,
+          37,
+          38,
+          40,
+          41
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 9,
+        "rows": [
+          41,
+          42,
+          43,
+          44,
+          46,
+          48,
+          49
+        ],
+        "annotations": [
+          {
+            "id": 17,
+            "x": 81.6,
+            "y": 34.0,
+            "content": "<p>asdfda adafa fadfasfasdfadsfadsf</p>"
+          },
+          {
+            "id": 18,
+            "x": 38.2,
+            "y": 57.2,
+            "content": "<p>dasdsad</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 10,
+        "rows": [
+          49,
+          50,
+          51,
+          52,
+          54,
+          55,
+          56
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 11,
+        "rows": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 12,
+        "rows": [
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 13,
+        "rows": [
+          73,
+          74,
+          75,
+          76,
+          77,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 14,
+        "rows": [
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 15,
+        "rows": [
+          97,
+          98,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 16,
+        "rows": [
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          117,
+          118
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 17,
+        "rows": [
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 18,
+        "rows": [
+          123,
+          125,
+          126,
+          127,
+          128
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 19,
+        "rows": [
+          128,
+          130,
+          131,
+          132,
+          133,
+          135,
+          136,
+          137,
+          139
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 20,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 21,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 22,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 23,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 24,
+        "rows": [
+          183,
+          185,
+          186,
+          188,
+          189,
+          192,
+          193
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 25,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 26,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 27,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 28,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 29,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 30,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 31,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 32,
+        "rows": [
+          234
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 33,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 34,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 35,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 36,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 37,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 38,
+        "rows": [
+          266,
+          267,
+          268,
+          269
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 39,
+        "rows": [
+          269,
+          270,
+          271,
+          272,
+          273,
+          274
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 40,
+        "rows": [
+          275
+        ],
+        "annotations": []
+      },
+      {
+        "ordinal": 41,
+        "rows": [],
+        "annotations": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "doc_id": "PNX_MANUSCRIPTS003146684",
+    "summary": null,
+    "num_pages": 141,
+    "start_page": 3,
+    "end_page": 141,
+    "pages": [
+      {
+        "ordinal": 1,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 2,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 3,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 4,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 5,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 6,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 7,
+        "rows": [],
+        "annotations": [
+          {
+            "id": 7,
+            "x": 42.7,
+            "y": 29.6,
+            "content": "<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad<br />dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>\n\n<p>dsfljkah flkdajshf lkasdj hfaldksjf hadslkjf hadslkjf hasdlkfjhadlskfj hasdsadsadsad</p>"
+          }
+        ]
+      },
+      {
+        "ordinal": 8,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 9,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 10,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 11,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 12,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 13,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 14,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 15,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 16,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 17,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 18,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 19,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 20,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 21,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 22,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 23,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 24,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 25,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 26,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 27,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 28,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 29,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 30,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 31,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 32,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 33,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 34,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 35,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 36,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 37,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 38,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 39,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 40,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 41,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 42,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 43,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 44,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 45,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 46,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 47,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 48,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 49,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 50,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 51,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 52,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 53,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 54,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 55,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 56,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 57,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 58,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 59,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 60,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 61,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 62,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 63,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 64,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 65,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 66,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 67,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 68,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 69,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 70,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 71,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 72,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 73,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 74,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 75,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 76,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 77,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 78,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 79,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 80,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 81,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 82,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 83,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 84,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 85,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 86,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 87,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 88,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 89,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 90,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 91,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 92,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 93,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 94,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 95,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 96,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 97,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 98,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 99,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 100,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 101,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 102,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 103,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 104,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 105,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 106,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 107,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 108,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 109,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 110,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 111,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 112,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 113,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 114,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 115,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 116,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 117,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 118,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 119,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 120,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 121,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 122,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 123,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 124,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 125,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 126,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 127,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 128,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 129,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 130,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 131,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 132,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 133,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 134,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 135,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 136,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 137,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 138,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 139,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 140,
+        "rows": [],
+        "annotations": []
+      },
+      {
+        "ordinal": 141,
+        "rows": [],
+        "annotations": []
+      }
+    ]
+  }
+]

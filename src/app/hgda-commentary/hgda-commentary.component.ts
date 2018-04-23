@@ -9,7 +9,7 @@ import {HgdaPageService} from '../hgda-page.service';
 export class HgdaCommentaryComponent implements OnInit, OnChanges {
   open: String = 'active';
 
-  constructor(private pageService: HgdaPageService) {
+  constructor(public pageService: HgdaPageService) {
   }
 
   ngOnInit() {
