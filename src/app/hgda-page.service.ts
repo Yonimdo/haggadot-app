@@ -17,7 +17,6 @@ export class HgdaPageService implements OnInit, OnChanges {
   chapter: any = [];
   chapters: any = [];
   rows: any;
-  tracks: any;
   books: any;
   annotations: any;
   private mplaylist: any;
@@ -29,65 +28,41 @@ export class HgdaPageService implements OnInit, OnChanges {
   constructor(private http: Http) {
 
     Promise.all([
-      fetch('assets/bookmarks.json').then(n => n.json()),
+      fetch('http://nli.oglam.hasadna.org.il/text/json/').then(n => n.json()),
       fetch('assets/chapters.json').then(n => n.json()),
-      fetch('assets/rows.json').then(n => n.json()),
-      fetch('assets/tracks.json').then(n => n.json()),
-      fetch('assets/books.json').then(n => n.json()),
+      // fetch('assets/tracks.json').then(n => n.json()),
+      fetch('http://nli.oglam.hasadna.org.il/books/json/').then(n => n.json()),
       fetch(`http://iiif.nli.org.il/IIIFv21/DOCID/${this.bookId}/manifest/`).then(n => n.json()),
     ]).then(c => {
-      const bookmarks = c[0], imgs = c[1];
-      this.rows = c[2];
-      this.tracks = c[3];
-      this.books = c[4];
-      const doc = c[5];
+      const bookmarks = c[0].bookmarks, imgs = c[1];
+      this.rows = c[0].rows;
+      this.books = c[2];
+      const doc = c[3];
       this.book = this.books[0];
       this.book.title = doc.label;
       bookmarks.map(b => {
-        b.img = imgs.filter(im => im.ordinal === b.ordinal)[0].img;
+        b.img = imgs.filter(im => im.title.match(b.title))[0].img;
       });
       this.chapters = bookmarks;
 
 
-      const annotations = this.book.pages.filter(n => n.annotations.length !== 0);
-      this.tracks.map(t => {
-        t.x = 500;
-        t.y = 2000;
-        t[t.audio_url.split('.').pop()] = t.audio_url;
-        const pages = this.getChaptersPages(t.bookmarks.map(b => this.getChapter(b)));
-        if (!!pages) {
-          pages.map(p => {
-            const anno = annotations.find(annoP => annoP.ordinal === p.ordinal);
-            if (!!anno) {
-              anno.annotations.push(t);
-            } else {
-              p.annotations = [t];
-              annotations.push(p);
-            }
-          });
-        }
-      });
-
-      this.annotations = [];
-      annotations.map(p => {
-        const page_anno = [];
+      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+      this.annotations.map(p => {
         p.annotations.map(a => {
-          if (a.hasOwnProperty('audio_url')) {
-            const playlist = !!page_anno[1] ? page_anno[1] : [];
-            playlist.push(a);
-            page_anno[1] = playlist;
-          } else {
-            const infolist = !!page_anno[0] ? page_anno[0] : [];
-            infolist.push(a);
-            page_anno[0] = infolist;
+          const is_track = 'audio'.match(a.type);
+          if (is_track) {
+            a.track.mp3 = a.track.audio_url;
+            // TODO: add the song parameters here
+          }
+          if (!(a.x)) {
+            a.x = is_track ? 500 : 100;
+          }
+          if (!(a.y)) {
+            a.y = is_track ? 5000 : 100;
           }
         });
-        this.annotations.push({
-          'ordinal': p.ordinal,
-          'rows': p.rows,
-          'annotations': page_anno
-        });
       });
+
       this.page = this.book.pages[this.book.start_page];
       this.pageChanged.emit(this.page);
       this.annotationLoaded.emit();
@@ -165,7 +140,7 @@ export class HgdaPageService implements OnInit, OnChanges {
   }
 
   setPlaylist(playlist: any) {
-    this.mplaylist = playlist;
+    this.mplaylist = playlist.map(a => a = a.track);
     this.playlistChanged.emit(this.mplaylist);
   }
 
