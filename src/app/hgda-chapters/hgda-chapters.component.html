@@ -16,6 +16,6 @@
       {{title.title}}
     </p>
     <img *ngIf="title !== pageService.chapter" src="{{title.img}}"/>
-    <img class="selected" *ngIf="title === pageService.chapter" src="{{title.img.replace('hover','normal')}}"/>
+    <img class="selected" *ngIf="open.match('is-active') && title === pageService.chapter" src="{{title.img.replace('hover','normal')}}"/>
   </div>
 </div>
