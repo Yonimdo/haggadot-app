@@ -30,43 +30,41 @@ export class HgdaPageService implements OnInit, OnChanges {
     Promise.all([
       fetch('http://nli.oglam.hasadna.org.il/text/json/').then(n => n.json()),
       fetch('assets/chapters.json').then(n => n.json()),
-      // fetch('assets/tracks.json').then(n => n.json()),
       fetch('http://nli.oglam.hasadna.org.il/books/json/').then(n => n.json()),
-      fetch(`http://iiif.nli.org.il/IIIFv21/DOCID/${this.bookId}/manifest/`).then(n => n.json()),
     ]).then(c => {
       const bookmarks = c[0].bookmarks, imgs = c[1];
       this.rows = c[0].rows;
       this.books = c[2];
-      const doc = c[3];
-      this.book = this.books[0];
-      this.book.title = doc.label;
+      this.setBook(0);
       bookmarks.map(b => {
         b.img = imgs.filter(im => im.title.match(b.title))[0].img;
       });
       this.chapters = bookmarks;
-
-
-      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
-      this.annotations.map(p => {
-        p.annotations.map(a => {
-          const is_track = 'audio'.match(a.type);
-          if (is_track) {
-            a.track.mp3 = a.track.audio_url;
-            // TODO: add the song parameters here
-          }
-          if (!(a.x)) {
-            a.x = is_track ? 500 : 100;
-          }
-          if (!(a.y)) {
-            a.y = is_track ? 5000 : 100;
-          }
-        });
-      });
-
-      this.page = this.book.pages[this.book.start_page];
-      this.pageChanged.emit(this.page);
-      this.annotationLoaded.emit();
     });
+  }
+
+  setBook(ordinal) {
+    this.book = this.books[ordinal];
+    this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+    this.annotations.map(p => {
+      p.annotations.map(a => {
+        const is_track = 'audio'.match(a.type);
+        if (is_track) {
+          a.track.mp3 = a.track.audio_url;
+          // TODO: add the song parameters here
+        }
+        if (!(a.x)) {
+          a.x = is_track ? 500 : 100;
+        }
+        if (!(a.y)) {
+          a.y = is_track ? 5000 : 100;
+        }
+      });
+    });
+
+    this.page = this.book.pages[this.book.start_page];
+    this.pageChanged.emit(this.page);
+    this.annotationLoaded.emit();
   }
 
   getChaptersPages(chapters) {
