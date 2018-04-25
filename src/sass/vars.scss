@@ -54,7 +54,9 @@ $btn-height: 60px;
 $control-padding-screen-wide: 100px;
 $control-padding-screen: 30px;
 $control-padding-screen-bottom:80px;
-$info-dialog-width:1090px;
+//$info-dialog-width:1090px;
+// todo (info-image): change the img width to 554px and $info-dialog-width to 1090px
+$info-dialog-width:536px;
+$info-dialog-image-width:0;
 $info-dialog-text-width:536px;
-$info-dialog-image-width:554px;
 $info-dialog-height:610px;

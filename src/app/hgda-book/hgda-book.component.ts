@@ -88,9 +88,16 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
             'data-toggle': 'modal',
             'data-target': '#hgda-info-model',
             'click': () => {
-              $('#info-img').attr('src', a[0].src);
-              $('#info-title').html(a[0].title);
-              $('#info-text').html(a[0].content);
+              const img =  $('#info-img');
+              const title = $('#info-title');
+              const text = $('#info-text');
+              if (!!(a.title)) {
+                title.html(a.title);
+                title.show();
+              } else {
+                title.hide();
+              }
+              text.html(a.content);
             }
           },
           'divID': `page${n.ordinal - 1}-highlight-${index}`

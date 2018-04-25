@@ -1178,6 +1178,7 @@
               return false;
 
             var offset = layout.getPageOffset(pageIndex);
+            var size = layout.getPageDimensions(pageIndex);
 
             var top = offset.top + topOffset;
             var left = offset.left + leftOffset;
@@ -2956,7 +2957,7 @@
               if (!!pageNavElement) {
                 toolsRightElement.removeChild(pageNavElement);
                 toolsRightElement.insertBefore(pageNavElement, toolsRightElement.firstChild);
-              }else{
+              } else {
                 console.log("pageNavElement is null");
               }
             }
@@ -2968,7 +2969,7 @@
               if (!!pageNavElement) {
                 toolsRightElement.removeChild(pageNavElement);
                 toolsRightElement.appendChild(pageNavElement);
-              }else{
+              } else {
                 console.log("pageNavElement is null")
               }
             }
@@ -12104,7 +12105,9 @@
       HighlightPageOverlay.prototype.refresh = function () {
         var maxZoom = this._divaInstance.getMaxZoomLevel();
 
-        var maxZoomWidth = this._divaInstance.getPageDimensionsAtZoomLevel(this.page, maxZoom).width;
+        var maxZoomWidth = this._divaInstance.getPageDimensionsAtZoomLevel(this.page, maxZoom);
+        var maxZoomHeight = maxZoomWidth.height;
+        maxZoomWidth = maxZoomWidth.width;
         var currentWidth = this._divaInstance.getPageDimensions(this.page).width;
         var zoomDifference = Math.log(maxZoomWidth / currentWidth) / Math.log(2);
 
@@ -12120,8 +12123,8 @@
             style: {
               width: incorporateZoom(region.width, zoomDifference) + "px",
               height: incorporateZoom(region.height, zoomDifference) + "px",
-              top: pageOffset.top + incorporateZoom(region.uly, zoomDifference) + "px",
-              left: pageOffset.left + incorporateZoom(region.ulx, zoomDifference) + "px"
+              top: pageOffset.top + incorporateZoom(region.uly* maxZoomHeight / 100, zoomDifference) + "px",
+              left: pageOffset.left + incorporateZoom(region.ulx * maxZoomWidth / 100, zoomDifference) + "px"
             }
           });
         });

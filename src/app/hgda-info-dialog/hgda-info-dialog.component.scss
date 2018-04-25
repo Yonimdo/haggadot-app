@@ -2,7 +2,8 @@
 
 .hgda-info-model {
   margin: auto;
-  left: -580px;
+  // todo (info-image): add left
+  //left: -580px;
   padding-top: $nav-size;
   & .close {
     z-index: 1020;
@@ -25,7 +26,11 @@
       align-items: center;
       height: $info-dialog-height;
       width: $info-dialog-image-width;
-      @include base-background()
+      @include base-background();
+      // todo (info-image): remove
+      & img{
+        display: none;
+      }
     }
     & .text-container {
       padding: $padding-wide 0 0 0;
