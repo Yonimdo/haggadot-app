@@ -28,18 +28,18 @@ export class HgdaPageService implements OnInit, OnChanges {
   constructor(private http: Http) {
 
     Promise.all([
-      fetch('http://nli.oglam.hasadna.org.il/text/json/').then(n => n.json()),
+      fetch('http://nli.oglam.hasadna.org.il/editors/text/json/').then(n => n.json()),
       fetch('assets/chapters.json').then(n => n.json()),
-      fetch('http://nli.oglam.hasadna.org.il/books/json/').then(n => n.json()),
+      fetch('http://nli.oglam.hasadna.org.il/editors/books/json/').then(n => n.json()),
     ]).then(c => {
       const bookmarks = c[0].bookmarks, imgs = c[1];
       this.rows = c[0].rows;
       this.books = c[2];
-      this.setBook(0);
       bookmarks.map(b => {
         b.img = imgs.filter(im => im.title.match(b.title))[0].img;
       });
       this.chapters = bookmarks;
+      this.setBook(0);
     });
   }
 
@@ -59,6 +59,7 @@ export class HgdaPageService implements OnInit, OnChanges {
         if (!(a.y)) {
           a.y = is_track ? 5000 : 100;
         }
+
       });
     });
 
