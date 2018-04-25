@@ -33,6 +33,7 @@ export class HgdaAudioComponent implements OnInit {
         keyEnabled: true,
         audioFullScreen: false // Allows the audio poster to go full screen via keyboard
       });
+      $('#jp_container_1').removeClass('hide');
     });
     $('#jquery_jplayer_1').bind($.jPlayer.event.play, (a) => {
       const current = this.myPlaylist.playlist[this.myPlaylist.current];
@@ -40,7 +41,6 @@ export class HgdaAudioComponent implements OnInit {
       $('#static-track-title').html(current.title);
       $('#static-track-summary').html(current.summary);
     });
-
   }
 
   constructor(private pageService: HgdaPageService) {

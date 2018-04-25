@@ -51,7 +51,6 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     diva.Events.subscribe('VisiblePageDidChange', (index) => {
       this.pageService.changePage(index);
     }, 1);
-
   }
 
   setDivaAnnotations() {

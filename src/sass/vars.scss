@@ -27,7 +27,7 @@ $player-background-color: rgba(6,31,59,0.8);
 @mixin base-background() {
 
   background-color: $primary-back-dark;
-  background-image: url("/assets/img/res-img-general-background-pattern.png");
+  background-image: url("/assets/img/res-img-background-pattern.png");
   background-repeat: repeat;
 }
 //dimensions
@@ -42,9 +42,7 @@ $font-size-small: 10px;
 
 
 $nav-size: 76px;
-$player-size: 70px;
-$player-playlist-size: 50px;
-
+$player-size: 50px;
 $box-border-radius: 3px;
 $chapter-height-closed: 40px;
 $info-height-closed: 40px;

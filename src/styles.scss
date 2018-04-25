@@ -26,9 +26,10 @@ html, body {
   background-color: transparent;
   border: 0;
   bottom: $control-padding-screen-bottom;
+  box-shadow: none;
 }
 
-#diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title, .diva-zoom-label, .diva-goto-form {
+#diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title,#diva-1-dwn-icon,#diva-1-print-icon, .diva-zoom-label, .diva-goto-form {
   display: none !important;
 }
 
@@ -98,10 +99,10 @@ html, body {
   &:before {
     width: 80px !important;
     height: 80px !important;
-    content: url("/assets/img/res-btn-hagada-Music-normal.svg") !important;
+    content: url("/assets/img/res-btn-hagada-music-normal.svg") !important;
   }
   &:hover:before{
-    content: url("/assets/img/res-btn-hagada-Music-hover.svg") !important;
+    content: url("/assets/img/res-btn-hagada-music-hover.svg") !important;
   }
 }
 
@@ -119,26 +120,32 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: $player-playlist-size !important;
+    height: $player-size !important;
   }
   & li {
     background-color: $player-background-color;
     & a.jp-playlist-item {
       display: flex;
-      line-height: $player-playlist-size;
-      height: $player-playlist-size;
+      line-height: $player-size;
+      height: $player-size;
       font-size: 20px;
       color: $accent-color;
+      font-weight: 700;
       &:after {
         margin-left: $padding-wide;
-        padding-left: $padding-small;
-        height: $player-playlist-size;
+        padding: 10.5px;
+        height: $player-size;
         border-left: 2px solid $primary-color;
-        content: url(assets/img/res-btn-music-Playlist-normal.svg);
+        content: url(assets/img/res-img-playlist-icon-of-song-normal.svg);
+      }
+      &:hover:after{
+        content: url(assets/img/res-img-playlist-icon-of-song-hover.svg);
       }
     }
   }
-
+  & .jp-playlist-item-remove{
+    color:$accent-color;
+  }
 }
 
 .track-jumbotron {

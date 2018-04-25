@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>btn/tools/download/hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="btn/tools/download/hover" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-2" fill="#FBF9ED" x="0" y="0" width="40" height="40" rx="2"></rect>
+        <path d="M22.3937453,10 L22.3711998,15.8047519 L25.1568225,15.8120325 C25.5200556,15.8120325 26.357997,15.8011117 26.7218564,16.1523973 C27.0919785,16.5097501 27.0913522,17.0806652 26.728119,17.4325576 L21.2295204,22.7473461 C21.0360048,22.9348199 20.7717213,23.0088386 20.5193369,22.9985245 C20.2669525,23.0124789 20.0039216,22.9275393 19.8091534,22.7400656 L14.2786153,17.3955482 C13.9084932,17.0381954 13.907867,16.4684938 14.2723527,16.115388 C14.6355858,15.7634956 15.2599711,15.7774499 15.866821,15.7841237 L18.6524437,15.7914043 L18.6361608,10 L22.3937453,10 Z" id="Path" fill="#384C62"></path>
+        <path d="M16,27 L25,27" id="Line" stroke="#384C62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

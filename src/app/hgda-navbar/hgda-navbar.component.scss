@@ -8,10 +8,11 @@
 #title {
   flex-grow: 1;
   & h4 {
-    min-height: $nav-size;
-    background-image: url("/assets/img/res-img-general-nav_down-normal.svg"), url("/assets/img/res-btn-general-arrow-normal.svg");
+    min-height: 100px;
+    background-image: url("/assets/img/res-img-general-nav_down.svg"), url("/assets/img/res-btn-general-arrow-normal.svg");
     background-repeat: no-repeat;
-    background-position: center 70px, center 50px;
+    background-position: center 70px, center 45px;
+    font-weight: 700;
   }
 }
 

@@ -24,12 +24,10 @@ def copy_folder_files(root):
     path = "{}/{}".format(root, name)
     # If the extension of the file matches some text followed by ext...
     if os.path.isfile(path):
-      ff = STATIC_DIR + path.replace("/", "-")
-      shutil.copyfile(path, ff)
-      html_items = html_items + (img_template.format(**{'name': ff}))
-      # Make a directory with the extension name...
-      # os.makedirs(ext)
-      pass
+      if path.split('.')[-1] != "ini":
+        ff = STATIC_DIR + path.replace("/", "-")
+        shutil.copyfile(path, ff.lower())
+        html_items = html_items + (img_template.format(**{'name': ff}))
     else:
       copy_folder_files(path)
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>btn/tools/facebook/normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="btn/tools/facebook/normal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill-opacity="0.8" fill="#384C62" x="0" y="0" width="40" height="40" rx="3"></rect>
+        <path d="M17.2153344,31 L17.2153344,20.4991803 L15,20.4991803 L15,16.8803985 L17.2153344,16.8803985 L17.2153344,14.707695 C17.2153344,11.7554985 18.4662506,10 22.0202517,10 L24.9790572,10 L24.9790572,13.6191917 L23.1295943,13.6191917 C21.7461099,13.6191917 21.6545896,14.1249195 21.6545896,15.0687535 L21.6495633,16.8799887 L25,16.8799887 L24.6079499,20.4987705 L21.6495633,20.4987705 L21.6495633,31 L17.2153344,31 Z" id="Shape" fill="#FBF9ED"></path>
+    </g>
+</svg>

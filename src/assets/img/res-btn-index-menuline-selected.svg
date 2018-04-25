@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>btn/index/menuline/selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="btn/index/menuline/selected" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu" fill="#0A9CA3">
+            <g id="Group">
+                <rect id="Rectangle" x="0" y="0" width="20" height="4.09090909" rx="2.04545455"></rect>
+                <rect id="Rectangle-Copy" x="4.61538462" y="7.36363636" width="15.3846154" height="4.09090909" rx="2.04545455"></rect>
+                <rect id="Rectangle-Copy-2" x="9.23076923" y="13.9090909" width="10.7692308" height="4.09090909" rx="2.04545455"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
