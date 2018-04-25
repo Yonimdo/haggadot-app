@@ -6,51 +6,61 @@
   background-color: $accent-btn-color;
   width: 100%;
   text-align: right;
-  & .content {
-    height: $info-height-open - $info-height-closed;
-    padding: 0 $padding-medium;
-    overflow-y: auto;
-    & p {
-      margin: 3px;
-    }
-    .text {
+  height: $info-height-closed;
+  .button {
+    background-color: $primary-color;
+    width: 100%;
+
+    height: $info-height-closed !important;
+    display: flex;
+    align-content: space-between;
+    & img {
       margin: $padding-small;
-      padding: $padding-small;
-      font-size: $font-size;
-      width: 90%;
+      transform: rotate(-90deg);
+    }
+    & .text {
+      position: absolute;
+      right: 60px;
+      color: $accent-btn-color;
+      display: inline-block;
+      font-weight: 700;
+      width: 70%;
       text-align: right;
-      border: 2px Solid $primary-btn-color;
-      border-radius: $box-border-radius;
+      font-size: $font-size-big;
     }
   }
-  height: $info-height-closed;
+  & .content {
+    display: none;
+  }
   &.open {
     height: $info-height-open;
+    & .button {
+      & img {
+        transform: rotate(90deg);
+      }
+    }
+      & .content {
+      display: block;
+      height: $info-height-open - $info-height-closed;
+      padding: 0 $padding-medium;
+      overflow-y: auto;
+      & p {
+        margin: 3px;
+      }
+      .text {
+        margin: $padding-small;
+        padding: $padding-small;
+        font-size: $font-size;
+        width: 90%;
+        text-align: right;
+        border: 2px Solid $primary-btn-color;
+        border-radius: $box-border-radius;
+      }
+    }
   }
 }
 
-.button {
-  background-color: $primary-color;
-  width: 100%;
 
-  height: $info-height-closed !important;
-  display: flex;
-  align-content: space-between;
-  & img {
-    margin: $padding-small;
-    transform: rotate(180deg);
-  }
-  & .text {
-    position: absolute;
-    right: 60px;
-    color: $accent-btn-color;
-    display: inline-block;
-    font-weight: 700;
-    width: 70%;
-    text-align: right;
-    font-size: $font-size-big;
-  }
-}
 
 
 @media (max-width: 600px) {
