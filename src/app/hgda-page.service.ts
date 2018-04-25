@@ -37,7 +37,7 @@ export class HgdaPageService implements OnInit, OnChanges {
         b.img = imgs.filter(im => im.title.match(b.title))[0].img;
       });
       this.chapters = bookmarks;
-      this.setBook(0);
+      this.setBook(4);
     });
   }
 
@@ -57,6 +57,8 @@ export class HgdaPageService implements OnInit, OnChanges {
         if (!(a.y)) {
           a.y = is_track ? 70 : 30;
         }
+        a.x = a.x * p.width / 100;
+        a.y = a.y * p.height / 100;
       });
     });
 

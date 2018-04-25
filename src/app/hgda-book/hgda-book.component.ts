@@ -88,7 +88,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
             'data-toggle': 'modal',
             'data-target': '#hgda-info-model',
             'click': () => {
-              const img =  $('#info-img');
+              const img = $('#info-img');
               const title = $('#info-title');
               const text = $('#info-text');
               if (!!(a.title)) {
@@ -103,7 +103,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
       });
-      this.iiif_viewer_data.highlightOnPage(n.ordinal, regions, '#ffffff', 'highlight-page');
+      this.iiif_viewer_data.highlightOnPage(n.ordinal - 1 , regions, '#ffffff', 'highlight-page');
     });
 // Apply the highlight to the first page
   }

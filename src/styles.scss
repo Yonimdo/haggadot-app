@@ -12,6 +12,7 @@ html, body {
 }
 
 .diva-outer, .diva-wrapper {
+  direction: ltr;
   height: 100% !important;
   @include base-background()
 }
@@ -84,6 +85,8 @@ html, body {
   cursor: pointer;
   z-index: 1005;
   overflow: visible;
+  margin-top: -40px;
+  margin-left: -40px;
 }
 
 .highlight-audio {

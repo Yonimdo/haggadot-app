@@ -12105,9 +12105,7 @@
       HighlightPageOverlay.prototype.refresh = function () {
         var maxZoom = this._divaInstance.getMaxZoomLevel();
 
-        var maxZoomWidth = this._divaInstance.getPageDimensionsAtZoomLevel(this.page, maxZoom);
-        var maxZoomHeight = maxZoomWidth.height;
-        maxZoomWidth = maxZoomWidth.width;
+        var maxZoomWidth = this._divaInstance.getPageDimensionsAtZoomLevel(this.page, maxZoom).width;
         var currentWidth = this._divaInstance.getPageDimensions(this.page).width;
         var zoomDifference = Math.log(maxZoomWidth / currentWidth) / Math.log(2);
 
@@ -12123,8 +12121,8 @@
             style: {
               width: incorporateZoom(region.width, zoomDifference) + "px",
               height: incorporateZoom(region.height, zoomDifference) + "px",
-              top: pageOffset.top + incorporateZoom(region.uly* maxZoomHeight / 100, zoomDifference) + "px",
-              left: pageOffset.left + incorporateZoom(region.ulx * maxZoomWidth / 100, zoomDifference) + "px"
+              top: pageOffset.top + incorporateZoom(region.uly, zoomDifference) + "px",
+              left: pageOffset.left + incorporateZoom(region.ulx, zoomDifference) + "px"
             }
           });
         });
