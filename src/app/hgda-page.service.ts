@@ -54,10 +54,10 @@ export class HgdaPageService implements OnInit, OnChanges {
           // TODO: add the song parameters here
         }
         if (!(a.x)) {
-          a.x = is_track ? 500 : 100;
+          a.x = is_track ? 60 : 20;
         }
         if (!(a.y)) {
-          a.y = is_track ? 5000 : 100;
+          a.y = is_track ? 70 : 30;
         }
 
       });
