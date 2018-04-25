@@ -27,7 +27,7 @@ export class HgdaBookComponent implements OnInit, OnDestroy {
     $('#diva-wrapper').diva({
       enableImageTitles: false,
       fixedHeightGrid: true,
-      objectData: this.pageService.getBookUrl(this.pageService.bookId),
+      objectData: this.pageService.getBookUrl('PNX_MANUSCRIPTS000041667'),
       // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error

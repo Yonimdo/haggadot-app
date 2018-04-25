@@ -3,13 +3,20 @@
   <div
     class="button"
     aria-label="Menu" aria-controls="navigation">
-    <input type="text" class="text" placeholder="קפוץ לפסוק"/>
+
+
+    <!--<input type="text" class="text" placeholder="קפוץ לפסוק"/>-->
     <img
       (click)="toggle()"
       [ngClass]="''"
       type="button"
       aria-label="Menu" aria-controls="navigation" src="assets/img/res-btn-main-arrow-normal.svg">
+    <p class="text">
+    תוכן ההגדה
+</p>
   </div>
-  <p *ngFor="let verse of (pageService.rows | hgdaTextFilter: pageService.page :pageService.chapter );let i = index;"
-     [innerHTML]="verse[1]"></p>
+  <div class="content">
+    <p *ngFor="let verse of (pageService.rows | hgdaTextFilter: pageService.page :pageService.chapter );let i = index;"
+       [innerHTML]="verse[1]"></p>
+  </div>
 </div>

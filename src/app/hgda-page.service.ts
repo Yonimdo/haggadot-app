@@ -7,7 +7,6 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class HgdaPageService implements OnInit, OnChanges {
-  @Input() bookId: any = 'PNX_MANUSCRIPTS000041667';
   pageChanged: EventEmitter<any> = new EventEmitter();
   annotationLoaded: EventEmitter<any> = new EventEmitter();
   playlistChanged: EventEmitter<any> = new EventEmitter();
@@ -26,7 +25,6 @@ export class HgdaPageService implements OnInit, OnChanges {
   }
 
   constructor(private http: Http) {
-
     Promise.all([
       fetch('http://nli.oglam.hasadna.org.il/editors/text/json/').then(n => n.json()),
       fetch('assets/chapters.json').then(n => n.json()),
@@ -59,7 +57,6 @@ export class HgdaPageService implements OnInit, OnChanges {
         if (!(a.y)) {
           a.y = is_track ? 70 : 30;
         }
-
       });
     });
 

@@ -6,9 +6,22 @@
   background-color: $accent-btn-color;
   width: 100%;
   text-align: right;
-  overflow: hidden;
-  & p {
-    margin: 3px;
+  & .content {
+    height: $info-height-open - $info-height-closed;
+    padding: 0 $padding-medium;
+    overflow-y: auto;
+    & p {
+      margin: 3px;
+    }
+    .text {
+      margin: $padding-small;
+      padding: $padding-small;
+      font-size: $font-size;
+      width: 90%;
+      text-align: right;
+      border: 2px Solid $primary-btn-color;
+      border-radius: $box-border-radius;
+    }
   }
   height: $info-height-closed;
   &.open {
@@ -16,7 +29,7 @@
   }
 }
 
-.button{
+.button {
   background-color: $primary-color;
   width: 100%;
 
@@ -27,25 +40,21 @@
     margin: $padding-small;
     transform: rotate(180deg);
   }
-  & .text{
-    border : none;
+  & .text {
+    position: absolute;
+    right: 60px;
+    color: $accent-btn-color;
+    display: inline-block;
+    font-weight: 700;
+    width: 70%;
+    text-align: right;
+    font-size: $font-size-big;
   }
-}
-
-.text {
-  margin: $padding-small;
-  padding: $padding-small;
-  font-size: $font-size;
-  width: 90%;
-  text-align: right;
-  border : 2px Solid $primary-btn-color;
-  border-radius : $box-border-radius;
-
 }
 
 
 @media (max-width: 600px) {
-  div{
-    display:none;
+  div {
+    display: none;
   }
 }
