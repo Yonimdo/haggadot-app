@@ -52,3 +52,9 @@ li * {
   line-height: 27px;
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  #title{
+    display: none;
+  }
+}
