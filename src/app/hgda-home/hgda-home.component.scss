@@ -1,0 +1,53 @@
+@import "../../sass/vars";
+
+.header {
+  background-image: url('/assets/img/res-img-home-page-background.png');
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .content {
+    width: 900px;
+    opacity: 0.81;
+    border-radius: 12px;
+    background-color: #FDFDFB;
+    box-shadow: 0 0 18px 14px $accent-color;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    & .img {
+      margin-top: $padding-wide;
+    }
+    & .text-container {
+      color: #384C62;
+      font-family: Assistant;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 26px;
+      text-align: center;
+      padding: $padding-medium;
+    }
+  }
+}
+
+.books{
+  padding: $padding-small 0 $padding-small $padding-small;
+  width: 100%;
+  & .book{
+    width: 33.1%;
+    img{
+      width: inherit;
+    }
+  }
+}
+.footer{
+  background-color: $primary-text-color;
+  padding: $padding-medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

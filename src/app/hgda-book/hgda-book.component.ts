@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {HgdaPageService} from "../hgda-page.service";
+import {ActivatedRoute} from '@angular/router';
+import {HgdaPageService} from '../hgda-page.service';
 
 @Component({
   selector: 'app-hgda-book',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HgdaPageService} from "../hgda-page.service";
+import {HgdaPageService} from '../hgda-page.service';
 
 @Component({
   selector: 'app-hgda-home',
