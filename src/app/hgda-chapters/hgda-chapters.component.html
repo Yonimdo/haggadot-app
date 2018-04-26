@@ -2,8 +2,8 @@
 
   <div (click)="toggleOpen()"
           class="main-btn">
-    <img  *ngIf="!(open)" src="/assets/img/res-btn-index-menuline-normal.svg"/>
-    <img  *ngIf="open" src="/assets/img/res-btn-general-close-normal.svg"/>
+    <img  *ngIf="!(open)" src="/app/assets/img/res-btn-index-menuline-normal.svg"/>
+    <img  *ngIf="open" src="/app/assets/img/res-btn-general-close-normal.svg"/>
     <p *ngIf="!(pageService.chapter.img)" >
       סדר הגדה </p>
     <img *ngIf="!!(pageService.chapter.img)" class="selected"
