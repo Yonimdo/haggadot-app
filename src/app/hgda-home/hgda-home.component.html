@@ -1,8 +1,8 @@
 
 <div class="header">
   <div class="content">
-    <img class="img" src="/assets/img/res-img-home-page-logo.png" />
-    <img src="/assets/img/res-img-info-open_end_text-normal.svg">
+    <img class="img" src="assets/img/res-img-home-page-logo.png" />
+    <img src="assets/img/res-img-info-open_end_text-normal.svg">
     <div class="text-container">
       הספרייה הלאומית והסדנא לידע ציבורי בפרויקט משותף במסגרת "הספרייה הפתוחה": בספרייה הלאומית נמצא אוסף ענקי של הגדות
       מרהיבות ונדירות. רצינו למצוא דרך שתאפשר לקוראים מחוץ לכותלי הספרייה להשתמש באוסף ההגדות, להכיר את הסיפורים
@@ -11,19 +11,19 @@
       אנחנו מזמינים אתכם ואתכן לצאת אתנו למסע - לטייל בין דפי ההגדות והסיפורים,
       לשיר אתנו ועם כל המשפחה והחברים ולחגוג אתנו את חג הפסח.
     </div>
-    <img src="/assets/img/res-img-info-open_end_text-normal.svg">
-    <img class="img" src="/assets/img/res-btn-home-page-scroll-down.svg">
+    <img src="assets/img/res-img-info-open_end_text-normal.svg">
+    <img class="img" src="assets/img/res-btn-home-page-scroll-down.svg">
   </div>
 </div>
 
 <div *ngIf="!!(pageService.books)" class="books">
-  <a class="book" [href]="'/#/book/'+i" *ngFor="let book of (pageService.books);let i = index">
+  <a class="book" [href]="'#/book/'+i" *ngFor="let book of (pageService.books);let i = index">
     <img [src]="book.cover_image_url">
   </a>
 </div>
 
 <div class="footer">
-  <img src="/assets/img/res-img-footer-logo-sifriya.png">
-  <img src="/assets/img/logo-oglam.png">
-  <img src="/assets/img/res-img-footer-logo-sadna.png">
+  <img src="assets/img/res-img-footer-logo-sifriya.png">
+  <img src="assets/img/logo-oglam.png">
+  <img src="assets/img/res-img-footer-logo-sadna.png">
 </div>
