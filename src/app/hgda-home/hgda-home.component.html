@@ -11,13 +11,13 @@
       אנחנו מזמינים אתכם ואתכן לצאת אתנו למסע - לטייל בין דפי ההגדות והסיפורים,
       לשיר אתנו ועם כל המשפחה והחברים ולחגוג אתנו את חג הפסח.
     </div>
-    <img src="assets/img/res-img-info-open_end_text-normal.svg">
-    <img class="img" src="assets/img/res-btn-home-page-scroll-down.svg">
+    <img src="/assets/img/res-img-info-open_end_text-normal.svg">
+    <img class="img" src="/assets/img/res-btn-home-page-scroll-down.svg">
   </div>
 </div>
 
 <div *ngIf="!!(pageService.books)" class="books">
-  <a class="book" [href]="'/book/'+i" *ngFor="let book of (pageService.books);let i = index">
+  <a class="book" [href]="'/#/book/'+i" *ngFor="let book of (pageService.books);let i = index">
     <img [src]="book.cover_image_url">
   </a>
 </div>
