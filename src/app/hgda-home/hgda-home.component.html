@@ -18,7 +18,9 @@
 
 <div *ngIf="!!(pageService.books)" class="books">
   <a class="book" [href]="'#/book/'+i" *ngFor="let book of (pageService.books);let i = index">
+    <span class="title">{{book.title}}</span>
     <img [src]="book.cover_image_url">
+    <!--<p>{{book.summary}}</p>-->
   </a>
 </div>
 

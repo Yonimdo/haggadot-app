@@ -32,20 +32,38 @@
   }
 }
 
-.books{
+.books {
   padding: $padding-small 0 $padding-small $padding-small;
   width: 100%;
-  & .book{
+  & .book {
+
+    display: inline-block;
     width: 33.1%;
-    img{
-      width: inherit;
+    & img {
+      z-index: 0;
+      display: block;
+      width: 100%;
+    }
+    & .title {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      width: 33.1%;
+      height: 50px;
+      background-color: $primary-color;
+      font-weight: 700;
+      color: $accent-color;
+      font-size: $font-size-meddium;
     }
   }
 }
-.footer{
+
+.footer {
   background-color: $primary-text-color;
   padding: $padding-medium;
-  & img{
+  & img {
     padding: $padding-medium;
   }
   display: flex;
