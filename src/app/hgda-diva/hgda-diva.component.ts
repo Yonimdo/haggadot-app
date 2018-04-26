@@ -54,6 +54,7 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
   }
 
   setDivaAnnotations() {
+    
     this.pageService.annotations.map(n => {
       const regions = [];
       n.annotations.map((a, index) => {
@@ -103,7 +104,7 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
       });
-      this.iiif_viewer_data.highlightOnPage(n.ordinal - 1 , regions, '#ffffff', 'highlight-page');
+      this.iiif_viewer_data.highlightOnPage(n.ordinal - 1, regions, '#ffffff', 'highlight-page');
     });
 // Apply the highlight to the first page
   }
@@ -114,19 +115,26 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.pageService.bookChanged.subscribe(() => {
-      this.setDiva();
-      diva.Events.subscribe('ViewerDidLoad', (s) => {
-        this.setDivaEvents();
-        this.pageService.getPageChangeEmitter()
-          .subscribe(item => {
-            if (item != null) {
-              // TODO: throws error if diva is not loaded before the data
-              this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
-            }
-          });
-        this.pageService.getAnnoChangeEmitter()
-          .subscribe(e => this.setDivaAnnotations());
-      });
+      this.initBook();
+    });
+  }
+
+  initBook() {
+    this.setDiva();
+    diva.Events.subscribe('ViewerDidLoad', (s) => {
+      this.setDivaEvents();
+      this.pageService.getPageChangeEmitter()
+        .subscribe(item => {
+          if (item != null) {
+            // TODO: throws error if diva is not loaded before the data
+            this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
+          }
+        });
+      if (!!(this.pageService.annotations)) {
+        this.setDivaAnnotations();
+      }
+      this.pageService.getAnnoChangeEmitter()
+        .subscribe(e => this.setDivaAnnotations());
     });
   }
 

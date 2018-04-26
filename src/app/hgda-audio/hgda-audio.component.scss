@@ -117,6 +117,7 @@
     }
     & .jp-progress {
       flex-grow: 1;
+      min-width: 200px;
       height: 2px;
       padding: 0 $padding-wide 0 $padding-wide;
       & .jp-seek-bar {
