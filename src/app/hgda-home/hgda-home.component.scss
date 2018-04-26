@@ -45,6 +45,9 @@
 .footer{
   background-color: $primary-text-color;
   padding: $padding-medium;
+  & img{
+    padding: $padding-medium;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
