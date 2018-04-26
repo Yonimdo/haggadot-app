@@ -1,0 +1,32 @@
+@import "../../sass/vars";
+
+.chapters {
+  margin-top: $control-padding-screen-wide;
+  width: $chapter-width;
+  right: $control-padding-screen;
+  position: fixed;
+  z-index: 105;
+}
+
+.book-buttons {
+  z-index: 1;
+  position: fixed;
+  bottom: $control-padding-screen;
+  right: $control-padding-screen;
+  height: $btn-height;
+}
+
+.commentary {
+  margin-top: 100px;
+  left: $control-padding-screen;
+  position: fixed;
+  z-index: 105;
+  width: $info-width;
+}
+
+div.diva-wrapper {
+  overflow: hidden;
+}
+
+
+

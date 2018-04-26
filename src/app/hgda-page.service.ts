@@ -10,6 +10,7 @@ export class HgdaPageService implements OnInit, OnChanges {
   pageChanged: EventEmitter<any> = new EventEmitter();
   annotationLoaded: EventEmitter<any> = new EventEmitter();
   playlistChanged: EventEmitter<any> = new EventEmitter();
+  bookChanged: EventEmitter<any> = new EventEmitter();
   book: any;
   page: any;
   track: any;
@@ -18,10 +19,11 @@ export class HgdaPageService implements OnInit, OnChanges {
   rows: any;
   books: any;
   annotations: any;
-  private mplaylist: any;
+  mplaylist: any;
+  bookId: any;
 
-  getBookUrl(id) {
-    return `http://iiif.nli.org.il/IIIFv21/DOCID/${id}/manifest/`;
+  getBookUrl() {
+    return `http://iiif.nli.org.il/IIIFv21/DOCID/${this.book.doc_id}/manifest/`;
   }
 
   constructor(private http: Http) {
@@ -37,34 +39,40 @@ export class HgdaPageService implements OnInit, OnChanges {
         b.img = imgs.filter(im => im.title.match(b.title))[0].img;
       });
       this.chapters = bookmarks;
-      this.setBook(4);
+      if (!!(this.bookId)) {
+        this.setBook(this.bookId);
+      }
     });
   }
 
   setBook(ordinal) {
-    this.book = this.books[ordinal];
-    this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
-    this.annotations.map(p => {
-      p.annotations.map(a => {
-        const is_track = 'audio'.match(a.type);
-        if (is_track) {
-          a.track.mp3 = a.track.audio_url;
-          // TODO: add the song parameters here
-        }
-        if (!(a.x)) {
-          a.x = is_track ? 60 : 20;
-        }
-        if (!(a.y)) {
-          a.y = is_track ? 70 : 30;
-        }
-        a.x = a.x * p.width / 100;
-        a.y = a.y * p.height / 100;
+    this.bookId = ordinal;
+    if (!!(this.books)) {
+      this.book = this.books[ordinal];
+      this.annotations = this.book.pages.filter(n => n.annotations.length !== 0);
+      this.annotations.map(p => {
+        p.annotations.map(a => {
+          const is_track = 'audio'.match(a.type);
+          if (is_track) {
+            a.track.mp3 = a.track.audio_url;
+            // TODO: add the song parameters here
+          }
+          if (!(a.x)) {
+            a.x = is_track ? 60 : 20;
+          }
+          if (!(a.y)) {
+            a.y = is_track ? 70 : 30;
+          }
+          a.x = a.x * p.width / 100;
+          a.y = a.y * p.height / 100;
+        });
       });
-    });
 
-    this.page = this.book.pages[this.book.start_page];
-    this.pageChanged.emit(this.page);
-    this.annotationLoaded.emit();
+      this.page = this.book.pages[this.book.start_page];
+      this.pageChanged.emit(this.page);
+      this.annotationLoaded.emit();
+      this.bookChanged.emit(this.book);
+    }
   }
 
   getChaptersPages(chapters) {
