@@ -39,7 +39,7 @@ export class HgdaPageService implements OnInit, OnChanges {
         b.img = imgs.filter(im => im.title.match(b.title))[0].img;
       });
       this.chapters = bookmarks;
-      if (!!(this.bookId)) {
+      if (!!(this.bookId) || this.bookId === 0) {
         this.setBook(this.bookId);
       }
     });

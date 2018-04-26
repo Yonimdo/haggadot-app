@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {HgdaPageService} from '../hgda-page.service';
 
@@ -10,7 +10,8 @@ import {HgdaPageService} from '../hgda-page.service';
 export class HgdaBookComponent implements OnInit {
   id: number;
 
-  constructor(private route: ActivatedRoute, public pageService: HgdaPageService) { }
+  constructor(private route: ActivatedRoute, public pageService: HgdaPageService) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

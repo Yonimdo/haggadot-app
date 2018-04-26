@@ -54,7 +54,6 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
   }
 
   setDivaAnnotations() {
-    
     this.pageService.annotations.map(n => {
       const regions = [];
       n.annotations.map((a, index) => {
@@ -76,11 +75,11 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
                 el.html(`<div class="jumbotron track-jumbotron">
                   <h4 class=""><span id="static-track-title">הכותרת של השיר</span>
                   <small>[<span id="static-track-time">00:00</span>]</small></h4>
-                  <p>ביצוע:<span id="static-track-author" >שם האומן</span></p>
-                  <p>שפות:<span id="static-track-language" >שפה</span></p>
-                  <div class="flex-row"><p >מקום:<span id="static-track-location">שם המקום</span>
-                  </p><p>שנה:<span id="static-track-year" >שנת יציאה </span></p></div>
-                  <p >קרדיט:<span id="static-track-credit">קרדיט</span></p>
+                  <!--<p>ביצוע:<span id="static-track-author" >שם האומן</span></p>-->
+                  <!--<p>שפות:<span id="static-track-language" >שפה</span></p>-->
+                  <!--<div class="flex-row"><p >מקום:<span id="static-track-location">שם המקום</span>-->
+                  <!--</p><p>שנה:<span id="static-track-year" >שנת יציאה </span></p></div>-->
+                  <!--<p >קרדיט:<span id="static-track-credit">קרדיט</span></p>-->
                   <p class="summary"><span id="static-track-summary" >תיאור כללי ב</span></p>
               </div>`);
               }
@@ -117,6 +116,10 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
     this.pageService.bookChanged.subscribe(() => {
       this.initBook();
     });
+    if (!!(this.pageService.book)) {
+      this.initBook();
+    }
+
   }
 
   initBook() {
