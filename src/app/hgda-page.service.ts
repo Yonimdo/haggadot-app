@@ -68,7 +68,7 @@ export class HgdaPageService implements OnInit, OnChanges {
         });
       });
 
-      this.page = this.book.pages[this.book.start_page];
+      this.page = this.book.pages[this.book.start_page - 1];
       this.pageChanged.emit(this.page);
       this.annotationLoaded.emit();
       this.bookChanged.emit(this.book);

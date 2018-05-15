@@ -28,10 +28,9 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
       enableImageTitles: false,
       fixedHeightGrid: true,
       objectData: this.pageService.getBookUrl(),
-      // objectData: 'https://ddmal.github.io/diva.js/try/iiif-highlight-pages/stgallen_390_annotated.json', // Example
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error
-      goDirectlyTo: 3,
+      goDirectlyTo: this.pageService.book.start_page - 1,
       inFullscreen: true,
       enableHighlight: true
     });
