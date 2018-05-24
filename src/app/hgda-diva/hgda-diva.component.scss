@@ -24,8 +24,12 @@
   width: $info-width;
 }
 
-div.diva-wrapper {
+#viewer {
+  direction: ltr;
+  @include base-background();
+  height: 100%;
   overflow: hidden;
+  padding: $nav-size + $control-padding-screen $chapter-width + $control-padding-screen * 2 $control-padding-screen $info-width + $control-padding-screen * 2;
 }
 
 

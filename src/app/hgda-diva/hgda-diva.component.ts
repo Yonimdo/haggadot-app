@@ -1,12 +1,20 @@
-import {hasOwnProperty} from 'tslint/lib/utils';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {HgdaPageService} from '../hgda-page.service';
+import {MnFullpageService} from 'ngx-fullpage';
+import {WindowRef} from '../win-ref.service';
 
 declare var diva: any;
 declare var $: any;
 
-import {Component, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
-import {HgdaPageService} from '../hgda-page.service';
-import {MnFullpageService} from 'ngx-fullpage';
-import {WindowRef} from '../win-ref.service';
+const hms = function (n) {
+  if (n < 60 * 60) {
+    return `${Math.floor(n / 60)}:${String(Math.floor(n % 60 / 1)).padStart(2, '0')}`;
+  }
+  const h = Math.floor(n / 60 / 60);
+  const m = Math.floor(n / 60 % 60);
+  const s = Math.floor(n % 60);
+  return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+};
 
 
 @Component({
@@ -16,33 +24,32 @@ import {WindowRef} from '../win-ref.service';
 })
 export class HgdaDivaComponent implements OnInit, OnDestroy {
   @Output() pageChanged = new EventEmitter();
-  iiif_viewer_data: any;
-
-  selectObject: any;
+  diva: any;
+  currentAnnotation = null;
 
   constructor(public pageService: HgdaPageService, public fullpageService: MnFullpageService, public window: WindowRef) {
   }
 
   setDiva() {
-    $('#diva-wrapper').diva({
+    this.diva = $('#viewer').diva({
       enableImageTitles: false,
+      enableLinkIcon: false,
       fixedHeightGrid: true,
       objectData: this.pageService.getBookUrl(),
       enableIIIFHighlight: true,
       // enableIIIFMetadata: true, throws error
       goDirectlyTo: this.pageService.book.start_page - 1,
       inFullscreen: true,
-      enableHighlight: true
-    });
+      enableHighlight: true,
+      zoomLevel: 1
+    }).data('diva');
 
-    this.selectObject = $('#object-select');
-    this.iiif_viewer_data = $('#diva-wrapper').data('diva');
-    this.selectObject.on('change', function () {
-      this.iiif_viewer_data.changeObject(this.selectObject.val());
+    $('#object-select').on('change', function () {
+      this.diva.changeObject(this.selectObject.val());
     });
 
     $('#orientation').on('click', function () {
-      this.iiif_viewer_data.toggleOrientation();
+      this.diva.toggleOrientation();
     });
   }
 
@@ -62,26 +69,9 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
           'ulx': a.x,
           'uly': a.y,
           'classes': 'audio'.includes(a.type) ? 'highlight-audio' : 'highlight-info',
-          'attrs': 'audio'.match(a.type) ? {
-            'click': (box) => {
-              const el = $(box);
-              if (el.hasClass('selected')) {
-                el.removeClass('selected');
-                el.html('');
-              } else {
-                this.playPlaylist(n.annotations.filter(t => 'audio'.includes(t.type)));
-                el.addClass('selected');
-                el.html(`<div class="jumbotron track-jumbotron">
-                  <h4 class=""><span id="static-track-title">הכותרת של השיר</span>
-                  <small>[<span id="static-track-time">00:00</span>]</small></h4>
-                  <!--<p>ביצוע:<span id="static-track-author" >שם האומן</span></p>-->
-                  <!--<p>שפות:<span id="static-track-language" >שפה</span></p>-->
-                  <!--<div class="flex-row"><p >מקום:<span id="static-track-location">שם המקום</span>-->
-                  <!--</p><p>שנה:<span id="static-track-year" >שנת יציאה </span></p></div>-->
-                  <!--<p >קרדיט:<span id="static-track-credit">קרדיט</span></p>-->
-                  <p class="summary"><span id="static-track-summary" >תיאור כללי ב</span></p>
-              </div>`);
-              }
+          'attrs': a.type === 'audio' ? {
+            'click': (el) => {
+              this.onAudioClick(a, el);
             }
           } : {
             'data-toggle': 'modal',
@@ -102,13 +92,37 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
           'divID': `page${n.ordinal - 1}-highlight-${index}`
         });
       });
-      this.iiif_viewer_data.highlightOnPage(n.ordinal - 1, regions, '#ffffff', 'highlight-page');
+      this.diva.highlightOnPage(n.ordinal - 1, regions, '#ffffff', 'highlight-page');
     });
 // Apply the highlight to the first page
   }
 
-  playPlaylist(playlist): void {
-    this.pageService.setPlaylist(playlist);
+  onAudioClick(a, target) {
+    console.log(a, target);
+    const el = $(target);
+    if (this.currentAnnotation !== target) {
+      $(this.currentAnnotation).removeClass('selected').html('');
+      this.currentAnnotation = null;
+    }
+
+    if (el.hasClass('selected')) {
+      el.removeClass('selected');
+      el.html('');
+      this.currentAnnotation = null;
+    } else {
+      this.play(a);
+      el.addClass('selected');
+      el.html(`<div class="jumbotron track-jumbotron">
+          <h4>${a.track.title} <small>| ${hms(a.track.length)}</small></h4>
+          <p class="summary">${a.track.summary}</p>
+      </div>`);
+      this.currentAnnotation = target;
+    }
+
+  }
+
+  play(track): void {
+    this.pageService.setPlaylist([track]);
   }
 
   ngOnInit() {
@@ -129,7 +143,7 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
         .subscribe(item => {
           if (item != null) {
             // TODO: throws error if diva is not loaded before the data
-            this.iiif_viewer_data.gotoPageByIndex(item.ordinal);
+            this.diva.gotoPageByIndex(item.ordinal);
           }
         });
       if (!!(this.pageService.annotations)) {

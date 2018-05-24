@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @import "sass/vars";
 
 html, body {
@@ -12,9 +11,13 @@ html, body {
 }
 
 .diva-outer, .diva-wrapper {
-  direction: ltr;
-  height: 100% !important;
-  @include base-background()
+    height: 100% !important;
+}
+
+
+.diva-outer {
+  border: 0 !important;
+  background: none !important;
 }
 
 .diva-viewport {
@@ -23,7 +26,7 @@ html, body {
   overflow-x: hidden;
 }
 
-.diva-fullscreen-tools {
+.diva-tools {
   background-color: transparent;
   border: 0;
   bottom: $control-padding-screen-bottom;
@@ -32,13 +35,13 @@ html, body {
   box-shadow: none;
 }
 
-#diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title,#diva-1-dwn-icon,#diva-1-print-icon, .diva-zoom-label, .diva-goto-form {
+#diva-1-view-icon, #diva-1-fullscreen-icon, #diva-1-title, #diva-1-dwn-icon, #diva-1-print-icon, .diva-zoom-label, .diva-goto-form {
   display: none !important;
 }
 
-.diva-fullscreen-tools, .diva-page-nav,
-.diva-fullscreen-tools .diva-grid-label,
-.diva-fullscreen-tools .diva-page-label {
+.diva-tools, .diva-page-nav,
+.diva-tools .diva-grid-label,
+.diva-tools .diva-page-label {
   display: inline-block !important;
 }
 
@@ -91,13 +94,13 @@ html, body {
 
 .highlight-audio {
   direction: rtl;
-  &.selected{
+  &.selected {
     &:before {
       width: 80px !important;
       height: 80px !important;
       content: url("/assets/img/res-btn-info-close-normal.svg") !important;
     }
-    &:hover:before{
+    &:hover:before {
       content: url("/assets/img/res-btn-info-close-selected.svg") !important;
     }
   }
@@ -106,7 +109,7 @@ html, body {
     height: 80px !important;
     content: url("/assets/img/res-btn-hagada-music-normal.svg") !important;
   }
-  &:hover:before{
+  &:hover:before {
     content: url("/assets/img/res-btn-hagada-music-hover.svg") !important;
   }
 }
@@ -143,18 +146,19 @@ html, body {
         border-left: 2px solid $primary-color;
         content: url(assets/img/res-img-playlist-icon-of-song-normal.svg);
       }
-      &:hover:after{
+      &:hover:after {
         content: url(assets/img/res-img-playlist-icon-of-song-hover.svg);
       }
     }
   }
-  & .jp-playlist-item-remove{
-    color:$accent-color;
+  & .jp-playlist-item-remove {
+    color: $accent-color;
   }
 }
 
 .track-jumbotron {
   direction: rtl;
+  text-align: right;
   margin: -40px 40px;
   width: 314px !important;
   display: flex;
@@ -197,16 +201,16 @@ html, body {
     & span {
     }
     font-weight: normal;
-    &:after {
-      display: inline-block;
-      content: "{";
-      transform: rotate(180deg);
-    }
-    &:before {
-      display: inline-block;
-      content: "}";
-      transform: rotate(180deg);
-    }
+    //&:after {
+    //  display: inline-block;
+    //  content: "{";
+    //  transform: rotate(180deg);
+    //}
+    //&:before {
+    //  display: inline-block;
+    //  content: "}";
+    //  transform: rotate(180deg);
+    //}
   }
 
 }

@@ -2,7 +2,9 @@ declare var $: any;
 declare var jPlayerPlaylist: any;
 
 import {HgdaPageService} from '../hgda-page.service';
-import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-hgda-audio',
@@ -34,12 +36,11 @@ export class HgdaAudioComponent implements OnInit {
         audioFullScreen: false // Allows the audio poster to go full screen via keyboard
       });
       $('#jp_container_1').removeClass('hide');
+      $('.jp-playlist').hide();
     });
     $('#jquery_jplayer_1').bind($.jPlayer.event.play, (a) => {
       const current = this.myPlaylist.playlist[this.myPlaylist.current];
       this.pageService.changeTrack(current);
-      $('#static-track-title').html(current.title);
-      $('#static-track-summary').html(current.summary);
     });
   }
 
