@@ -98,7 +98,6 @@ export class HgdaDivaComponent implements OnInit, OnDestroy {
   }
 
   onAudioClick(a, target) {
-    console.log(a, target);
     const el = $(target);
     if (this.currentAnnotation !== target) {
       $(this.currentAnnotation).removeClass('selected').html('');
